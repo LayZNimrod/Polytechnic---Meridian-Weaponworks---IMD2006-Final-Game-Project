@@ -9,13 +9,13 @@ public class PlayerScript : MonoBehaviour
     public PlayerControls playerCont;
 
     public int moveSpeed;
-    public int jumpHight;
+    public int jumpHeight;
     public float rayCastJumpHight = 0.01f;
     public float rayCastDistFromOrigin = -0.5f;
 
-
     private InputAction movement;
     private InputAction jump;
+    private InputAction aim;
 
     private Rigidbody2D rb;
 
@@ -37,18 +37,22 @@ public class PlayerScript : MonoBehaviour
         jump = playerCont.Player.Jump;
         jump.Enable();
         jump.performed += Jump;
+        aim = playerCont.Player.Look;
+        aim.Enable();
     }
 
     private void OnDisable()
     {
         movement.Disable();
         jump.Disable();
+        aim.Disable();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        Vector2 moveVector = aim.ReadValue<Vector2>();
+        Debug.Log(moveVector);
     }
     private void FixedUpdate()
     {
@@ -75,10 +79,9 @@ public class PlayerScript : MonoBehaviour
     {
         if (CheckOnGround())
         {
-            Vector2 vel = new Vector2(0, jumpHight);
+            Vector2 vel = new Vector2(0, jumpHeight);
             rb.velocity += vel;
         }
-
     }
 
     private Boolean CheckOnGround()
@@ -92,7 +95,6 @@ public class PlayerScript : MonoBehaviour
                 return true;
             }
         }
-
         return false;
     }
 }
