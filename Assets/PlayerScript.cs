@@ -17,6 +17,11 @@ public class PlayerScript : MonoBehaviour
     private InputAction jump;
     private InputAction aim;
 
+    private Vector2 mouseWorldVector;
+    private Vector2 moveVector;
+    private Vector3 playerMove;
+
+
     private Rigidbody2D rb;
 
     // Start is called before the first frame update
@@ -51,13 +56,16 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 moveVector = aim.ReadValue<Vector2>();
-        Debug.Log(moveVector);
+        Vector2 lookVector = aim.ReadValue<Vector2>();
+        mouseWorldVector = Camera.main.ScreenToWorldPoint(lookVector);
+        Vector2 weaponPos = new Vector2 (mouseWorldVector.x - transform.position.x, mouseWorldVector.y - transform.position.y);
+        weaponPos.Normalize();
+        Debug.Log(weaponPos);
     }
     private void FixedUpdate()
     {
-        Vector2 moveVector = movement.ReadValue<Vector2>();
-        Vector3 playermove = new Vector3(moveVector.x, 0, 0);
+        moveVector = movement.ReadValue<Vector2>();
+        playerMove = new Vector3(moveVector.x, 0, 0);
 
         rb = GetComponent<Rigidbody2D>();
         if (moveVector.magnitude == 0)
@@ -67,10 +75,10 @@ public class PlayerScript : MonoBehaviour
         } 
         else
         {
-            rb.AddForce(playermove * moveSpeed * Time.deltaTime);
-            playermove.x = Mathf.Clamp(rb.velocity.x, -10, 10);
-            playermove.y = rb.velocity.y;
-            rb.velocity = playermove;
+            rb.AddForce(playerMove * moveSpeed * Time.deltaTime);
+            playerMove.x = Mathf.Clamp(rb.velocity.x, -10, 10);
+            playerMove.y = rb.velocity.y;
+            rb.velocity = playerMove;
         }
     }
 
