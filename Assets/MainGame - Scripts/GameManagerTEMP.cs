@@ -11,6 +11,7 @@ public class GameManagerTEMP : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Choice for weapon set to text
         switch (ChoiceCarrier.ChosenWeapon){
             case (MenuScript.Weapon.Cannon):
                 SWeapText.text = "Cannon";
@@ -19,6 +20,8 @@ public class GameManagerTEMP : MonoBehaviour
                 SWeapText.text = "Wrench";
                 break;
         }
+
+        //Choice for element set to text
         switch (ChoiceCarrier.ChosenElement)
         {
             case (MenuScript.Element.Fire):

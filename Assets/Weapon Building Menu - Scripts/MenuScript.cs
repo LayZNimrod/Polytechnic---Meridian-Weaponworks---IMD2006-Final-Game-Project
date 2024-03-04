@@ -21,7 +21,7 @@ public class MenuScript : MonoBehaviour
     }
     public Element chosenElement;
 
-    // Start is called before the first frame update
+    // Choose weapon
     public void SwitchWeapon()
     {
         switch (chosenWeapon)
@@ -42,6 +42,7 @@ public class MenuScript : MonoBehaviour
         }
     }
 
+    // Choose element
     public void SwitchElement()
     {
         switch (chosenElement)
@@ -65,6 +66,7 @@ public class MenuScript : MonoBehaviour
     public void CompleteWeapon()
     {
         SceneManager.LoadScene("SampleScene");
+        //carry choices to main scene
         ChoiceCarrier.ChosenWeapon = chosenWeapon;
         ChoiceCarrier.ChosenElement = chosenElement;
     }
