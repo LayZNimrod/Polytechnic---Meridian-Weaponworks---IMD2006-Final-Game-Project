@@ -8,18 +8,18 @@ public class MenuScript : MonoBehaviour
 {
     public TextMeshProUGUI SelectedWeapon = null;
     public TextMeshProUGUI SelectedElement = null;
-    enum Weapon
+    public enum Weapon
     {
         Wrench,
         Cannon
     }
-    Weapon chosenWeapon;
-    enum Element
+    public Weapon chosenWeapon;
+    public enum Element
     {
         Fire,
         Lightning
     }
-    Element chosenElement;
+    public Element chosenElement;
 
     // Start is called before the first frame update
     public void SwitchWeapon()
@@ -65,6 +65,8 @@ public class MenuScript : MonoBehaviour
     public void CompleteWeapon()
     {
         SceneManager.LoadScene("SampleScene");
+        ChoiceCarrier.ChosenWeapon = chosenWeapon;
+        ChoiceCarrier.ChosenElement = chosenElement;
     }
     // Update is called once per frame
 }
