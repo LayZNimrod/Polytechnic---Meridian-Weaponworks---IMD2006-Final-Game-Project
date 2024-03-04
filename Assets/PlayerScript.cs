@@ -17,7 +17,7 @@ public class PlayerScript : MonoBehaviour
     private InputAction jump;
     private InputAction aim;
 
-    private Vector2 mouseWorldVector;
+    Vector2 weaponPos;
     private Vector2 moveVector;
     private Vector3 playerMove;
 
@@ -57,8 +57,8 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         Vector2 lookVector = aim.ReadValue<Vector2>();
-        mouseWorldVector = Camera.main.ScreenToWorldPoint(lookVector);
-        Vector2 weaponPos = new Vector2 (mouseWorldVector.x - transform.position.x, mouseWorldVector.y - transform.position.y);
+        Vector2 mouseWorldVector = Camera.main.ScreenToWorldPoint(lookVector);
+        weaponPos = new Vector2 (mouseWorldVector.x - transform.position.x, mouseWorldVector.y - transform.position.y);
         weaponPos.Normalize();
         Debug.Log(weaponPos);
     }
