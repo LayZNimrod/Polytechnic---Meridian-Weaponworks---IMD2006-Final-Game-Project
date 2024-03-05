@@ -29,7 +29,7 @@ public class PlayerScript : MonoBehaviour
     private Vector3 playerMove;
     private Vector2 lerpVel;
     public Vector2 weaponPos;
-    
+
 
     private Rigidbody2D rb;
 
@@ -73,7 +73,6 @@ public class PlayerScript : MonoBehaviour
         weaponPos.Normalize();
 
 
-
         playerMove = new Vector3(moveVector.x, 0, 0);
         velX = rb.velocity.x;
         velY = rb.velocity.y;
@@ -87,15 +86,26 @@ public class PlayerScript : MonoBehaviour
         {
             velY -= gravity;
         }
+
         if (moveVector.magnitude == 0)
         {
-            lerpVel = new Vector2(Mathf.Lerp(velX, 0, Time.deltaTime * 2), velY);
+            lerpVel = new Vector2(Mathf.Lerp(velX, 0, Time.deltaTime * 7), velY);
         }
         else
         {
-            velX = Mathf.Lerp(velX, moveVector.x * moveSpeed, Time.deltaTime);
+            velX = Mathf.Lerp(velX, moveVector.x * moveSpeed, .5f);
             playerMove.x = Mathf.Clamp(velX, -10, 10);
             playerMove.y = velY;
+        }
+
+        Debug.Log(weaponCont.isFire); // remember to delete
+
+        if (weaponCont.isFire)
+        {
+            Vector2 pushVector = new Vector2(weaponPos.x*-1, weaponPos.y*-1)*10;
+            playerMove = pushVector;
+            lerpVel = pushVector;
+            weaponCont.isFire = false;
         }
     }
 
@@ -108,7 +118,6 @@ public class PlayerScript : MonoBehaviour
         else
         {
             rb.velocity = playerMove;
-            Debug.Log(rb.velocity); // remember to delete
         }
     }
 
@@ -132,13 +141,5 @@ public class PlayerScript : MonoBehaviour
             }
         }
         return false;
-    }
-
-    private void pushBack()
-    {
-        if (CheckOnGround())
-        {
-
-        }
     }
 }
