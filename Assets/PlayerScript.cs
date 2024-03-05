@@ -17,7 +17,7 @@ public class PlayerScript : MonoBehaviour
     private InputAction jump;
     private InputAction aim;
 
-    Vector2 weaponPos;
+    public Vector2 weaponPos;
     private Vector2 moveVector;
     private Vector3 playerMove;
 
@@ -60,8 +60,9 @@ public class PlayerScript : MonoBehaviour
         Vector2 mouseWorldVector = Camera.main.ScreenToWorldPoint(lookVector);
         weaponPos = new Vector2 (mouseWorldVector.x - transform.position.x, mouseWorldVector.y - transform.position.y);
         weaponPos.Normalize();
-        Debug.Log(weaponPos);
+        
     }
+
     private void FixedUpdate()
     {
         moveVector = movement.ReadValue<Vector2>();
@@ -81,7 +82,6 @@ public class PlayerScript : MonoBehaviour
             rb.velocity = playerMove;
         }
     }
-
 
     private void Jump(InputAction.CallbackContext context)
     {
