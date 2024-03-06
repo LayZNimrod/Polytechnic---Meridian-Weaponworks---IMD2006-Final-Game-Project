@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 137897337}
   - component: {fileID: 137897336}
+  - component: {fileID: 137897338}
   m_Layer: 0
   m_Name: SelectedElement
   m_TagString: Untagged
@@ -207,6 +208,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &137897338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137897335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39fab0c2abca76a4c9c54d61cd5bbdc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FireSprite: {fileID: 21300000, guid: 800fd0db81eb29344b2d3d135464e31b, type: 3}
+  LightningSprite: {fileID: 21300000, guid: 5ba3d084e5fbb724d981f7f81108934f, type: 3}
+  script: {fileID: 1946041945}
 --- !u!1 &445012470
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,6 +704,7 @@ GameObject:
   m_Component:
   - component: {fileID: 869427715}
   - component: {fileID: 869427714}
+  - component: {fileID: 869427716}
   m_Layer: 0
   m_Name: SelectedWeapon
   m_TagString: Untagged
@@ -762,6 +779,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &869427716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869427713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d47e91a62fbf44f4c914ab0bd1d6f8ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WrenchSprite: {fileID: 21300000, guid: 9daec6d3f370b3b42abd998869ae4b6c, type: 3}
+  CannonSprite: {fileID: 21300000, guid: cefc2c3a288ec3840bf45419901339a4, type: 3}
+  script: {fileID: 1946041945}
 --- !u!1 &983875265
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,7 +1252,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Weapon
+  m_text: Wrench
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1354,7 +1386,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Element
+  m_text: Fire
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1552,6 +1584,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SelectedWeapon: {fileID: 1753302157}
   SelectedElement: {fileID: 1779424002}
+  chosenWeapon: 0
+  chosenElement: 0
 --- !u!1 &2009906668
 GameObject:
   m_ObjectHideFlags: 0
