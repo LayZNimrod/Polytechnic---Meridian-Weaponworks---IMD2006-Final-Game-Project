@@ -1055,6 +1055,7 @@ MonoBehaviour:
   camOffset: {x: 0, y: 2.5, z: -1}
   SWeapText: {fileID: 1232792710}
   SElemText: {fileID: 760867508}
+--- !u!1 &160413778
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -16864,6 +16865,7 @@ PolygonCollider2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!1 &2070827118
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
