@@ -135,7 +135,7 @@ public class PlayerScript : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position + temp, Vector2.down, rayCastJumpHight);
         if (hit.collider != null)
         {
-            if (hit.collider.gameObject.tag == "Ground")
+            if (hit.collider.gameObject.tag == "Ground" || hit.collider.gameObject.tag == "FallThrough")
             {
                 return true;
             }
