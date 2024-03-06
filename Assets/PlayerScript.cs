@@ -77,6 +77,7 @@ public class PlayerScript : MonoBehaviour
         velX = rb.velocity.x;
         velY = rb.velocity.y;
 
+
         if (isJumping)
         {
             velY = jumpHeight;
@@ -98,7 +99,6 @@ public class PlayerScript : MonoBehaviour
             playerMove.y = velY;
         }
 
-        Debug.Log(weaponCont.isFire); // remember to delete
 
         if (weaponCont.isFire)
         {
