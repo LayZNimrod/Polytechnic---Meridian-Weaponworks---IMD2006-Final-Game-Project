@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - FallThrough
   - Danger
+  - End
   layers:
   - Default
   - TransparentFX
