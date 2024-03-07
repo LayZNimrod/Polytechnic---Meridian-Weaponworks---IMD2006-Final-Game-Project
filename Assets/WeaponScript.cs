@@ -16,13 +16,14 @@ public class WeaponScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GetComponentInParent<PlayerScript>();
+        player = PlayerScript.Instance;
         playerPos = GetComponentInParent<Rigidbody2D>();
     }
 
     private void OnEnable()
     {
-        fire = player.playerCont.Player.Fire;
+        // fire = player.playerCont.Player.Fire; 
+        fire = PlayerScript.Instance.playerCont.Player.Fire;
         fire.Enable();
         fire.performed += Fire;
     }
