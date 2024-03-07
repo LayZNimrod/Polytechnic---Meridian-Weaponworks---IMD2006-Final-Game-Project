@@ -20,8 +20,11 @@ public class EnemySpider : MonoBehaviour
 
     IEnumerator ProjFire()
     {
-        yield return new WaitForSeconds(5);
-        Vector3 EnemyPos = new Vector3(transform.position.x,transform.position.y, 0f);
-        Instantiate(SpiderProj, EnemyPos, Quaternion.identity);
+        while (true) 
+        {
+            yield return new WaitForSeconds(5);
+            Vector3 EnemyPos = new Vector3(transform.position.x, transform.position.y, 0f);
+            Instantiate(SpiderProj, EnemyPos, Quaternion.identity);
+        }
     }
 }
