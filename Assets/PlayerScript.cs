@@ -103,13 +103,12 @@ public class PlayerScript : MonoBehaviour
             playerMove.y = velY;
         }
 
-
-        if (weaponCont.isFire)
+        if (weaponCont.isFireOnGround)
         {
             Vector2 pushVector = new Vector2(weaponPos.x * -1, weaponPos.y * -1) * 10;
             playerMove = pushVector;
             lerpVel = pushVector;
-            weaponCont.isFire = false;
+            weaponCont.isFireOnGround = false;
         }
 
         if (moveVector.magnitude == 0)
