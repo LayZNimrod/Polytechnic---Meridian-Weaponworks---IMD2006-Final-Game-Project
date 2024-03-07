@@ -6,12 +6,15 @@ using UnityEngine.InputSystem;
 
 public class WeaponScript : MonoBehaviour
 {
+    public static WeaponScript Instance;
     [SerializeField] PlayerScript player;
     private Rigidbody2D playerPos;
     private InputAction fire;
 
-    public bool isFire;
-    public bool isWeaponTouch;
+    public bool isFireOnGround;
+    public bool isWeaponTouchGround;
+    public bool isWeaponTouchEnemy;
+    public bool isFireOnEnemy;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +25,7 @@ public class WeaponScript : MonoBehaviour
 
     private void OnEnable()
     {
+        Instance = this;
         // fire = player.playerCont.Player.Fire; 
         fire = PlayerScript.Instance.playerCont.Player.Fire;
         fire.Enable();
@@ -43,18 +47,30 @@ public class WeaponScript : MonoBehaviour
         Vector3 multVector = new Vector3(0f, 0f, rotate);
         transform.eulerAngles = multVector;
 
-        isWeaponTouch = false;
+        isWeaponTouchGround = false;
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        isWeaponTouch = true;
+        if (collision.tag == "Ground")
+        {
+            isWeaponTouchGround = true;
+        }
+        if (collision.tag == "Enemy")
+        {
+            isWeaponTouchEnemy = true;
+        }
+        
     }
 
     private void Fire(InputAction.CallbackContext context)
     {
-        if (isWeaponTouch)
+        if (isWeaponTouchGround)
         {
-            isFire = true;
+            isFireOnGround = true;
+        }
+        if (isWeaponTouchEnemy)
+        {
+            isFireOnEnemy = true;
         }
     }
 }
