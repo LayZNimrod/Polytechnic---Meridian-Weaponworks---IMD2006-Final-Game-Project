@@ -34,6 +34,11 @@ public class HPSystem : MonoBehaviour
                 StartCoroutine(BackToBuild());
             }
         }
+        if (collision.tag == "End")
+        {
+            HPText.text = "YOU WIN!";
+            StartCoroutine(BackToBuild());
+        }
     }
 
     IEnumerator BackToBuild()
