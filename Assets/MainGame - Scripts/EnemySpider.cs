@@ -7,6 +7,7 @@ public class EnemySpider : MonoBehaviour
 {
     public int SpiderHP;
     public GameObject SpiderProj;
+    public StatHandler StatHandler;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,11 @@ public class EnemySpider : MonoBehaviour
     {
         if (WeaponScript.Instance.isFireOnEnemy)
         {
-
+            SpiderHP = SpiderHP - StatHandler.TotalDamage;
+            if(SpiderHP <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 
