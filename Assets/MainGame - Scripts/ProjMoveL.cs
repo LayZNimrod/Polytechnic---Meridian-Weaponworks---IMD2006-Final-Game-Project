@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemScript_Spider : MonoBehaviour
+public class ProjMoveLeft : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -13,6 +13,6 @@ public class EnemScript_Spider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.left*25;
     }
 }
