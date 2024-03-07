@@ -3251,6 +3251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpiderHP: 5
   SpiderProj: {fileID: 2650140515139729138, guid: 067a591e3d4b9964fb7a2298b1855e7a, type: 3}
+  StatHandler: {fileID: 0}
 --- !u!61 &376052456
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3620,6 +3621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpiderHP: 5
   SpiderProj: {fileID: 2650140515139729138, guid: 878e40b0cdf5965499da3031fa2f932c, type: 3}
+  StatHandler: {fileID: 0}
 --- !u!61 &386960382
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6725,6 +6727,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpiderHP: 5
   SpiderProj: {fileID: 2650140515139729138, guid: 878e40b0cdf5965499da3031fa2f932c, type: 3}
+  StatHandler: {fileID: 0}
 --- !u!61 &685132188
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8012,6 +8015,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpiderHP: 5
   SpiderProj: {fileID: 2650140515139729138, guid: 067a591e3d4b9964fb7a2298b1855e7a, type: 3}
+  StatHandler: {fileID: 0}
 --- !u!1 &843832913
 GameObject:
   m_ObjectHideFlags: 0
@@ -9456,6 +9460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpiderHP: 5
   SpiderProj: {fileID: 2650140515139729138, guid: 067a591e3d4b9964fb7a2298b1855e7a, type: 3}
+  StatHandler: {fileID: 0}
 --- !u!61 &1110295505
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10487,6 +10492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpiderHP: 5
   SpiderProj: {fileID: 2650140515139729138, guid: 067a591e3d4b9964fb7a2298b1855e7a, type: 3}
+  StatHandler: {fileID: 0}
 --- !u!61 &1232929849
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12160,6 +12166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpiderHP: 5
   SpiderProj: {fileID: 2650140515139729138, guid: 067a591e3d4b9964fb7a2298b1855e7a, type: 3}
+  StatHandler: {fileID: 0}
 --- !u!61 &1374799654
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12364,6 +12371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpiderHP: 5
   SpiderProj: {fileID: 2650140515139729138, guid: 067a591e3d4b9964fb7a2298b1855e7a, type: 3}
+  StatHandler: {fileID: 0}
 --- !u!61 &1378289365
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12728,6 +12736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpiderHP: 5
   SpiderProj: {fileID: 2650140515139729138, guid: 878e40b0cdf5965499da3031fa2f932c, type: 3}
+  StatHandler: {fileID: 0}
 --- !u!61 &1468023248
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13097,6 +13106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpiderHP: 5
   SpiderProj: {fileID: 2650140515139729138, guid: 878e40b0cdf5965499da3031fa2f932c, type: 3}
+  StatHandler: {fileID: 0}
 --- !u!61 &1499393141
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14215,6 +14225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpiderHP: 5
   SpiderProj: {fileID: 2650140515139729138, guid: 067a591e3d4b9964fb7a2298b1855e7a, type: 3}
+  StatHandler: {fileID: 0}
 --- !u!61 &1709349114
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16101,8 +16112,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponCont: {fileID: 0}
   moveSpeed: 20
-  jumpHeight: 8
-  gravity: 1
+  jumpHeight: 12
+  gravity: 0.1
   rayCastJumpHight: 0.01
   rayCastDistFromOrigin: -0.51
   weaponPos: {x: 0, y: 0}
@@ -17048,6 +17059,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpiderHP: 5
   SpiderProj: {fileID: 2650140515139729138, guid: 067a591e3d4b9964fb7a2298b1855e7a, type: 3}
+  StatHandler: {fileID: 0}
 --- !u!61 &2145553430
 BoxCollider2D:
   m_ObjectHideFlags: 0
