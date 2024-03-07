@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerScript : MonoBehaviour
 {
+    public static PlayerScript Instance;
     public PlayerControls playerCont;
 
     public WeaponScript weaponCont;
@@ -32,15 +33,18 @@ public class PlayerScript : MonoBehaviour
 
 
     private Rigidbody2D rb;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        weaponCont = GetComponentInChildren<WeaponScript>();
     }
 
     private void Awake()
     {
+        Instance = this;
         playerCont = new PlayerControls();
     }
 
@@ -99,13 +103,12 @@ public class PlayerScript : MonoBehaviour
             playerMove.y = velY;
         }
 
-
-        if (weaponCont.isFire)
+        if (weaponCont.isFireOnGround)
         {
             Vector2 pushVector = new Vector2(weaponPos.x * -1, weaponPos.y * -1) * 10;
             playerMove = pushVector;
             lerpVel = pushVector;
-            weaponCont.isFire = false;
+            weaponCont.isFireOnGround = false;
         }
 
         if (moveVector.magnitude == 0)
