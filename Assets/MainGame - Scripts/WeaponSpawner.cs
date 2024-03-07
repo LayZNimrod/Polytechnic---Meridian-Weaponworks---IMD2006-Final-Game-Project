@@ -5,8 +5,9 @@ using UnityEngine.XR;
 
 public class WeaponSpawner : MonoBehaviour
 {
-    public GameObject wrench;
     public GameObject cannon;
+    public GameObject wrench;
+    
     // Start is called before the first frame update
     private void Awake()
     {

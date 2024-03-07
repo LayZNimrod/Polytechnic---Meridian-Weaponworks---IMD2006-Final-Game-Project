@@ -7,6 +7,12 @@ TagManager:
   - Ground
   - FallThrough
   - Danger
+<<<<<<< Updated upstream
+=======
+  - End
+  - Weapon
+  - Enemy
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
