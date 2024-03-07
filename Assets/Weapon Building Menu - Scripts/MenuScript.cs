@@ -8,6 +8,7 @@ public class MenuScript : MonoBehaviour
 {
     public TextMeshProUGUI SelectedWeapon = null;
     public TextMeshProUGUI SelectedElement = null;
+
     public enum Weapon
     {
         Wrench,

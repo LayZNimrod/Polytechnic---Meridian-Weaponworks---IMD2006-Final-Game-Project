@@ -81,6 +81,7 @@ public class PlayerScript : MonoBehaviour
         velX = rb.velocity.x;
         velY = rb.velocity.y;
 
+
         if (isJumping)
         {
             velY = jumpHeight;
@@ -102,19 +103,15 @@ public class PlayerScript : MonoBehaviour
             playerMove.y = velY;
         }
 
-        Debug.Log(weaponCont.isFire); // remember to delete
 
         if (weaponCont.isFire)
         {
-            Vector2 pushVector = new Vector2(weaponPos.x*-1, weaponPos.y*-1)*10;
+            Vector2 pushVector = new Vector2(weaponPos.x * -1, weaponPos.y * -1) * 10;
             playerMove = pushVector;
             lerpVel = pushVector;
             weaponCont.isFire = false;
         }
-    }
 
-    private void FixedUpdate()
-    {
         if (moveVector.magnitude == 0)
         {
             rb.velocity = lerpVel;
@@ -123,6 +120,11 @@ public class PlayerScript : MonoBehaviour
         {
             rb.velocity = playerMove;
         }
+    }
+
+    private void FixedUpdate()
+    {
+
     }
 
     private void Jump(InputAction.CallbackContext context)
