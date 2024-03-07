@@ -6,6 +6,7 @@ using UnityEngine.XR;
 public class WeaponSpawner : MonoBehaviour
 {
     public GameObject wrench;
+    public GameObject cannon;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -16,8 +17,13 @@ public class WeaponSpawner : MonoBehaviour
     {
         if (ChoiceCarrier.ChosenWeapon == MenuScript.Weapon.Wrench)
         {
-            GameObject wrenchClone = Instantiate(wrench);
-            wrenchClone.transform.SetParent(GameObject.Find("Player").transform, false);
+            GameObject weaponClone = Instantiate(wrench);
+            weaponClone.transform.SetParent(GameObject.Find("Player").transform, false);
+        }
+        else if (ChoiceCarrier.ChosenWeapon == MenuScript.Weapon.Cannon)
+        {
+            GameObject weaponClone = Instantiate(cannon);
+            weaponClone.transform.SetParent(GameObject.Find("Player").transform, false);
         }
     }
 

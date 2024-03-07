@@ -9258,6 +9258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wrench: {fileID: 6768832261655851475, guid: f21080e82cb70dd4f8490caf161d6559, type: 3}
+  cannon: {fileID: 6768832261655851475, guid: 54af5bb1295949a45bd8b82a7de67112, type: 3}
 --- !u!4 &1077932140
 Transform:
   m_ObjectHideFlags: 0
