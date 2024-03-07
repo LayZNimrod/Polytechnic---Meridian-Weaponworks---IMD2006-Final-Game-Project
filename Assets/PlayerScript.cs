@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerScript : MonoBehaviour
 {
+    public static PlayerScript Instance;
     public PlayerControls playerCont;
 
     public WeaponScript weaponCont;
@@ -32,15 +33,18 @@ public class PlayerScript : MonoBehaviour
 
 
     private Rigidbody2D rb;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        weaponCont = GetComponentInChildren<WeaponScript>();
     }
 
     private void Awake()
     {
+        Instance = this;
         playerCont = new PlayerControls();
     }
 
