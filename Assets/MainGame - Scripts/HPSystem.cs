@@ -18,7 +18,7 @@ public class HPSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HPText.text = "HP: " + HPCount;
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -29,6 +29,8 @@ public class HPSystem : MonoBehaviour
             HPText.text = "HP: " + HPCount;
             if (HPCount <= 0)
             {
+                HPCount = 0;
+                HPText.text = "YOU DIED";
                 StartCoroutine(BackToBuild());
             }
         }
@@ -37,8 +39,6 @@ public class HPSystem : MonoBehaviour
     IEnumerator BackToBuild()
     {
         PlayerScript.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-        HPCount = 0;
-        HPText.text = "YOU DIED";
         yield return new WaitForSeconds(5);
         SceneManager.LoadScene("WeaponBuildingUI");
     }
