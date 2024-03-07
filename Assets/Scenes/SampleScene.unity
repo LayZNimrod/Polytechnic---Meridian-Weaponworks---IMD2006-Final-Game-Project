@@ -208,9 +208,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7927926e267a95458a9e9ad6216a28e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HPText: {fileID: 0}
-  HPCount: 0
-  PlayerScript: {fileID: 0}
+  HPText: {fileID: 105192631}
+  HPCount: 3
+  PlayerScript: {fileID: 81498123}
 --- !u!1 &46481935
 GameObject:
   m_ObjectHideFlags: 0
