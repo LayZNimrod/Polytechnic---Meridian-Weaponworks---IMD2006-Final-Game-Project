@@ -23,14 +23,12 @@ public class HPSystem : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
         if (collision.tag == "Danger")
         {
             HPCount--;
             HPText.text = "HP: " + HPCount;
             if (HPCount <= 0)
             {
-
                 StartCoroutine(BackToBuild());
             }
         }
