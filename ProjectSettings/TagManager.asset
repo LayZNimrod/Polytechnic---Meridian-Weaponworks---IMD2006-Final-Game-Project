@@ -8,6 +8,8 @@ TagManager:
   - FallThrough
   - Danger
   - End
+  - Weapon
+  - Enemy
   layers:
   - Default
   - TransparentFX
