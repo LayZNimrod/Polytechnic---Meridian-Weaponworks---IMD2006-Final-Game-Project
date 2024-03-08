@@ -217,6 +217,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402f8f48b0f00f146860832a5526ab8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpiderHP: 5
+  SpiderHP: 10
   SpiderProj: {fileID: 2650140515139729138, guid: 878e40b0cdf5965499da3031fa2f932c, type: 3}
   StatHandler: {fileID: 0}
