@@ -15,4 +15,12 @@ public class ProjMoveLeft : MonoBehaviour
     {
         gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.left*25;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Ground" || collision.tag == "FallThrough")
+        {
+            Destroy(gameObject);
+        }
+    }
 }
