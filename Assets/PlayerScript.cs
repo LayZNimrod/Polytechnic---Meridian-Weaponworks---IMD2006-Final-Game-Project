@@ -33,7 +33,8 @@ public class PlayerScript : MonoBehaviour
 
 
     private Rigidbody2D rb;
-    
+    public float maxSpeed = 10;
+
 
     // Start is called before the first frame update
     void Start()
@@ -99,7 +100,7 @@ public class PlayerScript : MonoBehaviour
         else
         {
             velX = Mathf.Lerp(velX, moveVector.x * moveSpeed, .5f);
-            playerMove.x = Mathf.Clamp(velX, -10, 10);
+            playerMove.x = Mathf.Clamp(velX, -maxSpeed, maxSpeed);
             playerMove.y = velY;
         }
 
