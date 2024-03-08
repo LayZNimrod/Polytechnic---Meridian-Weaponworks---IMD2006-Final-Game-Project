@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e2688adb7c013ab48ad0b24f1e558bff, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a4ceb5428098a0740be71f88167c296c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -217,6 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402f8f48b0f00f146860832a5526ab8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spider: {fileID: 0}
   SpiderHP: 10
   SpiderProj: {fileID: 2650140515139729138, guid: 878e40b0cdf5965499da3031fa2f932c, type: 3}
   StatHandler: {fileID: 0}

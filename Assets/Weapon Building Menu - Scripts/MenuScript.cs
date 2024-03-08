@@ -8,7 +8,8 @@ public class MenuScript : MonoBehaviour
 {
     public TextMeshProUGUI SelectedWeapon = null;
     public TextMeshProUGUI SelectedElement = null;
-
+    public TextMeshProUGUI SelectedWeaponDesc = null;
+    public TextMeshProUGUI SelectedElementDesc = null;
     public enum Weapon
     {
         Wrench,
@@ -31,6 +32,7 @@ public class MenuScript : MonoBehaviour
                 {
                     chosenWeapon = Weapon.Cannon;
                     SelectedWeapon.text = "Cannon";
+                    SelectedWeaponDesc.text = "Higher Damage, further knockback";
 
                     break;
                 }
@@ -38,6 +40,7 @@ public class MenuScript : MonoBehaviour
                 {
                     chosenWeapon = Weapon.Wrench;
                     SelectedWeapon.text = "Wrench";
+                    SelectedWeaponDesc.text = "Normal Damage, Normal knockback";
                     break;
                 }
         }
@@ -52,6 +55,7 @@ public class MenuScript : MonoBehaviour
                 {
                     chosenElement = Element.Lightning;
                     SelectedElement.text = "Lightning";
+                    SelectedElementDesc.text = "Faster speed, lower jump height";
 
                     break;
                 }
@@ -59,6 +63,8 @@ public class MenuScript : MonoBehaviour
                 {
                     chosenElement = Element.Fire;
                     SelectedElement.text = "Fire";
+                    SelectedElementDesc.text = "Slower speed, higher jump height";
+
                     break;
                 }
         }
