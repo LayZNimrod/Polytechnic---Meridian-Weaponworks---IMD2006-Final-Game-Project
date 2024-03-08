@@ -13710,8 +13710,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponCont: {fileID: 0}
   moveSpeed: 20
-  jumpHeight: 8
-  gravity: 1
+  jumpHeight: 10
+  gravity: 0.5
   rayCastJumpHight: 0.01
   rayCastDistFromOrigin: -0.51
   weaponPos: {x: 0, y: 0}
