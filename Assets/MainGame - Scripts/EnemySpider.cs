@@ -22,7 +22,7 @@ public class EnemySpider : MonoBehaviour
             SpiderHP = SpiderHP - StatHandler.TotalDamage;
             if(SpiderHP <= 0)
             {
-                Destroy(gameObject);
+                Destroy(this.gameObject);
             }
         }
     }
