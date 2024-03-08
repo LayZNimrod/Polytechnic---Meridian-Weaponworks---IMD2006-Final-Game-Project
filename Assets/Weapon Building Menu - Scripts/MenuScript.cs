@@ -66,7 +66,7 @@ public class MenuScript : MonoBehaviour
 
     public void CompleteWeapon()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Level1");
         //carry choices to main scene
         ChoiceCarrier.ChosenWeapon = chosenWeapon;
         ChoiceCarrier.ChosenElement = chosenElement;
