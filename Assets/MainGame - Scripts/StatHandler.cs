@@ -8,6 +8,7 @@ public class StatHandler : MonoBehaviour
     public int WeaponDamage;
     public int ElementDamage;
     public int TotalDamage;
+    public PlayerScript PlayerScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,9 +40,13 @@ public class StatHandler : MonoBehaviour
         {
             case (MenuScript.Element.Fire):
                 ElementDamage = 2;
+                PlayerScript.jumpHeight = 17;
+                PlayerScript.maxSpeed = 8;
                 break;
             case (MenuScript.Element.Lightning):
                 ElementDamage = -1;
+                PlayerScript.jumpHeight = 12;
+                PlayerScript.maxSpeed = 17;
                 break;
         }
         yield return new WaitForSeconds(0.001f); // Change this later, its there so this function returns something for now
