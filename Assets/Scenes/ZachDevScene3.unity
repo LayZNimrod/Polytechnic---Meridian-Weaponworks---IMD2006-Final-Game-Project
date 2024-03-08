@@ -13715,6 +13715,7 @@ MonoBehaviour:
   rayCastJumpHight: 0.01
   rayCastDistFromOrigin: -0.51
   weaponPos: {x: 0, y: 0}
+  maxSpeed: 10
 --- !u!50 &1904430312
 Rigidbody2D:
   serializedVersion: 4
