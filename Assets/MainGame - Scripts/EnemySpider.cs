@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Http.Headers;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -20,14 +22,7 @@ public class EnemySpider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (WeaponScript.Instance.isFireOnEnemy)
-        {
-            SpiderHP = SpiderHP - StatHandler.TotalDamage;
-            if(SpiderHP <= 0)
-            {
-                Destroy(gameObject);
-            }
-        }
+
     }
 
     IEnumerator ProjFire()
@@ -38,5 +33,16 @@ public class EnemySpider : MonoBehaviour
             Vector3 EnemyPos = new Vector3(transform.position.x, transform.position.y, 0f);
             Instantiate(SpiderProj, EnemyPos, Quaternion.identity);
         }
+    }
+
+    public void TakeDamage()
+    {
+
+        SpiderHP = SpiderHP - StatHandler.TotalDamage;
+        if (SpiderHP <= 0)
+        {
+        Destroy(gameObject);
+        }
+
     }
 }
