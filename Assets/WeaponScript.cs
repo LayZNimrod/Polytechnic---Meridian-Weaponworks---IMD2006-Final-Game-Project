@@ -10,7 +10,7 @@ public class WeaponScript : MonoBehaviour
     [SerializeField] PlayerScript player;
     private Rigidbody2D playerPos;
     private InputAction fire;
-    private EnemySpider touchedEnemy;
+    private EnemyHealth touchedEnemy;
 
     public bool isFireOnGround;
     public bool isWeaponTouchGround;
@@ -58,7 +58,7 @@ public class WeaponScript : MonoBehaviour
         }
         if (collision.tag == "Enemy")
         {
-            touchedEnemy = collision.gameObject.GetComponent<EnemySpider>();
+            touchedEnemy = collision.gameObject.GetComponent<EnemyHealth>();
             isWeaponTouchEnemy = true;
         }
         
