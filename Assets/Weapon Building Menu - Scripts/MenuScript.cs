@@ -77,5 +77,13 @@ public class MenuScript : MonoBehaviour
         ChoiceCarrier.ChosenWeapon = chosenWeapon;
         ChoiceCarrier.ChosenElement = chosenElement;
     }
+
+    public void EnterTutorial()
+    {
+        SceneManager.LoadScene("TutorialScene");
+        //carry choices to main scene
+        ChoiceCarrier.ChosenWeapon = chosenWeapon;
+        ChoiceCarrier.ChosenElement = chosenElement;
+    }
     // Update is called once per frame
 }
