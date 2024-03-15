@@ -13,13 +13,17 @@ public class MenuScript : MonoBehaviour
     public enum Weapon
     {
         Wrench,
-        Cannon
+        Cannon,
+        Spear,
+        Pizzacutter
     }
     public Weapon chosenWeapon;
     public enum Element
     {
         Fire,
-        Lightning
+        Lightning,
+        Steam,
+        Reinforced
     }
     public Element chosenElement;
 
@@ -38,6 +42,20 @@ public class MenuScript : MonoBehaviour
                 }
             case Weapon.Cannon:
                 {
+                    chosenWeapon = Weapon.Spear;
+                    SelectedWeapon.text = "Spear";
+                    SelectedWeaponDesc.text = "TBA";
+                    break;
+                }
+            case Weapon.Spear:
+                {
+                    chosenWeapon = Weapon.Pizzacutter;
+                    SelectedWeapon.text = "Sawblade";
+                    SelectedWeaponDesc.text = "TBA";
+                    break;
+                }
+            case Weapon.Pizzacutter:
+                {
                     chosenWeapon = Weapon.Wrench;
                     SelectedWeapon.text = "Wrench";
                     SelectedWeaponDesc.text = "Normal Damage, Normal knockback";
@@ -54,15 +72,31 @@ public class MenuScript : MonoBehaviour
             case Element.Fire:
                 {
                     chosenElement = Element.Lightning;
-                    SelectedElement.text = "Lightning";
+                    SelectedElement.text = "Electrified";
                     SelectedElementDesc.text = "Faster speed, lower jump height";
 
                     break;
                 }
             case Element.Lightning:
                 {
+                    chosenElement = Element.Steam;
+                    SelectedElement.text = "Steam-Powered";
+                    SelectedElementDesc.text = "TBA";
+
+                    break;
+                }
+            case Element.Steam:
+                {
+                    chosenElement = Element.Reinforced;
+                    SelectedElement.text = "Reinforced";
+                    SelectedElementDesc.text = "TBA";
+
+                    break;
+                }
+            case Element.Reinforced:
+                {
                     chosenElement = Element.Fire;
-                    SelectedElement.text = "Fire";
+                    SelectedElement.text = "Overheated";
                     SelectedElementDesc.text = "Slower speed, higher jump height";
 
                     break;

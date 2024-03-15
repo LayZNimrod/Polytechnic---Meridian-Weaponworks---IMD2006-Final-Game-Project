@@ -12,9 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level1.unity
     guid: 5d0705fa24dc9d645a9d799fce02c867
   - enabled: 0
-    path: Assets/Scenes/ZachDevScene2.unity
+    path: Assets/Scenes/Dev Scenes/ZachDevScene2.unity
     guid: 0859d3086a5c25340b82e09cdd2f55df
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Dev Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects: {}

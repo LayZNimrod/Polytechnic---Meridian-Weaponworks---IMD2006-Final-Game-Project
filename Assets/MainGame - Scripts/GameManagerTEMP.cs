@@ -19,16 +19,28 @@ public class GameManagerTEMP : MonoBehaviour
             case (MenuScript.Weapon.Wrench):
                 SWeapText.text = "Wrench";
                 break;
+            case (MenuScript.Weapon.Spear):
+                SWeapText.text = "Spear";
+                break;
+            case (MenuScript.Weapon.Pizzacutter):
+                SWeapText.text = "Sawblade";
+                break;
         }
 
         //Choice for element set to text
         switch (ChoiceCarrier.ChosenElement)
         {
             case (MenuScript.Element.Fire):
-                SElemText.text = "Fire";
+                SElemText.text = "Overheated";
                 break;
             case (MenuScript.Element.Lightning):
-                SElemText.text = "Lightning";
+                SElemText.text = "Electrified";
+                break;
+            case (MenuScript.Element.Steam):
+                SElemText.text = "Steam-Powered";
+                break;
+            case (MenuScript.Element.Reinforced):
+                SElemText.text = "Reinforced";
                 break;
         }
     }

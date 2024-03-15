@@ -6,6 +6,8 @@ public class ElemSpriteSwitcher : MonoBehaviour
 {
     public Sprite FireSprite;
     public Sprite LightningSprite;
+    public Sprite SteamSprite;
+    public Sprite ReinforcedSprite;
 
     public MenuScript script;
     // Start is called before the first frame update
@@ -29,6 +31,16 @@ public class ElemSpriteSwitcher : MonoBehaviour
                         this.gameObject.GetComponent<SpriteRenderer>().sprite = LightningSprite;
                         break;
                     }
-            }
+            case MenuScript.Element.Steam:
+                {
+                    this.gameObject.GetComponent<SpriteRenderer>().sprite = SteamSprite;
+                    break;
+                }
+            case MenuScript.Element.Reinforced:
+                {
+                    this.gameObject.GetComponent<SpriteRenderer>().sprite = ReinforcedSprite;
+                    break;
+                }
+        }
     }
 }
