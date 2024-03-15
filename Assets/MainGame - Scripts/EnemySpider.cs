@@ -9,9 +9,7 @@ using UnityEngine.Rendering;
 public class EnemySpider : MonoBehaviour
 {
     public GameObject spider;
-    public int SpiderHP;
     public GameObject SpiderProj;
-    public StatHandler StatHandler;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,16 +31,5 @@ public class EnemySpider : MonoBehaviour
             Vector3 EnemyPos = new Vector3(transform.position.x, transform.position.y, 0f);
             Instantiate(SpiderProj, EnemyPos, Quaternion.identity);
         }
-    }
-
-    public void TakeDamage()
-    {
-
-        SpiderHP = SpiderHP - StatHandler.TotalDamage;
-        if (SpiderHP <= 0)
-        {
-        Destroy(gameObject);
-        }
-
     }
 }
