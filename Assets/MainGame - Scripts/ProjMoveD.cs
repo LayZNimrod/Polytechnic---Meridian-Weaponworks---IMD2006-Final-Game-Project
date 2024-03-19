@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class ProjMoveDown : MonoBehaviour
 {
-    public StatHandler StatHandler;
-    public int EnemyHP;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,13 +13,12 @@ public class EnemyHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.down*25;
     }
 
-    public void TakeDamage()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        EnemyHP = EnemyHP - StatHandler.TotalDamage;
-        if (EnemyHP <= 0)
+        if (collision.tag == "Ground" || collision.tag == "FallThrough")
         {
             Destroy(gameObject);
         }

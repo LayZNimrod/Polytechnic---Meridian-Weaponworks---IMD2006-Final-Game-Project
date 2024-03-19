@@ -219,6 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StatHandler: {fileID: 0}
+  EnemyHP: 6
 --- !u!114 &6982882236594414404
 MonoBehaviour:
   m_ObjectHideFlags: 0
