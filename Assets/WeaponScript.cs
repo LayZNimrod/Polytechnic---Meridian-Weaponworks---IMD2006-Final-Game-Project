@@ -42,6 +42,10 @@ public class WeaponScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+    }
+    private void FixedUpdate()
+    {
         Vector2 weaponPos = playerScrip.weaponPos;
         transform.position = weaponPos + (Vector2)playerRB.transform.position;
 
