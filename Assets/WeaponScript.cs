@@ -7,8 +7,8 @@ using UnityEngine.InputSystem;
 public class WeaponScript : MonoBehaviour
 {
     public static WeaponScript Instance;
-    [SerializeField] PlayerScript player;
-    private Rigidbody2D playerPos;
+    [SerializeField] protected PlayerScript playerScrip;
+    protected Rigidbody2D playerRB;
     private InputAction fire;
     private EnemyHealth touchedEnemy;
 
@@ -17,11 +17,12 @@ public class WeaponScript : MonoBehaviour
     public bool isWeaponTouchEnemy;
     public bool isFireOnEnemy;
 
+
     // Start is called before the first frame update
     void Start()
     {
-        player = PlayerScript.Instance;
-        playerPos = GetComponentInParent<Rigidbody2D>();
+        playerScrip = PlayerScript.Instance;
+        playerRB = GetComponentInParent<Rigidbody2D>();
     }
 
     private void OnEnable()
@@ -41,8 +42,8 @@ public class WeaponScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 weaponPos = player.weaponPos;
-        transform.position = weaponPos + (Vector2)playerPos.transform.position;
+        Vector2 weaponPos = playerScrip.weaponPos;
+        transform.position = weaponPos + (Vector2)playerRB.transform.position;
 
         float rotate = Mathf.Atan2(weaponPos.y, weaponPos.x) * Mathf.Rad2Deg;
         Vector3 multVector = new Vector3(0f, 0f, rotate);
@@ -76,15 +77,20 @@ public class WeaponScript : MonoBehaviour
         }
     }
 
-    private void Fire(InputAction.CallbackContext context)
+    protected void Fire(InputAction.CallbackContext context)
     {
         if (isWeaponTouchGround)
         {
-            isFireOnGround = true;
+            Attack();
         }
         if (isWeaponTouchEnemy)
         {
             touchedEnemy.TakeDamage();
+            Attack();
         }
+    }
+    protected virtual void Attack()
+    {
+        
     }
 }
