@@ -4,30 +4,30 @@ using UnityEngine;
 
 public class PlayerAnimate : MonoBehaviour
 {
-    public GameObject Player;
-    Animator animator;
+    public GameObject player;
+    private Rigidbody2D playerRB;
+    public Animator animator;
     SpriteRenderer spr;
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
+        playerRB = player.GetComponent<Rigidbody2D>();
         spr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        if(Player.GetComponent<Rigidbody2D>().velocity != Vector2.zero){
+        if(playerRB.velocity.x > 1.5 || playerRB.velocity.x < -1.5){
             animator.SetFloat("Speed", 1.0f);
         }
         else
         animator.SetFloat("Speed", 0.0f);
 
-        if(Player.GetComponent<Rigidbody2D>().velocity.x > 0){
+        if(playerRB.velocity.x > 0.01){
             spr.flipX = false;
         }
-        if(Player.GetComponent<Rigidbody2D>().velocity.x < 0){
+        if(playerRB.velocity.x < -0.01){
             spr.flipX = true;
         }
     }

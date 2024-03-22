@@ -14972,15 +14972,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponCont: {fileID: 0}
-  moveSpeed: 10
-  jumpHeight: 30
-  gravity: 0.1
+  moveSpeed: 15
+  jumpHeight: 7
   rayCastLenth: 0.9
   rayCastXDistFromOrigin: -0.4
   rayCastYDistFromOrigin: -0.52
   weaponPushBack: -0.5
   weaponPos: {x: 0, y: 0}
-  maxSpeed: 400
+  maxSpeed: 7
+  jumpForce: 1
+  dragX: 5
+  airDragX: 0.8
 --- !u!50 &1904430312
 Rigidbody2D:
   serializedVersion: 4
@@ -14994,9 +14996,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 0.01
-  m_LinearDrag: 1
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 1.5
   m_Material: {fileID: 6200000, guid: d6cc5b6651611aa49a8e02c612e848c3, type: 2}
   m_IncludeLayers:
     serializedVersion: 2

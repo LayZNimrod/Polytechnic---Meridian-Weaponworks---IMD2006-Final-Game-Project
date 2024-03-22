@@ -15,7 +15,6 @@ public class PlayerScript : MonoBehaviour
     public float moveSpeed;
     public int jumpHeight;
 
-    public float gravity;
     public float rayCastLenth = 0.01f;
     public float rayCastXDistFromOrigin = -0.4f;
     public float rayCastYDistFromOrigin = -0.51f;
@@ -29,6 +28,7 @@ public class PlayerScript : MonoBehaviour
     private InputAction aim;
 
     private bool isJumping = false;
+    private bool move = false;
 
     private Vector2 moveVector;
     private Vector3 playerMove;
@@ -38,6 +38,10 @@ public class PlayerScript : MonoBehaviour
 
     private Rigidbody2D rb;
     public float maxSpeed = 100;
+    public float jumpForce;
+
+    public float dragX;
+    public float airDragX;
 
 
     // Start is called before the first frame update
@@ -81,35 +85,60 @@ public class PlayerScript : MonoBehaviour
         weaponPos = new Vector2(mouseWorldVector.x - transform.position.x, mouseWorldVector.y - transform.position.y);
         weaponPos.Normalize();
 
-
         playerMove = new Vector3(moveVector.x, 0, 0);
         velX = rb.velocity.x;
         velY = rb.velocity.y;
 
-
         //if (isJumping)
-        
+
         //{
-            velY = jumpHeight;
+
         //    isJumping = false;
-       // }
+        // }
 
+        if (velX > maxSpeed || velX < -maxSpeed)
+        {
+            move = false;
+        }
+        else
+        {
+            move = true;
+        }
 
-        velX = moveVector.x * moveSpeed;
-        playerMove.x = Mathf.Clamp(velX, -maxSpeed, maxSpeed);
-
+        if (velY > jumpHeight || velY < 0)
+        {
+            isJumping = false;
+        }
+        
+        velY = jumpForce;
         playerMove.y = velY;
 
-        
+        velX = moveVector.x * moveSpeed;
+        playerMove.x =velX;
     }
 
     private void FixedUpdate()
     {
-        if (jump.IsInProgress())
+        if (jump.IsInProgress() && isJumping)
         {
-            rb.AddForce(Vector2.up * playerMove.y * Time.deltaTime);
+            rb.AddForce(Vector2.up * playerMove.y * Time.fixedDeltaTime, ForceMode2D.Impulse);
         }
-        rb.AddForce(Vector2.right * playerMove.x * Time.deltaTime);
+        if (move)
+        {
+            rb.AddForce(Vector2.right * playerMove.x * Time.fixedDeltaTime, ForceMode2D.Force);
+        }
+
+        // adding drag
+        if (CheckOnGround() && (moveVector.x < 0.01 && moveVector.x > -0.01))
+        {
+            rb.AddForce(Vector2.right * -rb.velocity.x * Time.fixedDeltaTime * dragX, ForceMode2D.Force);
+        }
+        else
+        {
+            rb.AddForce(Vector2.right * -rb.velocity.x * Time.fixedDeltaTime * airDragX, ForceMode2D.Force);
+        }
+
+        
         //rb.AddForce(new Vector2(0, -gravity) * Time.deltaTime);
     }
 
