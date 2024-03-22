@@ -6,22 +6,28 @@ using UnityEngine.InputSystem;
 
 public class WeaponScript : MonoBehaviour
 {
-    [SerializeField] PlayerScript player;
-    private Rigidbody2D playerPos;
+    public static WeaponScript Instance;
+    [SerializeField] protected PlayerScript playerScrip;
+    protected Rigidbody2D playerRB;
     private InputAction fire;
+    private EnemyHealth touchedEnemy;
 
-    public bool isFire;
-    public bool isWeaponTouch;
+    public bool isFireOnGround;
+    public bool isWeaponTouchGround;
+    public bool isWeaponTouchEnemy;
+    public bool isFireOnEnemy;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        player = PlayerScript.Instance;
-        playerPos = GetComponentInParent<Rigidbody2D>();
+        playerScrip = PlayerScript.Instance;
+        playerRB = GetComponentInParent<Rigidbody2D>();
     }
 
     private void OnEnable()
     {
+        Instance = this;
         // fire = player.playerCont.Player.Fire; 
         fire = PlayerScript.Instance.playerCont.Player.Fire;
         fire.Enable();
@@ -36,25 +42,55 @@ public class WeaponScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 weaponPos = player.weaponPos;
-        transform.position = weaponPos + (Vector2)playerPos.transform.position;
+        Vector2 weaponPos = playerScrip.weaponPos;
+        transform.position = weaponPos + (Vector2)playerRB.transform.position;
 
         float rotate = Mathf.Atan2(weaponPos.y, weaponPos.x) * Mathf.Rad2Deg;
         Vector3 multVector = new Vector3(0f, 0f, rotate);
         transform.eulerAngles = multVector;
 
-        isWeaponTouch = false;
+        isWeaponTouchGround = false;
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        isWeaponTouch = true;
+        if (collision.tag == "Ground")
+        {
+            isWeaponTouchGround = true;
+        }
+        if (collision.tag == "Enemy")
+        {
+            touchedEnemy = collision.gameObject.GetComponent<EnemyHealth>();
+            isWeaponTouchEnemy = true;
+        }
+        
     }
 
-    private void Fire(InputAction.CallbackContext context)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (isWeaponTouch)
+        if (collision.tag == "Ground")
         {
-            isFire = true;
+            isWeaponTouchGround = false;
         }
+        if (collision.tag == "Enemy")
+        {
+            isWeaponTouchEnemy = false;
+        }
+    }
+
+    protected void Fire(InputAction.CallbackContext context)
+    {
+        if (isWeaponTouchGround)
+        {
+            Attack();
+        }
+        if (isWeaponTouchEnemy)
+        {
+            touchedEnemy.TakeDamage();
+            Attack();
+        }
+    }
+    protected virtual void Attack()
+    {
+        
     }
 }

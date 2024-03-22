@@ -1,15 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Http.Headers;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class EnemySpider : MonoBehaviour
 {
-    public int SpiderHP;
+    public GameObject spider;
     public GameObject SpiderProj;
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(ProjFire());
+        spider = this.gameObject;
     }
 
     // Update is called once per frame
