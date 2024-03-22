@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,12 +12,15 @@ public class PlayerScript : MonoBehaviour
 
     public WeaponScript weaponCont;
 
-    public int moveSpeed;
+    public float moveSpeed;
     public int jumpHeight;
 
     public float gravity;
-    public float rayCastJumpHight = 0.01f;
-    public float rayCastDistFromOrigin = -0.5f;
+    public float rayCastLenth = 0.01f;
+    public float rayCastXDistFromOrigin = -0.4f;
+    public float rayCastYDistFromOrigin = -0.51f;
+    public float weaponPushBack = -100f;
+
     private float velX;
     private float velY;
 
@@ -33,7 +37,7 @@ public class PlayerScript : MonoBehaviour
 
 
     private Rigidbody2D rb;
-    public float maxSpeed = 10;
+    public float maxSpeed = 100;
 
 
     // Start is called before the first frame update
@@ -70,7 +74,7 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moveVector = movement.ReadValue<Vector2>();
+        moveVector = movement.ReadValue<Vector2>().normalized;
 
         Vector2 lookVector = aim.ReadValue<Vector2>();
         Vector2 mouseWorldVector = Camera.main.ScreenToWorldPoint(lookVector);
@@ -83,48 +87,30 @@ public class PlayerScript : MonoBehaviour
         velY = rb.velocity.y;
 
 
-        if (isJumping)
-        {
+        //if (isJumping)
+        
+        //{
             velY = jumpHeight;
-            isJumping = false;
-        }
-        else
-        {
-            velY -= gravity;
-        }
+        //    isJumping = false;
+       // }
 
-        if (moveVector.magnitude == 0)
-        {
-            lerpVel = new Vector2(Mathf.Lerp(velX, 0, Time.deltaTime * 7), velY);
-        }
-        else
-        {
-            velX = Mathf.Lerp(velX, moveVector.x * moveSpeed, .5f);
-            playerMove.x = Mathf.Clamp(velX, -maxSpeed, maxSpeed);
-            playerMove.y = velY;
-        }
 
-        if (weaponCont.isFireOnGround)
-        {
-            Vector2 pushVector = new Vector2(weaponPos.x * -1, weaponPos.y * -1) * 10;
-            playerMove = pushVector;
-            lerpVel = pushVector;
-            weaponCont.isFireOnGround = false;
-        }
+        velX = moveVector.x * moveSpeed;
+        playerMove.x = Mathf.Clamp(velX, -maxSpeed, maxSpeed);
 
-        if (moveVector.magnitude == 0)
-        {
-            rb.velocity = lerpVel;
-        }
-        else
-        {
-            rb.velocity = playerMove;
-        }
+        playerMove.y = velY;
+
+        
     }
 
     private void FixedUpdate()
     {
-
+        if (jump.IsInProgress())
+        {
+            rb.AddForce(Vector2.up * playerMove.y * Time.deltaTime);
+        }
+        rb.AddForce(Vector2.right * playerMove.x * Time.deltaTime);
+        //rb.AddForce(new Vector2(0, -gravity) * Time.deltaTime);
     }
 
     private void Jump(InputAction.CallbackContext context)
@@ -137,8 +123,8 @@ public class PlayerScript : MonoBehaviour
 
     private Boolean CheckOnGround()
     {
-        Vector3 temp = new Vector3(0, rayCastDistFromOrigin, 0);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position + temp, Vector2.down, rayCastJumpHight);
+        Vector3 temp = new Vector3(0, rayCastYDistFromOrigin, 0);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position + temp, Vector2.right, rayCastLenth);
         if (hit.collider != null)
         {
             if (hit.collider.gameObject.tag == "Ground" || hit.collider.gameObject.tag == "FallThrough")
@@ -147,5 +133,18 @@ public class PlayerScript : MonoBehaviour
             }
         }
         return false;
+    }
+
+    private void StunPlayer()
+    {
+        movement.Disable();
+        jump.Disable();
+        aim.Disable();
+    }
+    private void UnStunPlayer()
+    {
+        movement.Enable();
+        jump.Enable();
+        aim.Enable();
     }
 }
