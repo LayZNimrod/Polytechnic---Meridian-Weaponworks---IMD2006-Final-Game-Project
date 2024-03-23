@@ -93,8 +93,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6826921938341953707}
-  - component: {fileID: 4975974090799235776}
   - component: {fileID: 6698157665548802020}
+  - component: {fileID: -3908688703958798568}
   m_Layer: 2
   m_Name: Wrench
   m_TagString: Weapon
@@ -118,23 +118,6 @@ Transform:
   - {fileID: 4745206215168137065}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4975974090799235776
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6768832261655851475}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ed8f2e6e39ecb8429f19b95c259d082, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerScrip: {fileID: 0}
-  isFireOnGround: 0
-  isWeaponTouchGround: 0
-  isWeaponTouchEnemy: 0
-  isFireOnEnemy: 0
 --- !u!60 &6698157665548802020
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -185,3 +168,21 @@ PolygonCollider2D:
       - {x: 1.583587, y: 0.018815331}
       - {x: 1.0119694, y: 1.6336374}
   m_UseDelaunayMesh: 0
+--- !u!114 &-3908688703958798568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6768832261655851475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 316a4b2b43cd889498fe4f352ccda902, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerScrip: {fileID: 0}
+  isFireOnGround: 0
+  isWeaponTouchGround: 0
+  isWeaponTouchEnemy: 0
+  isFireOnEnemy: 0
+  spearPushback: 4

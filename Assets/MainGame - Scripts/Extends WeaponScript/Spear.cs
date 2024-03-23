@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Spear : WeaponScript
 {
+    [SerializeField] int spearPushback = 10;
     protected override void Attack()// remember to add player stun and 
     {
-        if (PlayerScript.Instance.weaponCont.isFireOnGround)
+        if (isWeaponTouchGround)
         {
-            Vector2 pushVector = new Vector2(PlayerScript.Instance.weaponPos.x * -1, PlayerScript.Instance.weaponPos.y * -1) * PlayerScript.Instance.weaponPushBack;
-            playerRB.velocity = new Vector2(0,0);
-            playerRB.velocity = pushVector;
-            PlayerScript.Instance.weaponCont.isFireOnGround = false;
+            Vector2 pushVector = new Vector2(-PlayerScript.Instance.weaponPos.x, -PlayerScript.Instance.weaponPos.y) * spearPushback;
+            playerRB.velocity = new Vector2(playerRB.velocity.x,0);
+            playerRB.AddForce(pushVector);
         }
     }
 }

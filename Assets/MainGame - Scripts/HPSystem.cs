@@ -9,6 +9,7 @@ public class HPSystem : MonoBehaviour
     public TextMeshProUGUI HPText = null;
     public int HPCount = 0;
     public PlayerScript PlayerScript;
+    private double invulnTimer;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,13 +19,22 @@ public class HPSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (invulnTimer > 0) 
+        {
+            invulnTimer += Time.deltaTime;
+        }
+        if (invulnTimer > 3)
+        {
+            invulnTimer = 0;
+        }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "Danger" )
+        if (collision.tag == "Danger" && invulnTimer == 0)
         {
+            invulnTimer = Time.deltaTime;
+
             HPCount--;
             HPText.text = "HP: " + HPCount;
             if (HPCount <= 0)

@@ -32,7 +32,6 @@ public class PlayerScript : MonoBehaviour
 
     private Vector2 moveVector;
     private Vector3 playerMove;
-    private Vector2 lerpVel;
     public Vector2 weaponPos;
 
 
