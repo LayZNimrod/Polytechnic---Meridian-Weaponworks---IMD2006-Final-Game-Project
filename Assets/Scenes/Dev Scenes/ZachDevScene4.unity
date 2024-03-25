@@ -8466,7 +8466,7 @@ GameObject:
   - component: {fileID: 940777013}
   m_Layer: 0
   m_Name: Platform (39)
-  m_TagString: FallThrough
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9253,6 +9253,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 218420411631763159, guid: 4b327c637160e514aa662ce4fb4bef32, type: 3}
+      propertyPath: m_GravityScale
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5919303728850620391, guid: 4b327c637160e514aa662ce4fb4bef32, type: 3}
       propertyPath: HPText
       value: 
@@ -9267,7 +9271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6413277687552055184, guid: 4b327c637160e514aa662ce4fb4bef32, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6413277687552055184, guid: 4b327c637160e514aa662ce4fb4bef32, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9300,6 +9304,18 @@ PrefabInstance:
     - target: {fileID: 6544346472146973859, guid: 4b327c637160e514aa662ce4fb4bef32, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525552858604338965, guid: 4b327c637160e514aa662ce4fb4bef32, type: 3}
+      propertyPath: jumpForce
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525552858604338965, guid: 4b327c637160e514aa662ce4fb4bef32, type: 3}
+      propertyPath: rayCastLenth
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525552858604338965, guid: 4b327c637160e514aa662ce4fb4bef32, type: 3}
+      propertyPath: rayCastXDistFromOrigin
+      value: -0.45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

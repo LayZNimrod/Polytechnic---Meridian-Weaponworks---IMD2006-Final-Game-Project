@@ -1,37 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1056421334384701609
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5396686253086520172}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5396686253086520172
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1056421334384701609}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.60474414, y: 0.32768816, z: 0.008104291}
-  m_LocalScale: {x: 0.80193985, y: 2.0097306, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7633051579904468653}
-  m_Father: {fileID: 6826921938341953707}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5640701240015406136
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7633051579904468653}
   - component: {fileID: 1484034122750220035}
+  - component: {fileID: 1901557943623215193}
   m_Layer: 0
   m_Name: Weap-Cannon-H
   m_TagString: Untagged
@@ -58,11 +27,11 @@ Transform:
   m_GameObject: {fileID: 5640701240015406136}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.599, y: -0.163, z: -0.0081}
-  m_LocalScale: {x: 1.5053, y: 1.5053, z: 1.5053}
+  m_LocalPosition: {x: 0.1243822, y: 0.00010207263, z: 0}
+  m_LocalScale: {x: 1.2071602, y: 3.0252478, z: 1.5053}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5396686253086520172}
+  m_Father: {fileID: 6826921938341953707}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1484034122750220035
 SpriteRenderer:
@@ -116,6 +85,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1901557943623215193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5640701240015406136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd8d1fee36358a54ca66cc99413a02ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6768832261655851475
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,7 +128,7 @@ Transform:
   m_LocalScale: {x: 1.2469764, y: 0.49757916, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5396686253086520172}
+  - {fileID: 7633051579904468653}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &6698157665548802020
@@ -219,6 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScrip: {fileID: 0}
+  weaponPos: {x: 0, y: 0}
   weaponHitSpeed: 2.5
   proj: {fileID: 6510207953916752060, guid: 398f9fb1fd1e4fc4bacd7a2cfefa3695, type: 3}
-  cannonPushback: 10
+  cannonPushback: 8
