@@ -40,13 +40,17 @@ public class StatHandler : MonoBehaviour
         {
             case (MenuScript.Element.Fire):
                 ElementDamage = 2;
-                //PlayerScript.jumpHeight = 17;
-                //PlayerScript.maxSpeed = 8;
+                PlayerScript.jumpHeight = 6.5f;
+                PlayerScript.moveSpeed = 15;
+                PlayerScript.dragX = 5;
+                PlayerScript.airDragX = 0.8f;
                 break;
             case (MenuScript.Element.Lightning):
                 ElementDamage = -1;
-                //PlayerScript.jumpHeight = 12;
-                //PlayerScript.maxSpeed = 17;
+                PlayerScript.jumpHeight = 6.5f;
+                PlayerScript.moveSpeed = 30;
+                PlayerScript.dragX = 1;
+                PlayerScript.airDragX = 1f;
                 break;
         }
         yield return new WaitForSeconds(0.001f); // Change this later, its there so this function returns something for now

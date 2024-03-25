@@ -26,6 +26,9 @@ public class HPSystem : MonoBehaviour
         if (invulnTimer > 3)
         {
             invulnTimer = 0;
+        } else if (invulnTimer > 0.3)
+        {
+            PlayerScript.Instance.UnStunPlayer();
         }
     }
 
@@ -34,6 +37,19 @@ public class HPSystem : MonoBehaviour
         if (collision.tag == "Danger" && invulnTimer == 0)
         {
             invulnTimer = Time.deltaTime;
+            Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
+            
+            if (rb.velocity.x>0.1)
+            {
+                rb.velocity = Vector2.zero;
+                rb.AddForce(new Vector2(-3, 2));
+            }
+            if(rb.velocity.x<-0.1) 
+            {
+                rb.velocity = Vector2.zero;
+                rb.AddForce(new Vector2(3, 2));
+            }
+            PlayerScript.StunPlayer();
 
             HPCount--;
             HPText.text = "HP: " + HPCount;

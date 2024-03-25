@@ -13,7 +13,7 @@ public class PlayerScript : MonoBehaviour
     public WeaponScript weaponCont;
 
     public float moveSpeed;
-    public int jumpHeight;
+    public float jumpHeight;
 
     public float rayCastLenth = 0.01f;
     public float rayCastXDistFromOrigin = -0.4f;
@@ -77,6 +77,10 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Vector3 temp = new Vector3(rayCastXDistFromOrigin, rayCastYDistFromOrigin, 0);
+        //Debug.DrawRay(transform.position + temp, Vector2.right * rayCastLenth, Color.green);
+
+
         moveVector = movement.ReadValue<Vector2>().normalized;
 
         Vector2 lookVector = aim.ReadValue<Vector2>();
@@ -120,7 +124,7 @@ public class PlayerScript : MonoBehaviour
     {
         if (jump.IsInProgress() && isJumping)
         {
-            rb.AddForce(Vector2.up * playerMove.y * Time.fixedDeltaTime, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.up * playerMove.y * Time.fixedDeltaTime, ForceMode2D.Force);
         }
         if (move)
         {
@@ -136,9 +140,6 @@ public class PlayerScript : MonoBehaviour
         {
             rb.AddForce(Vector2.right * -rb.velocity.x * Time.fixedDeltaTime * airDragX, ForceMode2D.Force);
         }
-
-        
-        //rb.AddForce(new Vector2(0, -gravity) * Time.deltaTime);
     }
 
     private void Jump(InputAction.CallbackContext context)
@@ -151,8 +152,10 @@ public class PlayerScript : MonoBehaviour
 
     private Boolean CheckOnGround()
     {
-        Vector3 temp = new Vector3(0, rayCastYDistFromOrigin, 0);
+        Vector3 temp = new Vector3(rayCastXDistFromOrigin, rayCastYDistFromOrigin, 0);
         RaycastHit2D hit = Physics2D.Raycast(transform.position + temp, Vector2.right, rayCastLenth);
+
+
         if (hit.collider != null)
         {
             if (hit.collider.gameObject.tag == "Ground" || hit.collider.gameObject.tag == "FallThrough")
@@ -163,13 +166,13 @@ public class PlayerScript : MonoBehaviour
         return false;
     }
 
-    private void StunPlayer()
+    public void StunPlayer()
     {
         movement.Disable();
         jump.Disable();
         aim.Disable();
     }
-    private void UnStunPlayer()
+    public void UnStunPlayer()
     {
         movement.Enable();
         jump.Enable();
