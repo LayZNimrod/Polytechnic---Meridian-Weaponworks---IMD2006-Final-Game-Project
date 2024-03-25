@@ -9310,8 +9310,12 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8525552858604338965, guid: 4b327c637160e514aa662ce4fb4bef32, type: 3}
+      propertyPath: rayCastLenth
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525552858604338965, guid: 4b327c637160e514aa662ce4fb4bef32, type: 3}
       propertyPath: rayCastXDistFromOrigin
-      value: -1
+      value: -0.45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

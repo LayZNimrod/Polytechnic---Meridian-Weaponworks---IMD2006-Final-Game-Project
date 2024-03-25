@@ -277,7 +277,7 @@ MonoBehaviour:
   moveSpeed: 15
   jumpHeight: 7
   rayCastLenth: 0.85
-  rayCastXDistFromOrigin: -0.8
+  rayCastXDistFromOrigin: -0.45
   rayCastYDistFromOrigin: -0.52
   weaponPushBack: -0.5
   weaponPos: {x: 0, y: 0}
