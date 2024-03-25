@@ -13,7 +13,7 @@ public class PlayerScript : MonoBehaviour
     public WeaponScript weaponCont;
 
     public float moveSpeed;
-    public int jumpHeight;
+    public float jumpHeight;
 
     public float rayCastLenth = 0.01f;
     public float rayCastXDistFromOrigin = -0.4f;
@@ -29,6 +29,8 @@ public class PlayerScript : MonoBehaviour
 
     private bool isJumping = false;
     private bool move = false;
+    private bool jumpCancelled = false;
+    private bool onGround = false;
 
     private Vector2 moveVector;
     private Vector3 playerMove;
@@ -63,6 +65,7 @@ public class PlayerScript : MonoBehaviour
         jump = playerCont.Player.Jump;
         jump.Enable();
         jump.performed += Jump;
+        jump.canceled += JumpCancelled;
         aim = playerCont.Player.Look;
         aim.Enable();
     }
@@ -77,6 +80,14 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 temp = new Vector3(rayCastXDistFromOrigin, rayCastYDistFromOrigin, 0);
+        Debug.DrawRay(transform.position + temp, Vector2.right * rayCastLenth, Color.green);
+        onGround = CheckOnGround();
+        if (onGround)
+        {
+            jumpCancelled = false;
+        }
+
         moveVector = movement.ReadValue<Vector2>().normalized;
 
         Vector2 lookVector = aim.ReadValue<Vector2>();
@@ -88,12 +99,6 @@ public class PlayerScript : MonoBehaviour
         velX = rb.velocity.x;
         velY = rb.velocity.y;
 
-        //if (isJumping)
-
-        //{
-
-        //    isJumping = false;
-        // }
 
         if (velX > maxSpeed || velX < -maxSpeed)
         {
@@ -118,10 +123,11 @@ public class PlayerScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (jump.IsInProgress() && isJumping)
+        if (jump.IsInProgress() && isJumping && jumpCancelled==false)
         {
-            rb.AddForce(Vector2.up * playerMove.y * Time.fixedDeltaTime, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.up * playerMove.y * Time.fixedDeltaTime, ForceMode2D.Force);
         }
+
         if (move)
         {
             rb.AddForce(Vector2.right * playerMove.x * Time.fixedDeltaTime, ForceMode2D.Force);
@@ -136,23 +142,27 @@ public class PlayerScript : MonoBehaviour
         {
             rb.AddForce(Vector2.right * -rb.velocity.x * Time.fixedDeltaTime * airDragX, ForceMode2D.Force);
         }
-
-        
-        //rb.AddForce(new Vector2(0, -gravity) * Time.deltaTime);
     }
 
     private void Jump(InputAction.CallbackContext context)
     {
-        if (CheckOnGround())
+        if (onGround)
         {
             isJumping = true;
         }
     }
 
+    private void JumpCancelled(InputAction.CallbackContext context)
+    {
+        jumpCancelled = true;
+    }
+
     private Boolean CheckOnGround()
     {
-        Vector3 temp = new Vector3(0, rayCastYDistFromOrigin, 0);
+        Vector3 temp = new Vector3(rayCastXDistFromOrigin, rayCastYDistFromOrigin, 0);
         RaycastHit2D hit = Physics2D.Raycast(transform.position + temp, Vector2.right, rayCastLenth);
+
+
         if (hit.collider != null)
         {
             if (hit.collider.gameObject.tag == "Ground" || hit.collider.gameObject.tag == "FallThrough")
@@ -163,13 +173,13 @@ public class PlayerScript : MonoBehaviour
         return false;
     }
 
-    private void StunPlayer()
+    public void StunPlayer()
     {
         movement.Disable();
         jump.Disable();
         aim.Disable();
     }
-    private void UnStunPlayer()
+    public void UnStunPlayer()
     {
         movement.Enable();
         jump.Enable();

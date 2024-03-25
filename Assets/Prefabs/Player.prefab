@@ -276,13 +276,13 @@ MonoBehaviour:
   weaponCont: {fileID: 0}
   moveSpeed: 15
   jumpHeight: 7
-  rayCastLenth: 0.9
-  rayCastXDistFromOrigin: -0.4
+  rayCastLenth: 0.85
+  rayCastXDistFromOrigin: -0.45
   rayCastYDistFromOrigin: -0.52
   weaponPushBack: -0.5
   weaponPos: {x: 0, y: 0}
   maxSpeed: 7
-  jumpForce: 1
+  jumpForce: 30
   dragX: 5
   airDragX: 0.8
 --- !u!114 &3330375819381767166
