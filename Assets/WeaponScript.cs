@@ -13,7 +13,7 @@ public class WeaponScript : MonoBehaviour
     private InputAction fire;
     protected EnemyHealth touchedEnemy;
     protected float rotate;
-    protected Vector2 weaponPos;
+    public Vector2 weaponPos;
 
     protected float weaponTimer = 0;
     public float weaponHitSpeed = 5;

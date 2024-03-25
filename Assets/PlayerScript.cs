@@ -43,6 +43,7 @@ public class PlayerScript : MonoBehaviour
 
     public float dragX;
     public float airDragX;
+    private float coyoteTime;
 
 
     // Start is called before the first frame update
@@ -82,10 +83,15 @@ public class PlayerScript : MonoBehaviour
     {
         Vector3 temp = new Vector3(rayCastXDistFromOrigin, rayCastYDistFromOrigin, 0);
         Debug.DrawRay(transform.position + temp, Vector2.right * rayCastLenth, Color.green);
+
         onGround = CheckOnGround();
         if (onGround)
         {
             jumpCancelled = false;
+            coyoteTime = 0;
+        } else
+        {
+            coyoteTime += Time.deltaTime;
         }
 
         moveVector = movement.ReadValue<Vector2>().normalized;
@@ -99,7 +105,6 @@ public class PlayerScript : MonoBehaviour
         velX = rb.velocity.x;
         velY = rb.velocity.y;
 
-
         if (velX > maxSpeed || velX < -maxSpeed)
         {
             move = false;
@@ -109,7 +114,7 @@ public class PlayerScript : MonoBehaviour
             move = true;
         }
 
-        if (velY > jumpHeight || velY < 0)
+        if (velY > jumpHeight)
         {
             isJumping = false;
         }
@@ -146,7 +151,7 @@ public class PlayerScript : MonoBehaviour
 
     private void Jump(InputAction.CallbackContext context)
     {
-        if (onGround)
+        if (onGround || coyoteTime < 0.05)
         {
             isJumping = true;
         }

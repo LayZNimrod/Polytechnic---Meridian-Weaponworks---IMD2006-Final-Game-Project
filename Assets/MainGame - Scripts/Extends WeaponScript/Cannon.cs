@@ -7,7 +7,6 @@ public class Cannon : WeaponScript
     public CannonProj proj;
     [SerializeField] int cannonPushback = 0;
 
-
     protected override void Attack()// remember to add player stun and 
     {
         if (weaponTimer == 0)

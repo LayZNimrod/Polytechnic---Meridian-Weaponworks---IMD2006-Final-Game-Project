@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4745206215168137065}
   - component: {fileID: 6137397361391914708}
+  - component: {fileID: 2970361771351777409}
   m_Layer: 0
   m_Name: Weap-Wrench-H
   m_TagString: Untagged
@@ -84,6 +85,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2970361771351777409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419165089259203576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd8d1fee36358a54ca66cc99413a02ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6768832261655851475
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,7 +194,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScrip: {fileID: 0}
+  weaponPos: {x: 0, y: 0}
   weaponHitSpeed: 0.3
-  spearPushback: 4
+  spearPushback: 5
   isWeaponTouchGround: 0
   isWeaponTouchEnemy: 0

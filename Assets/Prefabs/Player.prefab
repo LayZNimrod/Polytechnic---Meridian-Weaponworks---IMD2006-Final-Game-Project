@@ -249,7 +249,7 @@ Rigidbody2D:
   m_Mass: 0.01
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 1.5
+  m_GravityScale: 3
   m_Material: {fileID: 6200000, guid: d6cc5b6651611aa49a8e02c612e848c3, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -282,7 +282,7 @@ MonoBehaviour:
   weaponPushBack: -0.5
   weaponPos: {x: 0, y: 0}
   maxSpeed: 7
-  jumpForce: 30
+  jumpForce: 50
   dragX: 5
   airDragX: 0.8
 --- !u!114 &3330375819381767166
