@@ -40,7 +40,6 @@ public class StatHandler : MonoBehaviour
         {
             case (MenuScript.Element.Fire):
                 ElementDamage = 2;
-                PlayerScript.jumpHeight = 9f;
                 PlayerScript.jumpForce = 5;
                 PlayerScript.moveSpeed = 15;
                 PlayerScript.maxSpeed = 7;
@@ -50,11 +49,10 @@ public class StatHandler : MonoBehaviour
                 break;
             case (MenuScript.Element.Lightning):
                 ElementDamage = 0;
-                PlayerScript.jumpHeight = 11f;
                 PlayerScript.jumpForce = 7;
                 PlayerScript.moveSpeed = 30;
                 PlayerScript.maxSpeed = 16;
-                PlayerScript.dragX = 3f;
+                PlayerScript.dragX = 5f;
                 PlayerScript.airDragX = 1f;
                 PlayerScript.GetComponent<Rigidbody2D>().gravityScale = 4;
                 break;
