@@ -43,7 +43,7 @@ public class StatHandler : MonoBehaviour
                 PlayerScript.jumpHeight = 9f;
                 PlayerScript.jumpForce = 5;
                 PlayerScript.moveSpeed = 15;
-                PlayerScript.maxSpeed = 7;
+                PlayerScript.maxSpeed = 9;
                 PlayerScript.dragX = 5;
                 PlayerScript.airDragX = 0.8f;
                 PlayerScript.GetComponent<Rigidbody2D>().gravityScale = 2;
@@ -58,7 +58,17 @@ public class StatHandler : MonoBehaviour
                 PlayerScript.airDragX = 1f;
                 PlayerScript.GetComponent<Rigidbody2D>().gravityScale = 4;
                 break;
+            case (MenuScript.Element.Reinforced):
+                ElementDamage = 4;
+                PlayerScript.jumpHeight = 7f;
+                PlayerScript.moveSpeed = 10;
+                PlayerScript.maxSpeed = 7;
+                PlayerScript.dragX = 3f;
+                PlayerScript.airDragX = 1f;
+                PlayerScript.GetComponent<Rigidbody2D>().gravityScale = 4;
+                break;
         }
+
         yield return new WaitForSeconds(0.001f); // Change this later, its there so this function returns something for now
     }
 }
