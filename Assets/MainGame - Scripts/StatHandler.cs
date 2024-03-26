@@ -46,6 +46,7 @@ public class StatHandler : MonoBehaviour
                 PlayerScript.dragX = 5;
                 PlayerScript.airDragX = 0.8f;
                 PlayerScript.GetComponent<Rigidbody2D>().gravityScale = 2;
+                HPSystem.Instance.HPCount = 4;
                 break;
             case (MenuScript.Element.Lightning):
                 ElementDamage = 0;
@@ -55,6 +56,7 @@ public class StatHandler : MonoBehaviour
                 PlayerScript.dragX = 5f;
                 PlayerScript.airDragX = 1f;
                 PlayerScript.GetComponent<Rigidbody2D>().gravityScale = 4;
+                HPSystem.Instance.HPCount = 3;
                 break;
             case (MenuScript.Element.Reinforced):
                 ElementDamage = 4;
@@ -63,6 +65,7 @@ public class StatHandler : MonoBehaviour
                 PlayerScript.dragX = 3f;
                 PlayerScript.airDragX = 1f;
                 PlayerScript.GetComponent<Rigidbody2D>().gravityScale = 4;
+                HPSystem.Instance.HPCount = 5;
                 break;
         }
 
