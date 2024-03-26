@@ -13,7 +13,6 @@ public class PlayerScript : MonoBehaviour
     public WeaponScript weaponCont;
 
     public float moveSpeed;
-    public float jumpHeight;
 
     public float rayCastLenth = 0.01f;
     public float rayCastXDistFromOrigin = -0.4f;
@@ -29,7 +28,6 @@ public class PlayerScript : MonoBehaviour
 
     private bool isJumping = false;
     private bool move = false;
-    private bool jumpCancelled = false;
     private bool onGround = false;
 
     private Vector2 moveVector;
@@ -87,7 +85,7 @@ public class PlayerScript : MonoBehaviour
         onGround = CheckOnGround();
         if (onGround)
         {
-            jumpCancelled = false;
+            //jumpCancelled = false;
             coyoteTime = 0;
         } else
         {
@@ -160,7 +158,7 @@ public class PlayerScript : MonoBehaviour
 
     private void JumpCancelled(InputAction.CallbackContext context)
     {
-        jumpCancelled = true;
+        //jumpCancelled = true;
         if (isJumping)
         {
             rb.velocity = new Vector2(rb.velocity.x,0f);
