@@ -71,7 +71,8 @@ public class HPSystem : MonoBehaviour
 
     IEnumerator BackToBuild()
     {
-        PlayerScript.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        //PlayerScript.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        PlayerScript.Instance.enabled = false;
         yield return new WaitForSeconds(5);
         SceneManager.LoadScene("WeaponBuildingUI");
     }

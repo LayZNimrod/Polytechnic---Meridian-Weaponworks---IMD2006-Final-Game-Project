@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StatHandler: {fileID: 0}
-  EnemyHP: 0
+  EnemyHP: 10
 --- !u!114 &-6187902525818928102
 MonoBehaviour:
   m_ObjectHideFlags: 0
