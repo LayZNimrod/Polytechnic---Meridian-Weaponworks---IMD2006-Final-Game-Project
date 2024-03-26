@@ -70,7 +70,7 @@ public class HPSystem : MonoBehaviour
         }
         if (collision.tag == "End")
         {
-            GameEndText.text = "YOU WIN!";
+            GameEndText.text = "ROOM COMPLETE!";
             StartCoroutine(BackToBuild());
         }
     }

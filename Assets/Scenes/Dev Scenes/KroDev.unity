@@ -7168,17 +7168,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1687266005}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &850470888 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 884525993867844994, guid: 8141529198c28144a9fd6759e99de6f9, type: 3}
-  m_PrefabInstance: {fileID: 996901770120348015}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &886346505
 GameObject:
   m_ObjectHideFlags: 0
@@ -13986,10 +13975,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2257342813558571317, guid: 8141529198c28144a9fd6759e99de6f9, type: 3}
-      propertyPath: rend
-      value: 
-      objectReference: {fileID: 850470888}
     - target: {fileID: 3049970257002992051, guid: 8141529198c28144a9fd6759e99de6f9, type: 3}
       propertyPath: m_Camera
       value: 
