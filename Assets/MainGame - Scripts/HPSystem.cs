@@ -12,6 +12,11 @@ public class HPSystem : MonoBehaviour
     public int HPCount = 0;
     public PlayerScript PlayerScript;
     private double invulnTimer;
+
+    private void OnEnable()
+    {
+        Instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
