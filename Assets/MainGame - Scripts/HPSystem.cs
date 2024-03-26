@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class HPSystem : MonoBehaviour
 {
+    public static HPSystem Instance;
     public TextMeshProUGUI HPText = null;
     public int HPCount = 0;
     public PlayerScript PlayerScript;
