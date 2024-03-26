@@ -275,7 +275,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponCont: {fileID: 0}
   moveSpeed: 15
-  jumpHeight: 7
   rayCastLenth: 0.85
   rayCastXDistFromOrigin: -0.45
   rayCastYDistFromOrigin: -0.52
@@ -311,5 +310,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HPText: {fileID: 0}
+  GameEndText: {fileID: 0}
   HPCount: 3
+  HPMax: 0
   PlayerScript: {fileID: 8525552858604338965}
+  hPBar: {fileID: 0}

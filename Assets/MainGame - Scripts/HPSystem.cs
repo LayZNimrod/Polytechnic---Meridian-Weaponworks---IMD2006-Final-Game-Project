@@ -10,11 +10,14 @@ public class HPSystem : MonoBehaviour
     public TextMeshProUGUI HPText = null;
     public TextMeshProUGUI GameEndText = null;
     public int HPCount = 0;
+    public int HPMax = 0;
     public PlayerScript PlayerScript;
     private double invulnTimer;
+    [SerializeField] FloatingHPBar hPBar;
     // Start is called before the first frame update
     void Start()
     {
+        HPMax = HPCount;
         HPText.text = "HP: " + HPCount;
     }
 
@@ -24,6 +27,7 @@ public class HPSystem : MonoBehaviour
         if (invulnTimer > 0) 
         {
             invulnTimer += Time.deltaTime;
+            //hPBar.switchGrey();
         }
         if (invulnTimer > 3)
         {
@@ -31,6 +35,7 @@ public class HPSystem : MonoBehaviour
         } else if (invulnTimer > 0.3)
         {
             PlayerScript.Instance.UnStunPlayer();
+            //hPBar.switchRed();
         }
     }
 
@@ -54,6 +59,7 @@ public class HPSystem : MonoBehaviour
             PlayerScript.StunPlayer();
 
             HPCount--;
+            hPBar.updateHP(HPCount, HPMax);
             HPText.text = "HP: " + HPCount;
             if (HPCount <= 0)
             {
@@ -71,9 +77,9 @@ public class HPSystem : MonoBehaviour
 
     IEnumerator BackToBuild()
     {
-        //PlayerScript.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        PlayerScript.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         PlayerScript.Instance.enabled = false;
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         SceneManager.LoadScene("WeaponBuildingUI");
     }
 }

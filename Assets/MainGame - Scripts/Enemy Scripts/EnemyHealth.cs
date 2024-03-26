@@ -5,11 +5,13 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public StatHandler StatHandler;
-    public int EnemyHP;
+    public float EnemyHP;
+    public float EnemyMaxHP;
+    [SerializeField] FloatingHPBar hPBar;
     // Start is called before the first frame update
     void Start()
     {
-        
+        hPBar = GetComponentInChildren<FloatingHPBar>();
     }
 
     // Update is called once per frame
@@ -21,6 +23,7 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage()
     {
         EnemyHP = EnemyHP - StatHandler.TotalDamage;
+        hPBar.updateHP(EnemyHP, EnemyMaxHP);
         if (EnemyHP <= 0)
         {
             Destroy(gameObject);
