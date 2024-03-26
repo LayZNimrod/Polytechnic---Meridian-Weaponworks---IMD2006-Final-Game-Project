@@ -14,6 +14,12 @@ public class HPSystem : MonoBehaviour
     public PlayerScript PlayerScript;
     private double invulnTimer;
     [SerializeField] FloatingHPBar hPBar;
+
+    private void OnEnable()
+    {
+        Instance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
