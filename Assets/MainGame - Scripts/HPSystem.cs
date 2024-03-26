@@ -35,7 +35,7 @@ public class HPSystem : MonoBehaviour
             invulnTimer += Time.deltaTime;
             //hPBar.switchGrey();
         }
-        if (invulnTimer > 3)
+        if (invulnTimer > 2)
         {
             invulnTimer = 0;
         } else if (invulnTimer > 0.3)
@@ -83,9 +83,10 @@ public class HPSystem : MonoBehaviour
 
     IEnumerator BackToBuild()
     {
-        PlayerScript.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        //PlayerScript.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         PlayerScript.Instance.enabled = false;
         yield return new WaitForSeconds(3);
+        PlayerScript.Instance.enabled = true;
         SceneManager.LoadScene("WeaponBuildingUI");
     }
 }
