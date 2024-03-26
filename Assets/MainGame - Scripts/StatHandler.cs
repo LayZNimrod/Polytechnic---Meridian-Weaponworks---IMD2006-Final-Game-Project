@@ -41,6 +41,7 @@ public class StatHandler : MonoBehaviour
             case (MenuScript.Element.Fire):
                 ElementDamage = 2;
                 PlayerScript.jumpHeight = 9f;
+                PlayerScript.jumpForce = 5;
                 PlayerScript.moveSpeed = 15;
                 PlayerScript.maxSpeed = 7;
                 PlayerScript.dragX = 5;
@@ -50,6 +51,7 @@ public class StatHandler : MonoBehaviour
             case (MenuScript.Element.Lightning):
                 ElementDamage = 0;
                 PlayerScript.jumpHeight = 11f;
+                PlayerScript.jumpForce = 7;
                 PlayerScript.moveSpeed = 30;
                 PlayerScript.maxSpeed = 16;
                 PlayerScript.dragX = 3f;

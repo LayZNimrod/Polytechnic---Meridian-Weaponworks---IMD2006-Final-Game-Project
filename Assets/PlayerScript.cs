@@ -114,7 +114,7 @@ public class PlayerScript : MonoBehaviour
             move = true;
         }
 
-        if (velY > jumpHeight)
+        if (velY < 0)
         {
             isJumping = false;
         }
@@ -128,10 +128,10 @@ public class PlayerScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (jump.IsInProgress() && isJumping && jumpCancelled==false)
-        {
-            rb.AddForce(Vector2.up * playerMove.y * Time.fixedDeltaTime, ForceMode2D.Force);
-        }
+        //if (jump.IsInProgress() && isJumping && jumpCancelled==false)
+        //{
+        //    rb.AddForce(Vector2.up * playerMove.y * Time.fixedDeltaTime, ForceMode2D.Force);
+        //}
 
         if (move)
         {
@@ -154,12 +154,19 @@ public class PlayerScript : MonoBehaviour
         if (onGround || coyoteTime < 0.05)
         {
             isJumping = true;
+            rb.AddForce(Vector2.up * playerMove.y, ForceMode2D.Force);
         }
     }
 
     private void JumpCancelled(InputAction.CallbackContext context)
     {
         jumpCancelled = true;
+        if (isJumping)
+        {
+            rb.velocity = new Vector2(rb.velocity.x,0f);
+            rb.AddForce(Vector2.up * 0.5f, ForceMode2D.Force);
+        }
+            
     }
 
     private Boolean CheckOnGround()

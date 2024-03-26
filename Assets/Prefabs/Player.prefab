@@ -282,7 +282,7 @@ MonoBehaviour:
   weaponPushBack: -0.5
   weaponPos: {x: 0, y: 0}
   maxSpeed: 7
-  jumpForce: 50
+  jumpForce: 5
   dragX: 5
   airDragX: 0.8
 --- !u!114 &3330375819381767166
