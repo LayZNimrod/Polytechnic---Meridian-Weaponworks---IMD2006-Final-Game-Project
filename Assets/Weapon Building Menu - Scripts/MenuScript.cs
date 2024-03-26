@@ -19,7 +19,9 @@ public class MenuScript : MonoBehaviour
     public enum Element
     {
         Fire,
-        Lightning
+        Lightning,
+        //Steam,
+        Reinforced
     }
     public Element chosenElement;
 
@@ -32,7 +34,7 @@ public class MenuScript : MonoBehaviour
                 {
                     chosenWeapon = Weapon.Cannon;
                     SelectedWeapon.text = "Cannon";
-                    SelectedWeaponDesc.text = "Higher Damage, further knockback";
+                    SelectedWeaponDesc.text = "Projectile, higher damage, slower attack speed. Use the knockback to your advantage!";
 
                     break;
                 }
@@ -40,7 +42,7 @@ public class MenuScript : MonoBehaviour
                 {
                     chosenWeapon = Weapon.Wrench;
                     SelectedWeapon.text = "Wrench";
-                    SelectedWeaponDesc.text = "Normal Damage, Normal knockback";
+                    SelectedWeaponDesc.text = "Melee, average damage, faster attack speed. Attack the ground to increase velocity!";
                     break;
                 }
         }
@@ -54,16 +56,24 @@ public class MenuScript : MonoBehaviour
             case Element.Fire:
                 {
                     chosenElement = Element.Lightning;
-                    SelectedElement.text = "Lightning";
-                    SelectedElementDesc.text = "Faster speed, lower jump height";
+                    SelectedElement.text = "Electified";
+                    SelectedElementDesc.text = "3HP, lower damage, Faster attack and movement speed, lower jump height";
 
                     break;
                 }
             case Element.Lightning:
                 {
+                    chosenElement = Element.Reinforced;
+                    SelectedElement.text = "Reinforced";
+                    SelectedElementDesc.text = "5HP, highest damage, lower movement and attack speed, lower jump height";
+
+                    break;
+                }
+            case Element.Reinforced:
+                {
                     chosenElement = Element.Fire;
-                    SelectedElement.text = "Fire";
-                    SelectedElementDesc.text = "Slower speed, higher jump height";
+                    SelectedElement.text = "Overheated";
+                    SelectedElementDesc.text = "4HP, higher damage, normal movement and attack speed, higher jump height";
 
                     break;
                 }

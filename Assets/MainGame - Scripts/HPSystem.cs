@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class HPSystem : MonoBehaviour
 {
     public TextMeshProUGUI HPText = null;
+    public TextMeshProUGUI GameEndText = null;
     public int HPCount = 0;
     public PlayerScript PlayerScript;
     private double invulnTimer;
@@ -56,13 +57,13 @@ public class HPSystem : MonoBehaviour
             if (HPCount <= 0)
             {
                 HPCount = 0;
-                HPText.text = "YOU DIED";
+                GameEndText.text = "YOU DIED";
                 StartCoroutine(BackToBuild());
             }
         }
         if (collision.tag == "End")
         {
-            HPText.text = "YOU WIN!";
+            GameEndText.text = "YOU WIN!";
             StartCoroutine(BackToBuild());
         }
     }

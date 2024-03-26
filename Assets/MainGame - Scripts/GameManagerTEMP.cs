@@ -25,10 +25,13 @@ public class GameManagerTEMP : MonoBehaviour
         switch (ChoiceCarrier.ChosenElement)
         {
             case (MenuScript.Element.Fire):
-                SElemText.text = "Fire";
+                SElemText.text = "Overheated";
                 break;
             case (MenuScript.Element.Lightning):
-                SElemText.text = "Lightning";
+                SElemText.text = "Electrified";
+                break;
+            case (MenuScript.Element.Reinforced):
+                SElemText.text = "Reinforced";
                 break;
         }
     }
