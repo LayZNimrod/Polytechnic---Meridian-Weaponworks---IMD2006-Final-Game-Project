@@ -1683,8 +1683,8 @@ Transform:
   m_GameObject: {fileID: 218216688}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.100006, y: -3.8700008, z: 0}
-  m_LocalScale: {x: 21.40568, y: 0.71540284, z: 1}
+  m_LocalPosition: {x: 21.97, y: -3.8652, z: 0}
+  m_LocalScale: {x: 21.664688, y: 0.72498924, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 527854429}
@@ -6064,8 +6064,8 @@ Transform:
   m_GameObject: {fileID: 625495416}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.100006, y: -10.48, z: 0}
-  m_LocalScale: {x: 21.40568, y: 0.71540284, z: 1}
+  m_LocalPosition: {x: 22.0678, y: -10.4795, z: 0}
+  m_LocalScale: {x: 21.469934, y: 0.7143297, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 527854429}
@@ -7733,7 +7733,7 @@ GameObject:
   - component: {fileID: 940777013}
   m_Layer: 0
   m_Name: Platform (39)
-  m_TagString: FallThrough
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
