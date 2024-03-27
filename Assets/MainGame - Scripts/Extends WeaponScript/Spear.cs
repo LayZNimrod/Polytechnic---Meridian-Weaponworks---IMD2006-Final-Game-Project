@@ -8,6 +8,9 @@ public class Spear : WeaponScript
     [SerializeField] public int spearPushback = 10;
     public bool isWeaponTouchGround;
     public bool isWeaponTouchEnemy;
+    public AudioSource attackSoundSource;
+    public AudioClip attackSound;
+    public float volume;
 
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -37,9 +40,10 @@ public class Spear : WeaponScript
     }
 
     protected override void Fire(InputAction.CallbackContext context)
-    {   
+    {
         if (weaponTimer == 0)
-        {        
+        {
+            attackSoundSource.PlayOneShot(attackSound, volume);
             if (isWeaponTouchGround)
             {
             Attack();
