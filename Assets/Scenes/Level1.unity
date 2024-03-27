@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 12180974}
   - component: {fileID: 12180975}
   m_Layer: 0
-  m_Name: GameManagerTEMP
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -212,6 +212,7 @@ MonoBehaviour:
   ElementDamage: 0
   TotalDamage: 0
   PlayerScript: {fileID: 126072950}
+  weapon: {fileID: 0}
 --- !u!1 &31661683
 GameObject:
   m_ObjectHideFlags: 0
@@ -7812,6 +7813,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cannon: {fileID: 6768832261655851475, guid: 54af5bb1295949a45bd8b82a7de67112, type: 3}
   wrench: {fileID: 6768832261655851475, guid: f21080e82cb70dd4f8490caf161d6559, type: 3}
+  stat: {fileID: 12180975}
 --- !u!4 &1077932140
 Transform:
   m_ObjectHideFlags: 0
@@ -10872,10 +10874,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2044444844501622586, guid: 8141529198c28144a9fd6759e99de6f9, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3049970257002992051, guid: 8141529198c28144a9fd6759e99de6f9, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 3049970257002992051, guid: 8141529198c28144a9fd6759e99de6f9, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3049970257002992051, guid: 8141529198c28144a9fd6759e99de6f9, type: 3}
+      propertyPath: m_UpdateRectTransformForStandalone
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4062010363472085078, guid: 8141529198c28144a9fd6759e99de6f9, type: 3}
+      propertyPath: m_IgnoreReversedGraphics
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6903454843898775011, guid: 8141529198c28144a9fd6759e99de6f9, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

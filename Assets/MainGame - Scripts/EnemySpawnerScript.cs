@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawnerScript : MonoBehaviour
@@ -10,12 +8,12 @@ public class EnemySpawnerScript : MonoBehaviour
     {
         Vector3 SpawnerPos = new Vector3(transform.position.x, transform.position.y, 0f);
         spawned = Instantiate(spawned, SpawnerPos, Quaternion.identity);
-        spawned.GetComponent<EnemyHealth>().StatHandler = GameObject.Find("GameManagerTEMP").GetComponent<StatHandler>();
+        spawned.GetComponent<EnemyHealth>().StatHandler = GameObject.Find("GameManager").GetComponent<StatHandler>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

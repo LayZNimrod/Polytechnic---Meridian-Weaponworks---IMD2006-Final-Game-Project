@@ -5,7 +5,7 @@ using UnityEngine;
 public class Cannon : WeaponScript
 {
     public CannonProj proj;
-    [SerializeField] int cannonPushback = 0;
+    [SerializeField] public int cannonPushback = 0;
     public AudioSource attackSoundSource;
     public AudioClip attackSound;
     public AudioSource reloadSoundSource;

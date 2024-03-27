@@ -9,6 +9,9 @@ public class StatHandler : MonoBehaviour
     public int ElementDamage;
     public int TotalDamage;
     public PlayerScript PlayerScript;
+    public WeaponScript weapon;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,6 +69,14 @@ public class StatHandler : MonoBehaviour
                 PlayerScript.airDragX = 1f;
                 PlayerScript.GetComponent<Rigidbody2D>().gravityScale = 4;
                 HPSystem.Instance.HPCount = 5;
+                if (weapon as Cannon != null) // https://forum.unity.com/threads/check-if-a-gameobject-has-a-certain-script.88484/
+                {
+                    (weapon as Cannon).cannonPushback = 20;
+                }
+                if (weapon as Spear != null) // https://forum.unity.com/threads/check-if-a-gameobject-has-a-certain-script.88484/
+                {
+                    (weapon as Spear).spearPushback = 10;
+                }
                 break;
         }
 

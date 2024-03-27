@@ -10,7 +10,7 @@ public class WeaponScript : MonoBehaviour
     public static WeaponScript Instance;
     [SerializeField] protected PlayerScript playerScrip;
     protected Rigidbody2D playerRB;
-    private InputAction fire;
+    protected InputAction fire;
     protected EnemyHealth touchedEnemy;
     protected float rotate;
     public Vector2 weaponPos;
@@ -20,7 +20,7 @@ public class WeaponScript : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         playerScrip = PlayerScript.Instance;
         playerRB = GetComponentInParent<Rigidbody2D>();
@@ -41,13 +41,13 @@ public class WeaponScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         if ( weaponTimer > 0 )
         {
             weaponTimer += Time.deltaTime;
-        } 
-        if ( weaponTimer > weaponHitSpeed )
+        }
+        if (weaponTimer > weaponHitSpeed)
         {
             weaponTimer = 0;
         }
