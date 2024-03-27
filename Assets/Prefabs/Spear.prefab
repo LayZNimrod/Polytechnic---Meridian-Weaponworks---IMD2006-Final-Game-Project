@@ -107,10 +107,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6826921938341953707}
   - component: {fileID: 6698157665548802020}
-  - component: {fileID: -3447239918155967724}
+  - component: {fileID: -3908688703958798568}
   - component: {fileID: 340806612657837384}
   m_Layer: 2
-  m_Name: Wrench
+  m_Name: Spear
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -182,7 +182,7 @@ PolygonCollider2D:
       - {x: 1.583587, y: 0.018815331}
       - {x: 1.0119694, y: 1.6336374}
   m_UseDelaunayMesh: 0
---- !u!114 &-3447239918155967724
+--- !u!114 &-3908688703958798568
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -191,12 +191,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 6768832261655851475}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb34553aac7c8f14faec5ec42d1dd294, type: 3}
+  m_Script: {fileID: 11500000, guid: 316a4b2b43cd889498fe4f352ccda902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerScrip: {fileID: 0}
   weaponPos: {x: 0, y: 0}
-  weaponHitSpeed: 5
+  weaponHitSpeed: 0.3
+  spearPushback: 5
+  isWeaponTouchGround: 0
+  isWeaponTouchEnemy: 0
+  attackSoundSource: {fileID: 340806612657837384}
+  attackSound: {fileID: 8300000, guid: f6c433639e03569439d240e03ca03e56, type: 3}
+  volume: 0.5
 --- !u!82 &340806612657837384
 AudioSource:
   m_ObjectHideFlags: 0

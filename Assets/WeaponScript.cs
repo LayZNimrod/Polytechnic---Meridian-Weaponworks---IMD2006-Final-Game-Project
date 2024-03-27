@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.Intrinsics;
@@ -33,7 +34,10 @@ public class WeaponScript : MonoBehaviour
         fire = PlayerScript.Instance.playerCont.Player.Fire;
         fire.Enable();
         fire.performed += Fire;
+        fire.canceled += FireCancel;
     }
+
+
 
     private void OnDisable()
     {
@@ -43,7 +47,7 @@ public class WeaponScript : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-        if ( weaponTimer > 0 )
+        if (weaponTimer > 0)
         {
             weaponTimer += Time.deltaTime;
         }
@@ -52,7 +56,8 @@ public class WeaponScript : MonoBehaviour
             weaponTimer = 0;
         }
     }
-    private void FixedUpdate()
+
+    protected virtual void FixedUpdate()
     {
         weaponPos = playerScrip.weaponPos;
         transform.position = weaponPos + (Vector2)playerRB.transform.position;
@@ -70,8 +75,14 @@ public class WeaponScript : MonoBehaviour
             weaponTimer += Time.deltaTime;
         }
     }
+
+    protected virtual void FireCancel(InputAction.CallbackContext context)
+    {
+
+    }
+
     protected virtual void Attack()
     {
-        
+
     }
 }
