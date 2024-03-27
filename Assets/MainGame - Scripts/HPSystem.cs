@@ -14,6 +14,9 @@ public class HPSystem : MonoBehaviour
     public PlayerScript PlayerScript;
     private double invulnTimer;
     [SerializeField] FloatingHPBar hPBar;
+    public AudioSource hurtSoundSource;
+    public AudioClip hurtSound;
+    public float volume;
 
     private void OnEnable()
     {
@@ -63,9 +66,9 @@ public class HPSystem : MonoBehaviour
                 rb.AddForce(new Vector2(3, 2));
             }
             PlayerScript.StunPlayer();
-
             HPCount--;
             hPBar.updateHP(HPCount, HPMax);
+            hurtSoundSource.PlayOneShot(hurtSound, volume);
             HPText.text = "HP: " + HPCount;
             if (HPCount <= 0)
             {
