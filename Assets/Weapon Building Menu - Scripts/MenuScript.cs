@@ -13,7 +13,8 @@ public class MenuScript : MonoBehaviour
     public enum Weapon
     {
         Wrench,
-        Cannon
+        Cannon,
+        Spear
     }
     public Weapon chosenWeapon;
     public enum Element
@@ -30,7 +31,7 @@ public class MenuScript : MonoBehaviour
     {
         switch (chosenWeapon)
         {
-            case Weapon.Wrench:
+            case Weapon.Spear:
                 {
                     chosenWeapon = Weapon.Cannon;
                     SelectedWeapon.text = "Cannon";
@@ -42,7 +43,14 @@ public class MenuScript : MonoBehaviour
                 {
                     chosenWeapon = Weapon.Wrench;
                     SelectedWeapon.text = "Wrench";
-                    SelectedWeaponDesc.text = "Melee, average damage, faster attack speed. Attack the ground to increase velocity!";
+                    SelectedWeaponDesc.text = "Melee, average damage, faster attack speed. Hold Attack to spin it around you!";
+                    break;
+                }
+            case Weapon.Wrench:
+                {
+                    chosenWeapon = Weapon.Spear;
+                    SelectedWeapon.text = "Spear";
+                    SelectedWeaponDesc.text = "Melee, lower damage, faster attack speed. Attack the ground to increase velocity!";
                     break;
                 }
         }
