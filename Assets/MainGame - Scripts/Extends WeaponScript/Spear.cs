@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Spear : WeaponScript
 {
-    [SerializeField] int spearPushback = 10;
+    [SerializeField] public int spearPushback = 10;
     public bool isWeaponTouchGround;
     public bool isWeaponTouchEnemy;
     public AudioSource attackSoundSource;

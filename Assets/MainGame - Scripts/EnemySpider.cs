@@ -17,12 +17,6 @@ public class EnemySpider : MonoBehaviour
         spider = this.gameObject;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     IEnumerator ProjFire()
     {
         while (true) 
