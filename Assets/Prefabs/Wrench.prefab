@@ -106,7 +106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6826921938341953707}
-  - component: {fileID: 6698157665548802020}
+  - component: {fileID: 6957943199842870449}
   - component: {fileID: -3447239918155967724}
   - component: {fileID: 340806612657837384}
   m_Layer: 2
@@ -132,8 +132,8 @@ Transform:
   - {fileID: 4745206215168137065}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &6698157665548802020
-PolygonCollider2D:
+--- !u!61 &6957943199842870449
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -164,24 +164,19 @@ PolygonCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.00000011920929, y: 0.02131927}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 0.32}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.5, y: 0.5}
-      - {x: -0.5, y: -0.5}
-      - {x: 0.99189204, y: -1.7109313}
-      - {x: 1.583587, y: 0.018815331}
-      - {x: 1.0119694, y: 1.6336374}
-  m_UseDelaunayMesh: 0
+  serializedVersion: 2
+  m_Size: {x: 1.3544166, y: 1.5827277}
+  m_EdgeRadius: 0
 --- !u!114 &-3447239918155967724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,7 +191,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScrip: {fileID: 0}
   weaponPos: {x: 0, y: 0}
-  weaponHitSpeed: 5
+  weaponHitSpeed: 1
+  maxSpinTime: 2
+  hitTick: 0.5
+  flightThrust: 8
 --- !u!82 &340806612657837384
 AudioSource:
   m_ObjectHideFlags: 0

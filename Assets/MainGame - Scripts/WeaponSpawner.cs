@@ -7,28 +7,36 @@ public class WeaponSpawner : MonoBehaviour
 {
     public GameObject cannon;
     public GameObject wrench;
+    public GameObject spear;
     public StatHandler stat;
-    
+
     // Start is called before the first frame update
     private void OnEnable()
     {
-        if (ChoiceCarrier.ChosenWeapon == MenuScript.Weapon.Wrench)
+        switch (ChoiceCarrier.ChosenWeapon)
         {
-            GameObject weaponClone = Instantiate(wrench);
-            weaponClone.transform.SetParent(GameObject.Find("Player").transform, false);
-            stat.weapon = weaponClone.GetComponent<WeaponScript>();
-        }
-        else if (ChoiceCarrier.ChosenWeapon == MenuScript.Weapon.Cannon)
-        {
-            GameObject weaponClone = Instantiate(cannon);
-            weaponClone.transform.SetParent(GameObject.Find("Player").transform, false);
-            stat.weapon = weaponClone.GetComponent<WeaponScript>();
+            case (MenuScript.Weapon.Wrench):
+                GameObject weaponCloneW = Instantiate(wrench);
+                weaponCloneW.transform.SetParent(GameObject.Find("Player").transform, false);
+                stat.weapon = weaponCloneW.GetComponent<WeaponScript>();
+                break;
+
+            case (MenuScript.Weapon.Cannon):
+                GameObject weaponCloneC = Instantiate(cannon);
+                weaponCloneC.transform.SetParent(GameObject.Find("Player").transform, false);
+                stat.weapon = weaponCloneC.GetComponent<WeaponScript>();
+                break;
+            case (MenuScript.Weapon.Spear):
+                GameObject weaponCloneS = Instantiate(spear);
+                weaponCloneS.transform.SetParent(GameObject.Find("Player").transform, false);
+                stat.weapon = weaponCloneS.GetComponent<WeaponScript>();
+                break;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

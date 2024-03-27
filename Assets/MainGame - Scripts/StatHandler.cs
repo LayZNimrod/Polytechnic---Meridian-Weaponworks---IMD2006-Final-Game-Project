@@ -36,6 +36,9 @@ public class StatHandler : MonoBehaviour
             case (MenuScript.Weapon.Wrench):
                 WeaponDamage = 3;
                 break;
+            case (MenuScript.Weapon.Spear):
+                WeaponDamage = 3;
+                break;
         }
 
         //Choice for element set to text
