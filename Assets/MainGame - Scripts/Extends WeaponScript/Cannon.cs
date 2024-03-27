@@ -5,9 +5,9 @@ using UnityEngine;
 public class Cannon : WeaponScript
 {
     public CannonProj proj;
-    [SerializeField] int cannonPushback = 0;
+    [SerializeField] public int cannonPushback = 0;
 
-    protected override void Attack()// remember to add player stun and 
+    protected override void Attack()
     {
         if (weaponTimer == 0)
         {
