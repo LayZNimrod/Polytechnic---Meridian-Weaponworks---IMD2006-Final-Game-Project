@@ -43,6 +43,12 @@ public class PlayerScript : MonoBehaviour
     public float airDragX;
     private float coyoteTime;
 
+    bool CanMove = true;
+
+    public void ToggleMove()
+    {
+        CanMove = !CanMove;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -92,36 +98,41 @@ public class PlayerScript : MonoBehaviour
             coyoteTime += Time.deltaTime;
         }
 
-        moveVector = movement.ReadValue<Vector2>().normalized;
-
-        Vector2 lookVector = aim.ReadValue<Vector2>();
-        Vector2 mouseWorldVector = Camera.main.ScreenToWorldPoint(lookVector);
-        weaponPos = new Vector2(mouseWorldVector.x - transform.position.x, mouseWorldVector.y - transform.position.y);
-        weaponPos.Normalize();
-
-        playerMove = new Vector3(moveVector.x, 0, 0);
-        velX = rb.velocity.x;
-        velY = rb.velocity.y;
-
-        if (velX > maxSpeed || velX < -maxSpeed)
+        if (CanMove)
         {
-            move = false;
-        }
-        else
-        {
-            move = true;
+            moveVector = movement.ReadValue<Vector2>().normalized;
+
+            Vector2 lookVector = aim.ReadValue<Vector2>();
+            Vector2 mouseWorldVector = Camera.main.ScreenToWorldPoint(lookVector);
+            weaponPos = new Vector2(mouseWorldVector.x - transform.position.x, mouseWorldVector.y - transform.position.y);
+            weaponPos.Normalize();
+
+            playerMove = new Vector3(moveVector.x, 0, 0);
+            velX = rb.velocity.x;
+            velY = rb.velocity.y;
+
+            if (velX > maxSpeed || velX < -maxSpeed)
+            {
+                move = false;
+            }
+            else
+            {
+                move = true;
+            }
+
+            if (velY < 0)
+            {
+                isJumping = false;
+            }
+
+            velY = jumpForce;
+            playerMove.y = velY;
+
+            velX = moveVector.x * moveSpeed;
+            playerMove.x = velX;
         }
 
-        if (velY < 0)
-        {
-            isJumping = false;
-        }
-        
-        velY = jumpForce;
-        playerMove.y = velY;
 
-        velX = moveVector.x * moveSpeed;
-        playerMove.x =velX;
     }
 
     private void FixedUpdate()
@@ -131,7 +142,7 @@ public class PlayerScript : MonoBehaviour
         //    rb.AddForce(Vector2.up * playerMove.y * Time.fixedDeltaTime, ForceMode2D.Force);
         //}
 
-        if (move)
+        if (move && CanMove)
         {
             rb.AddForce(Vector2.right * playerMove.x * Time.fixedDeltaTime, ForceMode2D.Force);
         }
