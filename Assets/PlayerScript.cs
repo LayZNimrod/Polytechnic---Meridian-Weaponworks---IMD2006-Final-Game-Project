@@ -148,7 +148,7 @@ public class PlayerScript : MonoBehaviour
         }
 
         // adding drag
-        if (CheckOnGround() && (moveVector.x < 0.01 && moveVector.x > -0.01))
+        if (onGround && (moveVector.x < 0.01 && moveVector.x > -0.01))
         {
             rb.AddForce(Vector2.right * -rb.velocity.x * Time.fixedDeltaTime * dragX, ForceMode2D.Force);
         }
@@ -177,7 +177,7 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
-    private Boolean CheckOnGround()
+    public Boolean CheckOnGround()
     {
         Vector3 temp = new Vector3(rayCastXDistFromOrigin, rayCastYDistFromOrigin, 0);
         RaycastHit2D hit = Physics2D.Raycast(transform.position + temp, Vector2.right, rayCastLenth);

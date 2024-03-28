@@ -102,6 +102,6 @@ public class Wrench : WeaponScript
             touchedEnemy.TakeDamage();
             attackTime += Time.deltaTime;
         }
-        playerRB.AddForce(new Vector2(playerScrip.weaponPos.x, playerScrip.weaponPos.y) * flightThrust * Time.deltaTime);
+        playerRB.AddForce(new Vector2(playerScrip.weaponPos.x * 1.5f, playerScrip.weaponPos.y) * flightThrust * Time.deltaTime);
     }
 }
