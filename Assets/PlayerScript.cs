@@ -57,6 +57,7 @@ public class PlayerScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         weaponCont = GetComponentInChildren<WeaponScript>();
+        UnStunPlayer();
     }
 
     private void Awake()
