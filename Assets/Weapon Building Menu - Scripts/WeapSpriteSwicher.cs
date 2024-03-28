@@ -6,6 +6,8 @@ public class WeapSpriteSwicher : MonoBehaviour
 {
     public Sprite WrenchSprite;
     public Sprite CannonSprite;
+    public Sprite SpearSprite;
+
     //public Sprite SpearSprite;
 
     public MenuScript script;
@@ -28,6 +30,11 @@ public class WeapSpriteSwicher : MonoBehaviour
             case MenuScript.Weapon.Cannon:
                 {
                     this.gameObject.GetComponent<SpriteRenderer>().sprite = CannonSprite;
+                    break;
+                }
+            case MenuScript.Weapon.Spear:
+                {
+                    this.gameObject.GetComponent<SpriteRenderer>().sprite = SpearSprite;
                     break;
                 }
         }

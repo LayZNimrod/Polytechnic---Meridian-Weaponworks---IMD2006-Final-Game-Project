@@ -13,7 +13,7 @@ public class ProjMoveRight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.right*25;
+        gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.right*15;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -433,12 +433,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08b6f76590d0c9347b4edceef026c922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitSoundSource: {fileID: -6915306716386852928}
-  hitSound: {fileID: 8300000, guid: 5abc7d1e2b661f74dae8182942db41d4, type: 3}
-  volume: 0.2
   StatHandler: {fileID: 0}
   EnemyHP: 10
   EnemyMaxHP: 10
+  EnemyHitSFX: {fileID: 4054223411292134189, guid: d69d86864dd567243a67ff893f4bf5c3, type: 3}
   hPBar: {fileID: 0}
 --- !u!114 &5296759254313169093
 MonoBehaviour:
