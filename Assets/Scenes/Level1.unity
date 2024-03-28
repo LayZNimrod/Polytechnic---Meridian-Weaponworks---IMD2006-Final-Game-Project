@@ -10100,6 +10100,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 476064837}
     - target: {fileID: 5919303728850620391, guid: 4b327c637160e514aa662ce4fb4bef32, type: 3}
+      propertyPath: hurtSound
+      value: 
+      objectReference: {fileID: 8300000, guid: f2747dfa378e1264ca2d56bfe9f234f3, type: 3}
+    - target: {fileID: 5919303728850620391, guid: 4b327c637160e514aa662ce4fb4bef32, type: 3}
       propertyPath: GameEndText
       value: 
       objectReference: {fileID: 890413513}
@@ -10147,6 +10151,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7519583611939719077, guid: 4b327c637160e514aa662ce4fb4bef32, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f2747dfa378e1264ca2d56bfe9f234f3, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
