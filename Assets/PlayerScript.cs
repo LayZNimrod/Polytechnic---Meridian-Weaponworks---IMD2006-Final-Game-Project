@@ -25,6 +25,7 @@ public class PlayerScript : MonoBehaviour
     private InputAction movement;
     private InputAction jump;
     private InputAction aim;
+    private InputAction fire;
 
     private bool isJumping = false;
     private bool move = false;
@@ -43,7 +44,9 @@ public class PlayerScript : MonoBehaviour
     public float airDragX;
     private float coyoteTime;
 
-    bool CanMove = true;
+    private bool CanMove = true;
+
+    private bool weaponFired;
 
     public void ToggleMove()
     {
@@ -73,6 +76,8 @@ public class PlayerScript : MonoBehaviour
         jump.canceled += JumpCancelled;
         aim = playerCont.Player.Look;
         aim.Enable();
+        fire = playerCont.Player.Fire;
+        fire.performed += Fire;
     }
 
     private void OnDisable()
@@ -120,7 +125,7 @@ public class PlayerScript : MonoBehaviour
                 move = true;
             }
 
-            if (velY < 0)
+            if (velY < 0 || weaponFired)
             {
                 isJumping = false;
             }
@@ -130,6 +135,8 @@ public class PlayerScript : MonoBehaviour
 
             velX = moveVector.x * moveSpeed;
             playerMove.x = velX;
+
+            weaponFired = false;
         }
 
 
@@ -204,5 +211,9 @@ public class PlayerScript : MonoBehaviour
         movement.Enable();
         jump.Enable();
         aim.Enable();
+    }
+    private void Fire(InputAction.CallbackContext context)
+    {
+        weaponFired = true;
     }
 }
