@@ -355,6 +355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireSprite: {fileID: 21300000, guid: 800fd0db81eb29344b2d3d135464e31b, type: 3}
   LightningSprite: {fileID: 21300000, guid: 5ba3d084e5fbb724d981f7f81108934f, type: 3}
+  ReinforcedSprite: {fileID: 21300000, guid: 1e415b6cf4ae0f84eaa4e0a85720d838, type: 3}
   script: {fileID: 1946041945}
 --- !u!1 &159066134
 GameObject:
