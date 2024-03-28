@@ -11,7 +11,7 @@ public class Wrench : WeaponScript
     private float attackLerp = 0;
     private float attackTime = 0;
     [SerializeField] private float hitTick;
-    [SerializeField] private int flightThrust;
+    [SerializeField] public int flightThrust;
 
     // weaponTimer for wrench works completly differently
 
@@ -29,7 +29,7 @@ public class Wrench : WeaponScript
             attackTime = 0;
         }
 
-        attackLerp = Mathf.Lerp(0, 360, attackHeld * 2);
+        attackLerp = Mathf.Lerp(0, 360, attackHeld * 2.5f);
         if (attackLerp >= 360)
         {
             attackHeld = 0;

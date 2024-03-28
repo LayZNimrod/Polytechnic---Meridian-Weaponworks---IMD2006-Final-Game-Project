@@ -203,13 +203,13 @@ public class PlayerScript : MonoBehaviour
     {
         movement.Disable();
         jump.Disable();
-        aim.Disable();
+        fire.Disable();
     }
     public void UnStunPlayer()
     {
         movement.Enable();
         jump.Enable();
-        aim.Enable();
+        fire.Enable();
     }
 
     private void Fire(InputAction.CallbackContext context)
