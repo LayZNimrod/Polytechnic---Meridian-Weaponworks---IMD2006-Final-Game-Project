@@ -43,7 +43,7 @@ public class MenuScript : MonoBehaviour
                 {
                     chosenWeapon = Weapon.Wrench;
                     SelectedWeapon.text = "Wrench";
-                    SelectedWeaponDesc.text = "Melee, average damage, faster attack speed. Hold Attack to spin it around you!";
+                    SelectedWeaponDesc.text = "Melee, average damage, faster attack speed. Hold Attack to spin it and glide!";
                     break;
                 }
             case Weapon.Wrench:

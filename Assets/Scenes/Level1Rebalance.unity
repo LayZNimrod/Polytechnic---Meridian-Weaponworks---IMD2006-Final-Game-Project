@@ -10273,8 +10273,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cannon: {fileID: 6768832261655851475, guid: 54af5bb1295949a45bd8b82a7de67112, type: 3}
   wrench: {fileID: 6768832261655851475, guid: f21080e82cb70dd4f8490caf161d6559, type: 3}
+  spear: {fileID: 0}
   stat: {fileID: 0}
-  attackCooldownBar: {fileID: 0}
 --- !u!4 &1077932140
 Transform:
   m_ObjectHideFlags: 0
@@ -10444,7 +10444,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6413277687552055184, guid: 4b327c637160e514aa662ce4fb4bef32, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.24
+      value: 17.34
       objectReference: {fileID: 0}
     - target: {fileID: 6413277687552055184, guid: 4b327c637160e514aa662ce4fb4bef32, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14441,7 +14441,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.049, y: 0.161}
+  m_AnchoredPosition: {x: 0.074, y: 0.161}
   m_SizeDelta: {x: 219.0327, y: 270.4044}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1601184128
@@ -14520,7 +14520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Slider: {fileID: 764296787}
-  WeaponSpawner: {fileID: 0}
+  WeaponScript: {fileID: 0}
 --- !u!1 &1605520430
 GameObject:
   m_ObjectHideFlags: 0

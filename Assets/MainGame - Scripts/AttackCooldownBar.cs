@@ -15,6 +15,6 @@ public class AttackCooldownBar : MonoBehaviour
     public void Update()
     {
         Debug.Log(WeaponScript);
-        updateStamina(WeaponScript.weaponTimer, WeaponScript.weaponHitSpeed);
+        //updateStamina(WeaponScript.weaponTimer, WeaponScript.weaponHitSpeed);
     }
 }
