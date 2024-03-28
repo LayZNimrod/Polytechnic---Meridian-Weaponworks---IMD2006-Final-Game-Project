@@ -194,10 +194,10 @@ MonoBehaviour:
   weaponTimer: 0
   weaponHitSpeed: 2
   hitTick: 0.5
-  flightThrust: 8
   spinSoundSource: {fileID: 340806612657837384}
   spinSound: {fileID: 8300000, guid: 45444ec0740eced42b9463e233eeaf79, type: 3}
   volume: 0.3
+  flightThrust: 8
 --- !u!82 &340806612657837384
 AudioSource:
   m_ObjectHideFlags: 0

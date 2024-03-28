@@ -65,7 +65,7 @@ public class MenuScript : MonoBehaviour
                 {
                     chosenElement = Element.Lightning;
                     SelectedElement.text = "Electified";
-                    SelectedElementDesc.text = "3HP, lower damage, Faster attack and movement speed, lower jump height";
+                    SelectedElementDesc.text = "3HP, lower damage, Faster movement and attack speed, lower jump height";
 
                     break;
                 }
@@ -73,7 +73,7 @@ public class MenuScript : MonoBehaviour
                 {
                     chosenElement = Element.Reinforced;
                     SelectedElement.text = "Reinforced";
-                    SelectedElementDesc.text = "5HP, highest damage, lower movement and attack speed, lower jump height";
+                    SelectedElementDesc.text = "5HP, highest damage and atack power, lower movement / attack speed, lower jump height";
 
                     break;
                 }
