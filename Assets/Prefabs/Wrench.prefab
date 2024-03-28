@@ -191,8 +191,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScrip: {fileID: 0}
   weaponPos: {x: 0, y: 0}
-  weaponHitSpeed: 1
-  maxSpinTime: 2
+  weaponTimer: 0
+  weaponHitSpeed: 2
   hitTick: 0.5
   flightThrust: 8
 --- !u!82 &340806612657837384

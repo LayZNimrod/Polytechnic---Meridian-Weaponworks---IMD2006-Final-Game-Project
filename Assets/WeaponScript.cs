@@ -16,8 +16,8 @@ public class WeaponScript : MonoBehaviour
     protected float rotate;
     public Vector2 weaponPos;
 
-    protected float weaponTimer = 0;
-    public float weaponHitSpeed = 5;
+    public float weaponTimer = 0;
+    public float weaponHitSpeed = 0;
 
 
     // Start is called before the first frame update
@@ -25,6 +25,7 @@ public class WeaponScript : MonoBehaviour
     {
         playerScrip = PlayerScript.Instance;
         playerRB = GetComponentInParent<Rigidbody2D>();
+        AttackCooldownBar.Instance.WeaponScript = this;
     }
 
     private void OnEnable()

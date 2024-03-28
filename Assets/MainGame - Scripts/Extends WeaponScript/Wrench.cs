@@ -7,7 +7,6 @@ public class Wrench : WeaponScript
 {
     private float attackHeld = 0;
 
-    [SerializeField] private float maxSpinTime = 0;
     private bool isWeaponTouchEnemy;
     private float attackLerp = 0;
     private float attackTime = 0;
@@ -45,9 +44,9 @@ public class Wrench : WeaponScript
             weaponTimer += Time.deltaTime * 2;
         }
 
-        if (weaponTimer > maxSpinTime)
+        if (weaponTimer > weaponHitSpeed)
         {
-            weaponTimer = maxSpinTime;
+            weaponTimer = weaponHitSpeed;
         }
         if (weaponTimer <= 0)
         {
@@ -102,6 +101,6 @@ public class Wrench : WeaponScript
             touchedEnemy.TakeDamage();
             attackTime += Time.deltaTime;
         }
-        playerRB.AddForce(new Vector2(playerScrip.weaponPos.x, playerScrip.weaponPos.y) * flightThrust * Time.deltaTime);
+        playerRB.AddForce(new Vector2(playerScrip.weaponPos.x * 1.5f, playerScrip.weaponPos.y) * flightThrust * Time.deltaTime);
     }
 }
