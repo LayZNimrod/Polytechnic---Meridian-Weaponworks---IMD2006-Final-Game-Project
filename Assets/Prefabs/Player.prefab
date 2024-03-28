@@ -710,7 +710,7 @@ MonoBehaviour:
   PlayerScript: {fileID: 8525552858604338965}
   hPBar: {fileID: 0}
   hurtSoundSource: {fileID: 7519583611939719077}
-  hurtSound: {fileID: 8300000, guid: 717bb24388c160443a7110e311589223, type: 3}
+  hurtSound: {fileID: 8300000, guid: f2747dfa378e1264ca2d56bfe9f234f3, type: 3}
   volume: 0.5
 --- !u!82 &7519583611939719077
 AudioSource:
@@ -722,7 +722,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 717bb24388c160443a7110e311589223, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f2747dfa378e1264ca2d56bfe9f234f3, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
