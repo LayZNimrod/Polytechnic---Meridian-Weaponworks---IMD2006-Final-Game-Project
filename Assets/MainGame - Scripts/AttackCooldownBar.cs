@@ -5,8 +5,14 @@ using UnityEngine.UI;
 
 public class AttackCooldownBar : MonoBehaviour
 {
+    public static AttackCooldownBar Instance;
     [SerializeField] private Slider Slider;
     public WeaponScript WeaponScript;
+
+    private void OnEnable()
+    {
+        Instance = this;
+    }
     public void updateStamina(float STCurrent, float STMax)
     {
         Slider.value = STCurrent / STMax;
@@ -14,7 +20,6 @@ public class AttackCooldownBar : MonoBehaviour
 
     public void Update()
     {
-        Debug.Log(WeaponScript);
-        //updateStamina(WeaponScript.weaponTimer, WeaponScript.weaponHitSpeed);
+        updateStamina(WeaponScript.weaponTimer, WeaponScript.weaponHitSpeed);
     }
 }
