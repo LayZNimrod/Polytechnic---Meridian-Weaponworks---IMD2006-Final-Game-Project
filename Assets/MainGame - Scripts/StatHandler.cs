@@ -80,6 +80,10 @@ public class StatHandler : MonoBehaviour
                 {
                     (weapon as Spear).spearPushback = 10;
                 }
+                if (weapon as Wrench != null) // https://forum.unity.com/threads/check-if-a-gameobject-has-a-certain-script.88484/
+                {
+                    (weapon as Wrench).flightThrust = 20;
+                }
                 break;
         }
 
