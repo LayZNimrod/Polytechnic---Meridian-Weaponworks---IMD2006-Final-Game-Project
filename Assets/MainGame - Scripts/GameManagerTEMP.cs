@@ -19,6 +19,9 @@ public class GameManagerTEMP : MonoBehaviour
             case (MenuScript.Weapon.Wrench):
                 SWeapText.text = "Wrench";
                 break;
+            case (MenuScript.Weapon.Spear):
+                SWeapText.text = "Spear";
+                break;
         }
 
         //Choice for element set to text

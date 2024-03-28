@@ -195,6 +195,9 @@ MonoBehaviour:
   weaponHitSpeed: 2
   hitTick: 0.5
   flightThrust: 8
+  spinSoundSource: {fileID: 340806612657837384}
+  spinSound: {fileID: 8300000, guid: 45444ec0740eced42b9463e233eeaf79, type: 3}
+  volume: 0.3
 --- !u!82 &340806612657837384
 AudioSource:
   m_ObjectHideFlags: 0
@@ -205,7 +208,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f6c433639e03569439d240e03ca03e56, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 45444ec0740eced42b9463e233eeaf79, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

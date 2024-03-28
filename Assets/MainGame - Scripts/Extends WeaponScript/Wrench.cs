@@ -11,7 +11,11 @@ public class Wrench : WeaponScript
     private float attackLerp = 0;
     private float attackTime = 0;
     [SerializeField] private float hitTick;
+    public AudioSource spinSoundSource;
+    public AudioClip spinSound;
+    public float volume;
     [SerializeField] public int flightThrust;
+
 
     // weaponTimer for wrench works completly differently
 
@@ -33,6 +37,7 @@ public class Wrench : WeaponScript
         if (attackLerp >= 360)
         {
             attackHeld = 0;
+            spinSoundSource.PlayOneShot(spinSound, volume);
         }
 
         if (fire.IsInProgress() && weaponTimer > 0)
@@ -84,7 +89,7 @@ public class Wrench : WeaponScript
 
     protected override void Fire(InputAction.CallbackContext context)
     {
-
+        spinSoundSource.PlayOneShot(spinSound, volume);
     }
 
     protected override void FireCancel(InputAction.CallbackContext context)
