@@ -46,6 +46,7 @@ public class PlayerScript : MonoBehaviour
 
     bool CanMove = true;
     private bool weaponFiredInAir = false;
+    public bool playerStun;
 
     public void ToggleMove()
     {
@@ -202,10 +203,12 @@ public class PlayerScript : MonoBehaviour
 
     public void StunPlayer()
     {
+        StartCoroutine(PlayerAnimate.Instance.stunBlink());
         movement.Disable();
         jump.Disable();
         fire.Disable();
     }
+
     public void UnStunPlayer()
     {
         movement.Enable();
