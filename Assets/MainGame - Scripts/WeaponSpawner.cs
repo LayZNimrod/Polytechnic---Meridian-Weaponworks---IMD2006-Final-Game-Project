@@ -10,7 +10,7 @@ public class WeaponSpawner : MonoBehaviour
     public GameObject spear;
     public StatHandler stat;
 
-    // Start is called before the first frame update
+        
     private void OnEnable()
     {
         switch (ChoiceCarrier.ChosenWeapon)
