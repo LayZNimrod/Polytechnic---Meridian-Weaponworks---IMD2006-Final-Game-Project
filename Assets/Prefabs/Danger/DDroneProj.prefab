@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4781952875355975520}
   - component: {fileID: 7636878138339923532}
-  - component: {fileID: 3175223497849169718}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -85,21 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!111 &3175223497849169718
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 548035878377259173}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: d01b5631d9a60d2489f3dcb401beb45a, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &2650140515139729138
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,7 +96,6 @@ GameObject:
   - component: {fileID: 3486239217344801099}
   - component: {fileID: -8855369708826760890}
   - component: {fileID: -1386642174310848450}
-  - component: {fileID: 335461780280066157}
   m_Layer: 0
   m_Name: DDroneProj
   m_TagString: Danger
@@ -210,24 +193,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 838f30720dc967c46b5dd406a70e0e08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &335461780280066157
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2650140515139729138}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 212a8980c56836c479c30a1268011642, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
