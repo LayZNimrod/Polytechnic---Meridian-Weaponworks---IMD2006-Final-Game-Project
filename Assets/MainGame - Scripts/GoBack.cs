@@ -9,6 +9,7 @@ public class GoBack : MonoBehaviour
     public void BuildNewWeapon()
     {
         SceneManager.LoadScene("WeaponBuildingUI");
+        MenuScript.Weapon ChosenWeapon = ChoiceCarrier.ChosenWeapon;
+        MenuScript.Element ChosenElement = ChoiceCarrier.ChosenElement;
     }
-    // Update is called once per frame
 }

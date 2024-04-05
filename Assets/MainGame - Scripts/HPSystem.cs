@@ -80,8 +80,15 @@ public class HPSystem : MonoBehaviour
         if (collision.tag == "End")
         {
             GameEndText.text = "ROOM COMPLETE!";
-            StartCoroutine(BackToBuild());
+            StartCoroutine(BackToLevelSelect());
         }
+    }
+
+    IEnumerator BackToLevelSelect()
+    {
+        PlayerScript.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene("LevelSelectMenu");
     }
 
     IEnumerator BackToBuild()
