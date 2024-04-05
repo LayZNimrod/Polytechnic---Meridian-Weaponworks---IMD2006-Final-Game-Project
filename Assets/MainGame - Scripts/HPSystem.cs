@@ -12,11 +12,12 @@ public class HPSystem : MonoBehaviour
     public int HPCount = 0;
     public int HPMax = 0;
     public PlayerScript PlayerScript;
-    private double invulnTimer;
+    public double invulnTimer;
     [SerializeField] FloatingHPBar hPBar;
     public AudioSource hurtSoundSource;
     public AudioClip hurtSound;
     public float volume;
+    public double maxInvulnTimer;
 
     private void OnEnable()
     {
@@ -38,9 +39,10 @@ public class HPSystem : MonoBehaviour
             invulnTimer += Time.deltaTime;
             //hPBar.switchGrey();
         }
-        if (invulnTimer > 2)
+        if (invulnTimer > maxInvulnTimer)
         {
             invulnTimer = 0;
+            PlayerAnimate.Instance.spriteBlinkToggle();
         } else if (invulnTimer > 0.3)
         {
             PlayerScript.Instance.UnStunPlayer();

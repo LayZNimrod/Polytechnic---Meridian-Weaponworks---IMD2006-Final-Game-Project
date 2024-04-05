@@ -15,7 +15,7 @@ public class Spear : WeaponScript
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "Ground")
+        if (collision.tag == "Ground" || collision.tag == "FallThrough")
         {
             isWeaponTouchGround = true;
         }
@@ -29,7 +29,7 @@ public class Spear : WeaponScript
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Ground")
+        if (collision.tag == "Ground" || collision.tag == "FallThrough")
         {
             isWeaponTouchGround = false;
         }
