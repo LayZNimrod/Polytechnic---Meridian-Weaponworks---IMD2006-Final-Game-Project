@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9845476ca67450c4bb6c742752b29d78
+guid: 9326c5d1aca5b7d439208591bd71b86f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -81,6 +81,19 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -106,24 +119,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Drone idle_0
+      name: EnemyProj_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d55392f79ce26b140abeb15a05aacd02
-      internalID: 1221918976
+      spriteID: 5380e87e7300a514ea3e7aa737a9b2cd
+      internalID: -1370781421
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Drone idle_1
+      name: EnemyProj_1
       rect:
         serializedVersion: 2
         x: 32
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2583ba9a023cfdd4ab56facd1f41d4dd
-      internalID: 942915625
+      spriteID: 18c914e18a79bd844821deab911ca849
+      internalID: 1836720568
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Drone idle_2
+      name: EnemyProj_2
       rect:
         serializedVersion: 2
         x: 64
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 452daaad901dc8b4698f241716ac68d6
-      internalID: 1828935954
+      spriteID: 331976a8a6dd3b14d81317a804a9ae08
+      internalID: 1567203076
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Drone idle_3
+      name: EnemyProj_3
       rect:
         serializedVersion: 2
         x: 96
@@ -200,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd941632a798d134f9a4ec19d130fcb4
-      internalID: 1098253855
+      spriteID: 0529e7d94bb73cd4abb1187effc73391
+      internalID: 1072796137
       vertices: []
       indices: 
       edges: []
@@ -217,10 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Drone idle_0: 1221918976
-      Drone idle_1: 942915625
-      Drone idle_2: 1828935954
-      Drone idle_3: 1098253855
+      EnemyProj_0: -1370781421
+      EnemyProj_1: 1836720568
+      EnemyProj_2: 1567203076
+      EnemyProj_3: 1072796137
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
