@@ -32,13 +32,22 @@ public class WeaponScript : MonoBehaviour
     {
         Instance = this;
         // fire = player.playerCont.Player.Fire; 
+        StartCoroutine(EnableFire());
+
+    }
+
+    IEnumerator EnableFire()
+    {
+        while (PlayerScript.Instance == null)
+        {
+        yield return null;
+        }
         fire = PlayerScript.Instance.playerCont.Player.Fire;
         fire.Enable();
         fire.performed += Fire;
         fire.canceled += FireCancel;
+        
     }
-
-
 
     private void OnDisable()
     {
