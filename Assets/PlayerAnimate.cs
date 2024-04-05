@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class PlayerAnimate : MonoBehaviour
 {
+    public static PlayerAnimate Instance;
     public GameObject player;
     private Rigidbody2D playerRB;
     private PlayerScript playerScript;
     public Animator animator;
     SpriteRenderer spr;
+
+    private bool spriteBlink = false;
     // Start is called before the first frame update
     void Start()
     {
+        Instance = this;
         playerRB = player.GetComponent<Rigidbody2D>();
         spr = GetComponent<SpriteRenderer>();
         playerScript = player.GetComponent<PlayerScript>();
@@ -41,5 +45,21 @@ public class PlayerAnimate : MonoBehaviour
         animator.SetBool("In_Air", true);
         }
         
+    }
+    public IEnumerator stunBlink()
+    {
+        spriteBlink = true;
+        while (spriteBlink)
+        {
+            spr.enabled = !spr.enabled;
+            yield return new WaitForSeconds(.2f);
+        }
+        spr.enabled = true;
+        spriteBlink = false;
+    }
+
+    public void spriteBlinkToggle()
+    {
+        spriteBlink = !spriteBlink;
     }
 }

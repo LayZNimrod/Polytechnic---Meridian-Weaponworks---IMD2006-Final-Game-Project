@@ -678,6 +678,7 @@ MonoBehaviour:
   jumpForce: 5
   dragX: 5
   airDragX: 0.8
+  playerStun: 0
 --- !u!114 &3330375819381767166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -708,10 +709,12 @@ MonoBehaviour:
   HPCount: 4
   HPMax: 0
   PlayerScript: {fileID: 8525552858604338965}
+  invulnTimer: 0
   hPBar: {fileID: 0}
   hurtSoundSource: {fileID: 7519583611939719077}
   hurtSound: {fileID: 8300000, guid: f2747dfa378e1264ca2d56bfe9f234f3, type: 3}
   volume: 0.5
+  maxInvulnTimer: 2
 --- !u!82 &7519583611939719077
 AudioSource:
   m_ObjectHideFlags: 0
