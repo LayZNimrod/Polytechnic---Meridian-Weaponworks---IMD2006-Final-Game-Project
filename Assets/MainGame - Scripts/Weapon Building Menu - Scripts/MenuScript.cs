@@ -1,6 +1,8 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,9 +14,9 @@ public class MenuScript : MonoBehaviour
     public TextMeshProUGUI SelectedElementDesc = null;
     public enum Weapon
     {
-        Wrench,
+        Spear,
         Cannon,
-        Spear
+        Wrench
     }
     public Weapon chosenWeapon;
     public enum Element
@@ -26,6 +28,11 @@ public class MenuScript : MonoBehaviour
     }
     public Element chosenElement;
 
+    public LevelSelect.LevelChoice ChosenLevel;
+    private void Start()
+    {
+        ChosenLevel = LevelChoiceCarrier.Chosen;
+    }
     // Choose weapon
     public void SwitchWeapon()
     {
@@ -90,19 +97,38 @@ public class MenuScript : MonoBehaviour
 
     public void CompleteWeapon()
     {
-        SceneManager.LoadScene("Level1");
-        //carry choices to main scene
         ChoiceCarrier.ChosenWeapon = chosenWeapon;
         ChoiceCarrier.ChosenElement = chosenElement;
+        //carry choices to main scene
+
+        SceneManager.LoadScene((int)LevelChoiceCarrier.Chosen + 1);
+        switch (ChosenLevel)
+        {
+            case LevelSelect.LevelChoice.TutorialScene:
+                {
+                    SceneManager.LoadScene("TutorialScene");
+                    break;
+                }
+            case LevelSelect.LevelChoice.Level1:
+                {
+                    SceneManager.LoadScene("Level1");
+                    break;
+                }
+            case LevelSelect.LevelChoice.Level2:
+                {
+                    SceneManager.LoadScene("Level2");
+                    break;
+                }
+        }
     }
 
-    public void EnterTutorial()
-    {
-        SceneManager.LoadScene("TutorialScene");
-        //carry choices to main scene
-        ChoiceCarrier.ChosenWeapon = chosenWeapon;
-        ChoiceCarrier.ChosenElement = chosenElement;
-    }
+    //public void EnterTutorial()
+    //{
+    //    SceneManager.LoadScene("TutorialScene");
+    //    //carry choices to main scene
+    //    ChoiceCarrier.ChosenWeapon = chosenWeapon;
+    //    ChoiceCarrier.ChosenElement = chosenElement;
+    //}
 
     public void LoadMainMenu()
     {
@@ -111,5 +137,12 @@ public class MenuScript : MonoBehaviour
         ChoiceCarrier.ChosenWeapon = chosenWeapon;
         ChoiceCarrier.ChosenElement = chosenElement;
     }
-    // Update is called once per frame
+
+    public void LoadLevelSelect()
+    {
+        SceneManager.LoadScene("LevelSelectMenu");
+        //carry choices to main scene
+        ChoiceCarrier.ChosenWeapon = chosenWeapon;
+        ChoiceCarrier.ChosenElement = chosenElement;
+    }
 }
