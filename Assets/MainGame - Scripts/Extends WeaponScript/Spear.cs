@@ -47,6 +47,7 @@ public class Spear : WeaponScript
     {
         if (weaponTimer == 0)
         {
+            anim.SetTrigger("Active");
             attackSoundSource.PlayOneShot(attackSound, volume);
             if (isWeaponTouchGround)
             {
@@ -56,7 +57,6 @@ public class Spear : WeaponScript
             {
                 touchedEnemy.TakeDamage();
             }
-            anim.SetTrigger("Active");
             weaponTimer = Time.deltaTime;
             anim.SetTrigger("Inactive");
         }
