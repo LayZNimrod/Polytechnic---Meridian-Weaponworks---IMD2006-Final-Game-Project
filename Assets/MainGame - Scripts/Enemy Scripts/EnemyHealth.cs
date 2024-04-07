@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class EnemyHealth : MonoBehaviour
     public EnemyHitSFX EnemyHitSFX;
     [SerializeField] FloatingHPBar hPBar;
     public KillCount KillCount;
+    public AudioClip sound;
+    public GameObject AudLocation;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +28,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage()
     {
+        AudioSource.PlayClipAtPoint(sound, transform.position);
         EnemyHP = EnemyHP - StatHandler.TotalDamage;
         hPBar.updateHP(EnemyHP, EnemyMaxHP);
         if (EnemyHP <= 0)
@@ -31,6 +36,5 @@ public class EnemyHealth : MonoBehaviour
             KillCount.IncreaseKillCount(); 
             Destroy(gameObject);
         }
-        //EnemyHitSFX.playenemySFX();
     }
 }
