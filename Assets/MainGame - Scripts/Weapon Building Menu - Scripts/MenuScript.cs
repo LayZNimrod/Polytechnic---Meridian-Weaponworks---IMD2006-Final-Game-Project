@@ -45,7 +45,7 @@ public class MenuScript : MonoBehaviour
                 {
                     chosenElement = Element.Lightning;
                     SelectedElement.text = "Electified";
-                    SelectedElementDesc.text = "3HP, lower damage, Faster movement and attack speed, lower jump height";
+                    SelectedElementDesc.text = "Electrify your gear, significantly boosting your movement speed, at the cost of weapon power and hp";
 
                     break;
                 }
@@ -53,7 +53,7 @@ public class MenuScript : MonoBehaviour
                 {
                     chosenElement = Element.Reinforced;
                     SelectedElement.text = "Reinforced";
-                    SelectedElementDesc.text = "5HP, highest damage and atack power, lower movement / attack speed, lower jump height";
+                    SelectedElementDesc.text = "Heavier metal plating, sacrificing movement prowess for much stronger weapon power, and higher hp";
 
                     break;
                 }
@@ -61,7 +61,7 @@ public class MenuScript : MonoBehaviour
                 {
                     chosenElement = Element.Fire;
                     SelectedElement.text = "Overheated";
-                    SelectedElementDesc.text = "4HP, higher damage, normal movement and attack speed, higher jump height";
+                    SelectedElementDesc.text = "Overheat your weapon's engine, providing well rounded stats and increased jump height";
 
                     break;
                 }
@@ -73,7 +73,7 @@ public class MenuScript : MonoBehaviour
                 {
                     chosenWeapon = Weapon.Cannon;
                     SelectedWeapon.text = "Cannon";
-                    SelectedWeaponDesc.text = "Projectile, higher damage, slower attack speed. Use the knockback to your advantage!";
+                    SelectedWeaponDesc.text = "Use the high knockback to your advantage when moving!";
 
                     break;
                 }
@@ -81,14 +81,14 @@ public class MenuScript : MonoBehaviour
                 {
                     chosenWeapon = Weapon.Wrench;
                     SelectedWeapon.text = "Wrench";
-                    SelectedWeaponDesc.text = "Melee, average damage, faster attack speed. Hold Attack to spin it and glide!";
+                    SelectedWeaponDesc.text = "Hold Attack to spin it and expend stamina to glide!";
                     break;
                 }
             case Weapon.Spear:
                 {
                     chosenWeapon = Weapon.Spear;
                     SelectedWeapon.text = "Spear";
-                    SelectedWeaponDesc.text = "Melee, lower damage, faster attack speed. Attack the ground to increase velocity!";
+                    SelectedWeaponDesc.text = "Attack the ground to increase velocity / bounce around!";
                     break;
                 }
         }
