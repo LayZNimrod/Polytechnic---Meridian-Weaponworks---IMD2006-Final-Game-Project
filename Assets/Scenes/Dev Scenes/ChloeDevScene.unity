@@ -684,11 +684,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponCont: {fileID: 1295138484}
   moveSpeed: 500
-  jumpHeight: 12
-  gravity: 0
-  rayCastJumpHight: 0.02
-  rayCastDistFromOrigin: -0.5
+  rayCastLenth: 0.01
+  rayCastXDistFromOrigin: -0.4
+  rayCastYDistFromOrigin: -0.51
+  weaponPushBack: -100
+  velX: 0
   weaponPos: {x: 0, y: 0}
+  maxSpeed: 100
+  jumpForce: 0
+  dragX: 0
+  airDragX: 0
+  playerStun: 0
 --- !u!114 &81498124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -715,8 +721,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HPText: {fileID: 105192631}
+  GameEndText: {fileID: 0}
   HPCount: 3
+  HPMax: 0
   PlayerScript: {fileID: 81498123}
+  invulnTimer: 0
+  hPBar: {fileID: 0}
+  hurtSoundSource: {fileID: 0}
+  hurtSound: {fileID: 0}
+  volume: 0
+  maxInvulnTimer: 0
 --- !u!95 &81498126
 Animator:
   serializedVersion: 5
@@ -750,7 +764,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc9b4cf68160ade4486f3da6a0e062c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 81498117}
+  player: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!1 &90302125
 GameObject:
   m_ObjectHideFlags: 0
@@ -3525,8 +3540,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402f8f48b0f00f146860832a5526ab8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpiderHP: 5
+  spider: {fileID: 0}
   SpiderProj: {fileID: 2650140515139729138, guid: 067a591e3d4b9964fb7a2298b1855e7a, type: 3}
+  EnemyTell1: {fileID: 0}
+  EnemyTell2: {fileID: 0}
+  EnemyTell3: {fileID: 0}
 --- !u!61 &376052456
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3894,8 +3912,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402f8f48b0f00f146860832a5526ab8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpiderHP: 5
+  spider: {fileID: 0}
   SpiderProj: {fileID: 2650140515139729138, guid: 878e40b0cdf5965499da3031fa2f932c, type: 3}
+  EnemyTell1: {fileID: 0}
+  EnemyTell2: {fileID: 0}
+  EnemyTell3: {fileID: 0}
 --- !u!61 &386960382
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6999,8 +7020,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402f8f48b0f00f146860832a5526ab8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpiderHP: 5
+  spider: {fileID: 0}
   SpiderProj: {fileID: 2650140515139729138, guid: 878e40b0cdf5965499da3031fa2f932c, type: 3}
+  EnemyTell1: {fileID: 0}
+  EnemyTell2: {fileID: 0}
+  EnemyTell3: {fileID: 0}
 --- !u!61 &685132188
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8286,8 +8310,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402f8f48b0f00f146860832a5526ab8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpiderHP: 5
+  spider: {fileID: 0}
   SpiderProj: {fileID: 2650140515139729138, guid: 067a591e3d4b9964fb7a2298b1855e7a, type: 3}
+  EnemyTell1: {fileID: 0}
+  EnemyTell2: {fileID: 0}
+  EnemyTell3: {fileID: 0}
 --- !u!1 &843832913
 GameObject:
   m_ObjectHideFlags: 0
@@ -9685,8 +9712,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402f8f48b0f00f146860832a5526ab8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpiderHP: 5
+  spider: {fileID: 0}
   SpiderProj: {fileID: 2650140515139729138, guid: 067a591e3d4b9964fb7a2298b1855e7a, type: 3}
+  EnemyTell1: {fileID: 0}
+  EnemyTell2: {fileID: 0}
+  EnemyTell3: {fileID: 0}
 --- !u!61 &1110295505
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10716,8 +10746,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402f8f48b0f00f146860832a5526ab8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpiderHP: 5
+  spider: {fileID: 0}
   SpiderProj: {fileID: 2650140515139729138, guid: 067a591e3d4b9964fb7a2298b1855e7a, type: 3}
+  EnemyTell1: {fileID: 0}
+  EnemyTell2: {fileID: 0}
+  EnemyTell3: {fileID: 0}
 --- !u!61 &1232929849
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11385,6 +11418,90 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1265551533
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1265551535}
+  - component: {fileID: 1265551534}
+  m_Layer: 0
+  m_Name: Square
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1265551534
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265551533}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1265551535
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265551533}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 25.16, y: -32.35, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1267498429
 GameObject:
   m_ObjectHideFlags: 0
@@ -12002,9 +12119,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed8f2e6e39ecb8429f19b95c259d082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 81498123}
-  isFire: 0
-  isWeaponTouch: 0
+  playerScrip: {fileID: 0}
+  weaponPos: {x: 0, y: 0}
+  weaponTimer: 0
+  weaponHitSpeed: 0
 --- !u!1 &1354803111
 GameObject:
   m_ObjectHideFlags: 0
@@ -12573,8 +12691,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402f8f48b0f00f146860832a5526ab8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpiderHP: 5
+  spider: {fileID: 0}
   SpiderProj: {fileID: 2650140515139729138, guid: 067a591e3d4b9964fb7a2298b1855e7a, type: 3}
+  EnemyTell1: {fileID: 0}
+  EnemyTell2: {fileID: 0}
+  EnemyTell3: {fileID: 0}
 --- !u!61 &1374799654
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12777,8 +12898,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402f8f48b0f00f146860832a5526ab8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpiderHP: 5
+  spider: {fileID: 0}
   SpiderProj: {fileID: 2650140515139729138, guid: 067a591e3d4b9964fb7a2298b1855e7a, type: 3}
+  EnemyTell1: {fileID: 0}
+  EnemyTell2: {fileID: 0}
+  EnemyTell3: {fileID: 0}
 --- !u!61 &1378289365
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13141,8 +13265,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402f8f48b0f00f146860832a5526ab8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpiderHP: 5
+  spider: {fileID: 0}
   SpiderProj: {fileID: 2650140515139729138, guid: 878e40b0cdf5965499da3031fa2f932c, type: 3}
+  EnemyTell1: {fileID: 0}
+  EnemyTell2: {fileID: 0}
+  EnemyTell3: {fileID: 0}
 --- !u!61 &1468023248
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13510,8 +13637,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402f8f48b0f00f146860832a5526ab8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpiderHP: 5
+  spider: {fileID: 0}
   SpiderProj: {fileID: 2650140515139729138, guid: 878e40b0cdf5965499da3031fa2f932c, type: 3}
+  EnemyTell1: {fileID: 0}
+  EnemyTell2: {fileID: 0}
+  EnemyTell3: {fileID: 0}
 --- !u!61 &1499393141
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14628,8 +14758,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402f8f48b0f00f146860832a5526ab8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpiderHP: 5
+  spider: {fileID: 0}
   SpiderProj: {fileID: 2650140515139729138, guid: 067a591e3d4b9964fb7a2298b1855e7a, type: 3}
+  EnemyTell1: {fileID: 0}
+  EnemyTell2: {fileID: 0}
+  EnemyTell3: {fileID: 0}
 --- !u!61 &1709349114
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17222,8 +17355,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402f8f48b0f00f146860832a5526ab8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpiderHP: 5
+  spider: {fileID: 0}
   SpiderProj: {fileID: 2650140515139729138, guid: 067a591e3d4b9964fb7a2298b1855e7a, type: 3}
+  EnemyTell1: {fileID: 0}
+  EnemyTell2: {fileID: 0}
+  EnemyTell3: {fileID: 0}
 --- !u!61 &2145553430
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17412,3 +17548,4 @@ SceneRoots:
   - {fileID: 1903461818}
   - {fileID: 1378289369}
   - {fileID: 1261176098}
+  - {fileID: 1265551535}
