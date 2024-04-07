@@ -13742,10 +13742,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 5612491781920947168, guid: 8141529198c28144a9fd6759e99de6f9, type: 3}
-      propertyPath: m_HorizontalAlignment
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6903454843898775011, guid: 8141529198c28144a9fd6759e99de6f9, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
