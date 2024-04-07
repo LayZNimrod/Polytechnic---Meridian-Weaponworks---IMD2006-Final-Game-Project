@@ -10,6 +10,6 @@ public class ChoiceCarrier : MonoBehaviour
     //public static LevelSelect
 
     public static bool didWin = false;
-    public static double timeInLevel = 0;
+    public static int timeInLevel = 0;
     public static int killCount = 0;
 }

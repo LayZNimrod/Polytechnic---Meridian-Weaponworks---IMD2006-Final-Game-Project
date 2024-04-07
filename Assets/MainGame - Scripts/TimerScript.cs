@@ -11,6 +11,7 @@ public class TimerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Instance = this;
         TextMeshPro = this.GetComponent<TextMeshProUGUI>();
     }
 

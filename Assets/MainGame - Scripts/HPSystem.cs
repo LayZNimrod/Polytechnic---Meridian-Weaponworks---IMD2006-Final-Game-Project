@@ -78,6 +78,8 @@ public class HPSystem : MonoBehaviour
                 HPCount = 0;
                 GameEndText.text = "YOU DIED";
                 ChoiceCarrier.didWin = false;
+                ChoiceCarrier.timeInLevel = (int)TimerScript.Instance.timer;
+                ChoiceCarrier.killCount = KillCount.Instance.KillCountTracker;
                 StartCoroutine(ToEndScreen());
             }
         }
@@ -85,7 +87,7 @@ public class HPSystem : MonoBehaviour
         {
             GameEndText.text = "ROOM COMPLETE!";
             ChoiceCarrier.didWin = true;
-            ChoiceCarrier.timeInLevel = TimerScript.Instance.timer;
+            ChoiceCarrier.timeInLevel = (int)TimerScript.Instance.timer;
             ChoiceCarrier.killCount = KillCount.Instance.KillCountTracker;
             StartCoroutine(ToEndScreen());
         }
