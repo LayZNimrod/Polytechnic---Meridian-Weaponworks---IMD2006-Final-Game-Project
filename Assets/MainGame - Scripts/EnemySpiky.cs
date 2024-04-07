@@ -9,6 +9,7 @@ public class EnemySpiky : MonoBehaviour
     public SpikyRayCast raycast1;
     public SpikyRayCast raycast2;
     private bool isFacingRight = true;
+    [SerializeField] private float speed;
 
     // Start is called before the first frame update
     void Start()
@@ -21,17 +22,20 @@ public class EnemySpiky : MonoBehaviour
     void Update()
     {
 
-        if (raycast1.hit.collider == null){
+        if (raycast1.hit.collider == null || raycast1.hit.collider.tag != "Ground"){
+           // Debug.Log("egg");
             isFacingRight = true;
         }
-          if (raycast2.hit.collider == null){
+          if (raycast2.hit.collider == null || raycast2.hit.collider.tag != "Ground"){
+           // Debug.Log("wscfughsaiurg");
             isFacingRight = false;
         }
         if (isFacingRight){
-            rb.velocity = Vector2.right;
+            rb.velocity = Vector2.right * speed;
+
         }
         else{
-            rb.velocity = Vector2.left;
+            rb.velocity = Vector2.left * speed;
         }
 
     }
