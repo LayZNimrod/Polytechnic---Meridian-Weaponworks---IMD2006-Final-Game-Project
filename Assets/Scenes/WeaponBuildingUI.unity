@@ -1911,6 +1911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d717f47eeb0feac4eaf86221fa89d098, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MenuScript: {fileID: 1946041945}
 --- !u!1 &750491726
 GameObject:
   m_ObjectHideFlags: 0
@@ -3350,6 +3351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23a6434dc20e1f14e864fb3fd619744c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MenuScript: {fileID: 1946041945}
 --- !u!212 &1928184408
 SpriteRenderer:
   m_ObjectHideFlags: 0
