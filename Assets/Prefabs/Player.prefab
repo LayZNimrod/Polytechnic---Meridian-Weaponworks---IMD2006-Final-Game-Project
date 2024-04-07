@@ -117,6 +117,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Slider: {fileID: 3804000639729111733}
   WeaponScript: {fileID: 0}
+--- !u!1 &3389151708465685966
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1142282726876980336}
+  - component: {fileID: 7066084459486048506}
+  m_Layer: 0
+  m_Name: WeaponSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1142282726876980336
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3389151708465685966}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.768425, y: -2.6861458, z: -0.053826485}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6413277687552055184}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7066084459486048506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3389151708465685966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dadc877a690e4a469b1e3e3e0b80090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cannon: {fileID: 6768832261655851475, guid: 54af5bb1295949a45bd8b82a7de67112, type: 3}
+  wrench: {fileID: 6768832261655851475, guid: 1d6b2bf64c1358641bd122eec376822d, type: 3}
+  spear: {fileID: 6768832261655851475, guid: f21080e82cb70dd4f8490caf161d6559, type: 3}
+  stat: {fileID: 0}
 --- !u!1 &3551373279016426812
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,7 +571,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6413277687552055184}
   - component: {fileID: 2917282018402406402}
-  - component: {fileID: 3771974796809972121}
+  - component: {fileID: 2093835269940040037}
   - component: {fileID: 218420411631763159}
   - component: {fileID: 8525552858604338965}
   - component: {fileID: 3330375819381767166}
@@ -549,6 +597,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1142282726876980336}
   - {fileID: 4747941177050950278}
   - {fileID: 3983863174376583804}
   m_Father: {fileID: 0}
@@ -583,7 +632,7 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!61 &3771974796809972121
+--- !u!61 &2093835269940040037
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -615,7 +664,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0018920898, y: 0.20317566}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -626,8 +675,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Size: {x: 0.4060936, y: 0.5936487}
+  m_EdgeRadius: 0.4
 --- !u!50 &218420411631763159
 Rigidbody2D:
   serializedVersion: 4
@@ -671,8 +720,9 @@ MonoBehaviour:
   moveSpeed: 15
   rayCastLenth: 0.85
   rayCastXDistFromOrigin: -0.45
-  rayCastYDistFromOrigin: -0.52
+  rayCastYDistFromOrigin: -0.525
   weaponPushBack: -0.5
+  velX: 0
   weaponPos: {x: 0, y: 0}
   maxSpeed: 7
   jumpForce: 5
@@ -691,7 +741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47464cb2b005a8a498ec18a3b55c83a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCollider: {fileID: 3771974796809972121}
+  playerCollider: {fileID: 2093835269940040037}
 --- !u!114 &5919303728850620391
 MonoBehaviour:
   m_ObjectHideFlags: 0

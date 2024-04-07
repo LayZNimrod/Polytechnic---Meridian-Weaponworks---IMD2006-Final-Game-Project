@@ -12,6 +12,13 @@ public class MenuScript : MonoBehaviour
     public TextMeshProUGUI SelectedElement = null;
     public TextMeshProUGUI SelectedWeaponDesc = null;
     public TextMeshProUGUI SelectedElementDesc = null;
+    public TextMeshProUGUI HPNum = null;
+    public TextMeshProUGUI JPNum = null;
+    public TextMeshProUGUI DGNum = null;
+    public TextMeshProUGUI SPNum = null;
+    public TextMeshProUGUI DMGType = null;
+    public TextMeshProUGUI DGNum2 = null;
+
     public enum Weapon
     {
         Spear,
@@ -31,7 +38,61 @@ public class MenuScript : MonoBehaviour
     public LevelSelect.LevelChoice ChosenLevel;
     private void Start()
     {
-        ChosenLevel = LevelChoiceCarrier.Chosen;
+        chosenElement = ChoiceCarrier.ChosenElement;
+        switch (chosenElement)
+        {
+            case Element.Lightning:
+                {
+                    chosenElement = Element.Lightning;
+                    SelectedElement.text = "Electified";
+                    SelectedElementDesc.text = "Electrify your gear, significantly boosting your movement speed, at the cost of weapon power and hp";
+
+                    break;
+                }
+            case Element.Reinforced:
+                {
+                    chosenElement = Element.Reinforced;
+                    SelectedElement.text = "Reinforced";
+                    SelectedElementDesc.text = "Heavier metal plating, sacrificing movement prowess for much stronger weapon power, and higher hp";
+
+                    break;
+                }
+            case Element.Fire:
+                {
+                    chosenElement = Element.Fire;
+                    SelectedElement.text = "Overheated";
+                    SelectedElementDesc.text = "Overheat your weapon's engine, providing well rounded stats and increased jump height";
+
+                    break;
+                }
+        }
+        chosenWeapon = ChoiceCarrier.ChosenWeapon;
+        switch (chosenWeapon)
+        {
+            case Weapon.Cannon:
+                {
+                    chosenWeapon = Weapon.Cannon;
+                    SelectedWeapon.text = "Cannon";
+                    SelectedWeaponDesc.text = "Use the high knockback to your advantage when moving!";
+
+                    break;
+                }
+            case Weapon.Wrench:
+                {
+                    chosenWeapon = Weapon.Wrench;
+                    SelectedWeapon.text = "Wrench";
+                    SelectedWeaponDesc.text = "Hold Attack to spin it and expend stamina to glide!";
+                    break;
+                }
+            case Weapon.Spear:
+                {
+                    chosenWeapon = Weapon.Spear;
+                    SelectedWeapon.text = "Spear";
+                    SelectedWeaponDesc.text = "Attack the ground to increase velocity / bounce around!";
+                    break;
+                }
+        }
+                ChosenLevel = LevelChoiceCarrier.Chosen;
     }
     // Choose weapon
     public void SwitchWeapon()
@@ -42,22 +103,27 @@ public class MenuScript : MonoBehaviour
                 {
                     chosenWeapon = Weapon.Cannon;
                     SelectedWeapon.text = "Cannon";
-                    SelectedWeaponDesc.text = "Projectile, higher damage, slower attack speed. Use the knockback to your advantage!";
-
+                    SelectedWeaponDesc.text = "Use the high knockback to your advantage when moving!";
+                    DGNum2.text = "3";
+                    DMGType.text = "RANGED";
                     break;
                 }
             case Weapon.Cannon:
                 {
                     chosenWeapon = Weapon.Wrench;
                     SelectedWeapon.text = "Wrench";
-                    SelectedWeaponDesc.text = "Melee, average damage, faster attack speed. Hold Attack to spin it and glide!";
+                    SelectedWeaponDesc.text = "Hold Attack to spin it and expend stamina to glide!";
+                    DGNum2.text = "2";
+                    DMGType.text = "MELEE";
                     break;
                 }
             case Weapon.Wrench:
                 {
                     chosenWeapon = Weapon.Spear;
                     SelectedWeapon.text = "Spear";
-                    SelectedWeaponDesc.text = "Melee, lower damage, faster attack speed. Attack the ground to increase velocity!";
+                    SelectedWeaponDesc.text = "Attack the ground to increase velocity / bounce around!";
+                    DGNum2.text = "2";
+                    DMGType.text = "MELEE";
                     break;
                 }
         }
@@ -72,7 +138,11 @@ public class MenuScript : MonoBehaviour
                 {
                     chosenElement = Element.Lightning;
                     SelectedElement.text = "Electified";
-                    SelectedElementDesc.text = "3HP, lower damage, Faster movement and attack speed, lower jump height";
+                    SelectedElementDesc.text = "Electrify your gear, significantly boosting your movement speed, at the cost of weapon power and hp";
+                    HPNum.text = "3";
+                    JPNum.text = "4";
+                    DGNum.text = "1";
+                    SPNum.text = "5";
 
                     break;
                 }
@@ -80,7 +150,11 @@ public class MenuScript : MonoBehaviour
                 {
                     chosenElement = Element.Reinforced;
                     SelectedElement.text = "Reinforced";
-                    SelectedElementDesc.text = "5HP, highest damage and atack power, lower movement / attack speed, lower jump height";
+                    SelectedElementDesc.text = "Heavier metal plating, sacrificing movement prowess for much stronger weapon power, and higher hp";
+                    HPNum.text = "5";
+                    JPNum.text = "2";
+                    DGNum.text = "5";
+                    SPNum.text = "1";
 
                     break;
                 }
@@ -88,7 +162,11 @@ public class MenuScript : MonoBehaviour
                 {
                     chosenElement = Element.Fire;
                     SelectedElement.text = "Overheated";
-                    SelectedElementDesc.text = "4HP, higher damage, normal movement and attack speed, higher jump height";
+                    SelectedElementDesc.text = "Overheat your weapon's engine, providing well rounded stats and increased jump height";
+                    HPNum.text = "4";
+                    JPNum.text = "5";
+                    DGNum.text = "3";
+                    SPNum.text = "3";
 
                     break;
                 }

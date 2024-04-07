@@ -5,8 +5,11 @@ using UnityEngine;
 
 public class GameManagerTEMP : MonoBehaviour
 {
-    public TextMeshProUGUI SWeapText;
-    public TextMeshProUGUI SElemText;
+    //public TextMeshProUGUI SWeapText;
+    //public TextMeshProUGUI SElemText;
+    public TextMeshProUGUI ComboText;
+    private string WeaponText;
+    private string ElementText;
 
     // Start is called before the first frame update
     void Start()
@@ -14,13 +17,16 @@ public class GameManagerTEMP : MonoBehaviour
         //Choice for weapon set to text
         switch (ChoiceCarrier.ChosenWeapon){
             case (MenuScript.Weapon.Cannon):
-                SWeapText.text = "Cannon";
+                //SWeapText.text = "Cannon";
+                WeaponText = "Cannon";
                 break;
             case (MenuScript.Weapon.Wrench):
-                SWeapText.text = "Wrench";
+                //SWeapText.text = "Wrench";
+                WeaponText = "Wrench";
                 break;
             case (MenuScript.Weapon.Spear):
-                SWeapText.text = "Spear";
+                //SWeapText.text = "Spear";
+                WeaponText = "Spear";
                 break;
         }
 
@@ -28,15 +34,20 @@ public class GameManagerTEMP : MonoBehaviour
         switch (ChoiceCarrier.ChosenElement)
         {
             case (MenuScript.Element.Fire):
-                SElemText.text = "Overheated";
+                //SElemText.text = "Overheated";
+                ElementText = "Overheated";
                 break;
             case (MenuScript.Element.Lightning):
-                SElemText.text = "Electrified";
+                //SElemText.text = "Electrified";
+                ElementText = "Electrified";
                 break;
             case (MenuScript.Element.Reinforced):
-                SElemText.text = "Reinforced";
+                //SElemText.text = "Reinforced";
+                ElementText = "Reinforced";
                 break;
         }
+
+        ComboText.text = ElementText + " " + WeaponText;
     }
 
     // Update is called once per frame

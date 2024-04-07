@@ -31,13 +31,13 @@ public class StatHandler : MonoBehaviour
         switch (ChoiceCarrier.ChosenWeapon)
         {
             case (MenuScript.Weapon.Cannon):
-                WeaponDamage = 4;
+                WeaponDamage = 3;
                 break;
             case (MenuScript.Weapon.Wrench):
-                WeaponDamage = 3;
+                WeaponDamage = 2;
                 break;
             case (MenuScript.Weapon.Spear):
-                WeaponDamage = 3;
+                WeaponDamage = 2;
                 break;
         }
 
@@ -45,7 +45,7 @@ public class StatHandler : MonoBehaviour
         switch (ChoiceCarrier.ChosenElement)
         {
             case (MenuScript.Element.Fire):
-                ElementDamage = 2;
+                ElementDamage = 3;
                 PlayerScript.jumpForce = 5;
                 PlayerScript.moveSpeed = 15;
                 PlayerScript.maxSpeed = 9;
@@ -55,7 +55,7 @@ public class StatHandler : MonoBehaviour
                 HPSystem.Instance.HPCount = 4;
                 break;
             case (MenuScript.Element.Lightning):
-                ElementDamage = 0;
+                ElementDamage = 1;
                 PlayerScript.jumpForce = 7;
                 PlayerScript.moveSpeed = 30;
                 PlayerScript.maxSpeed = 16;
@@ -63,9 +63,13 @@ public class StatHandler : MonoBehaviour
                 PlayerScript.airDragX = 1f;
                 PlayerScript.GetComponent<Rigidbody2D>().gravityScale = 4;
                 HPSystem.Instance.HPCount = 3;
+                if (weapon as Wrench != null) // https://forum.unity.com/threads/check-if-a-gameobject-has-a-certain-script.88484/
+                {
+                    (weapon as Wrench).flightThrust = 10;
+                }
                 break;
             case (MenuScript.Element.Reinforced):
-                ElementDamage = 4;
+                ElementDamage = 5;
                 PlayerScript.moveSpeed = 10;
                 PlayerScript.maxSpeed = 7;
                 PlayerScript.dragX = 3f;

@@ -33,7 +33,6 @@ public class WeaponScript : MonoBehaviour
         Instance = this;
         // fire = player.playerCont.Player.Fire; 
         StartCoroutine(EnableFire());
-
     }
 
     IEnumerator EnableFire()
@@ -49,10 +48,8 @@ public class WeaponScript : MonoBehaviour
         
     }
 
-    private void OnDisable()
-    {
-        fire.Disable();
-    }
+    private void OnDisable() { }
+
 
     // Update is called once per frame
     protected virtual void Update()

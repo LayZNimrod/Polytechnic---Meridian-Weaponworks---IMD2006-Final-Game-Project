@@ -19,6 +19,7 @@ public class HPSystem : MonoBehaviour
     public float volume;
     public double maxInvulnTimer;
 
+
     private void OnEnable()
     {
         Instance = this;
@@ -76,27 +77,33 @@ public class HPSystem : MonoBehaviour
             {
                 HPCount = 0;
                 GameEndText.text = "YOU DIED";
-                StartCoroutine(BackToBuild());
+                ChoiceCarrier.didWin = false;
+                ChoiceCarrier.timeInLevel = (int)TimerScript.Instance.timer;
+                ChoiceCarrier.killCount = KillCount.Instance.KillCountTracker;
+                StartCoroutine(ToEndScreen());
             }
         }
         if (collision.tag == "End")
         {
             GameEndText.text = "ROOM COMPLETE!";
-            StartCoroutine(BackToLevelSelect());
+            ChoiceCarrier.didWin = true;
+            ChoiceCarrier.timeInLevel = (int)TimerScript.Instance.timer;
+            ChoiceCarrier.killCount = KillCount.Instance.KillCountTracker;
+            StartCoroutine(ToEndScreen());
         }
     }
 
-    IEnumerator BackToLevelSelect()
+    IEnumerator ToEndScreen()
     {
-        PlayerScript.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-        yield return new WaitForSeconds(3);
-        SceneManager.LoadScene("LevelSelectMenu");
+        //PlayerScript.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        yield return new WaitForSeconds(0.1f);
+        SceneManager.LoadScene("GameOver");
     }
 
-    IEnumerator BackToBuild()
-    {
-        PlayerScript.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-        yield return new WaitForSeconds(3);
-        SceneManager.LoadScene("WeaponBuildingUI");
-    }
+//    IEnumerator BackToBuild()
+//    {
+//        PlayerScript.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+//        yield return new WaitForSeconds(3);
+//        SceneManager.LoadScene("WeaponBuildingUI");
+//    }
 }
