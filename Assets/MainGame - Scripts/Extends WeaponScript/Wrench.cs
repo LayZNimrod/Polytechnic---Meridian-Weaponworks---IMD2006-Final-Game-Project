@@ -39,15 +39,18 @@ public class Wrench : WeaponScript
             attackHeld = 0;
             spinSoundSource.PlayOneShot(spinSound, volume);
         }
+        if (fire != null)
+        {
+            if (fire.IsInProgress() && weaponTimer > 0)
+            {
+                Attack();
+            }
+            if (!fire.IsInProgress())
+            {
+                weaponTimer += Time.deltaTime * 2;
+            }
+        }
 
-        if (fire.IsInProgress() && weaponTimer > 0)
-        {
-            Attack();
-        }
-        if (!fire.IsInProgress())
-        {
-            weaponTimer += Time.deltaTime * 2;
-        }
 
         if (weaponTimer > weaponHitSpeed)
         {
