@@ -31,6 +31,8 @@ public class MenuScript : MonoBehaviour
     public LevelSelect.LevelChoice ChosenLevel;
     private void Start()
     {
+        chosenElement = ChoiceCarrier.ChosenElement;
+        chosenWeapon = ChoiceCarrier.ChosenWeapon;
         ChosenLevel = LevelChoiceCarrier.Chosen;
     }
     // Choose weapon
