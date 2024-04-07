@@ -13734,13 +13734,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1004941495705506605, guid: 8141529198c28144a9fd6759e99de6f9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 139
+      objectReference: {fileID: 0}
     - target: {fileID: 3049970257002992051, guid: 8141529198c28144a9fd6759e99de6f9, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 4637773341655835816, guid: 8141529198c28144a9fd6759e99de6f9, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
+    - target: {fileID: 5612491781920947168, guid: 8141529198c28144a9fd6759e99de6f9, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6903454843898775011, guid: 8141529198c28144a9fd6759e99de6f9, type: 3}
       propertyPath: m_AnchorMax.x

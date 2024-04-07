@@ -1127,7 +1127,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -253.4, y: 191.3}
+  m_AnchoredPosition: {x: -253.4, y: 139}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6134029285870641348
@@ -1192,7 +1192,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 4
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1254,7 +1254,6 @@ GameObject:
   - component: {fileID: 4062010363472085078}
   - component: {fileID: 1338154419068310845}
   - component: {fileID: 1696952249195850057}
-  - component: {fileID: 6775754833950976204}
   - component: {fileID: 4637773341655835816}
   m_Layer: 5
   m_Name: CameraUICanvas
@@ -1377,21 +1376,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KillCountTracker: 0
---- !u!114 &6775754833950976204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8675970564490010078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f5f2ab5322c98545ad5de17a85eade4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitSoundSource: {fileID: 4637773341655835816}
-  hitSound: {fileID: 8300000, guid: 5abc7d1e2b661f74dae8182942db41d4, type: 3}
-  volume: 1
 --- !u!82 &4637773341655835816
 AudioSource:
   m_ObjectHideFlags: 0
