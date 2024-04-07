@@ -93,8 +93,8 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Vector3 temp = new Vector3(rayCastXDistFromOrigin, rayCastYDistFromOrigin, 0);
-        // Debug.DrawRay(transform.position + temp, Vector2.right * rayCastLenth, Color.green);
+        Vector3 temp = new Vector3(rayCastXDistFromOrigin, rayCastYDistFromOrigin, 0);
+        Debug.DrawRay(transform.position + temp, Vector2.right * rayCastLenth, Color.green);
 
         onGround = CheckOnGround();
         if (onGround)

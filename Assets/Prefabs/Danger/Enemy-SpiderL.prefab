@@ -599,7 +599,7 @@ MonoBehaviour:
   EnemyHP: 10
   EnemyMaxHP: 10
   EnemyHitSFX: {fileID: 4054223411292134189, guid: d69d86864dd567243a67ff893f4bf5c3, type: 3}
-  hPBar: {fileID: 0}
+  hPBar: {fileID: 4764596191237327807}
 --- !u!114 &6982882236594414404
 MonoBehaviour:
   m_ObjectHideFlags: 0
