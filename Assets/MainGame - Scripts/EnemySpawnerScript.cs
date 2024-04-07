@@ -9,6 +9,7 @@ public class EnemySpawnerScript : MonoBehaviour
         Vector3 SpawnerPos = new Vector3(transform.position.x, transform.position.y, 0f);
         spawned = Instantiate(spawned, SpawnerPos, Quaternion.identity);
         spawned.GetComponent<EnemyHealth>().StatHandler = GameObject.Find("GameManager").GetComponent<StatHandler>();
+        spawned.GetComponent<EnemyHealth>().KillCount = GameObject.Find("CameraUICanvas").GetComponent<KillCount>();
     }
 
     // Update is called once per frame
