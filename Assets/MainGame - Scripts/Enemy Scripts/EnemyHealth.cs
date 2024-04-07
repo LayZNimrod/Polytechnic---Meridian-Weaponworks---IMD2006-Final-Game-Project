@@ -9,6 +9,7 @@ public class EnemyHealth : MonoBehaviour
     public float EnemyMaxHP;
     public EnemyHitSFX EnemyHitSFX;
     [SerializeField] FloatingHPBar hPBar;
+    public KillCount KillCount;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +28,7 @@ public class EnemyHealth : MonoBehaviour
         hPBar.updateHP(EnemyHP, EnemyMaxHP);
         if (EnemyHP <= 0)
         {
+            KillCount.IncreaseKillCount();
             Destroy(gameObject);
         }
         //EnemyHitSFX.playenemySFX();

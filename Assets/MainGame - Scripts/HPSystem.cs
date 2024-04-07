@@ -18,6 +18,7 @@ public class HPSystem : MonoBehaviour
     public AudioClip hurtSound;
     public float volume;
     public double maxInvulnTimer;
+    public bool didWin;
 
     private void OnEnable()
     {
@@ -76,27 +77,29 @@ public class HPSystem : MonoBehaviour
             {
                 HPCount = 0;
                 GameEndText.text = "YOU DIED";
-                StartCoroutine(BackToBuild());
+                didWin = false;
+                StartCoroutine(ToEndScreen());
             }
         }
         if (collision.tag == "End")
         {
             GameEndText.text = "ROOM COMPLETE!";
-            StartCoroutine(BackToLevelSelect());
+            didWin = true;
+            StartCoroutine(ToEndScreen());
         }
     }
 
-    IEnumerator BackToLevelSelect()
+    IEnumerator ToEndScreen()
     {
-        PlayerScript.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-        yield return new WaitForSeconds(3);
-        SceneManager.LoadScene("LevelSelectMenu");
+        //PlayerScript.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        yield return new WaitForSeconds(0.1f);
+        SceneManager.LoadScene("GameOver");
     }
 
-    IEnumerator BackToBuild()
-    {
-        PlayerScript.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-        yield return new WaitForSeconds(3);
-        SceneManager.LoadScene("WeaponBuildingUI");
-    }
+//    IEnumerator BackToBuild()
+//    {
+//        PlayerScript.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+//        yield return new WaitForSeconds(3);
+//        SceneManager.LoadScene("WeaponBuildingUI");
+//    }
 }
