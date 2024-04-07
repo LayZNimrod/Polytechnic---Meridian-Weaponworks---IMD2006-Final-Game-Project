@@ -16,7 +16,7 @@ public class SpikyRayCast : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       hit = Physics2D.Raycast(transform.position, transform.forward, rayCastLenth);
+        hit = Physics2D.Raycast(transform.position, transform.forward, rayCastLenth);
         Debug.DrawRay(transform.position, transform.forward * rayCastLenth, Color.green);
-     }
+    }
 }
