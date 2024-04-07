@@ -28,7 +28,7 @@ public class EnemyHealth : MonoBehaviour
         hPBar.updateHP(EnemyHP, EnemyMaxHP);
         if (EnemyHP <= 0)
         {
-            KillCount.IncreaseKillCount();
+            KillCount.IncreaseKillCount(); 
             Destroy(gameObject);
         }
         //EnemyHitSFX.playenemySFX();

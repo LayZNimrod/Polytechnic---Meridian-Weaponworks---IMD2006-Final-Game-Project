@@ -18,7 +18,7 @@ public class HPSystem : MonoBehaviour
     public AudioClip hurtSound;
     public float volume;
     public double maxInvulnTimer;
-    public bool didWin;
+
 
     private void OnEnable()
     {
@@ -77,14 +77,16 @@ public class HPSystem : MonoBehaviour
             {
                 HPCount = 0;
                 GameEndText.text = "YOU DIED";
-                didWin = false;
+                ChoiceCarrier.didWin = false;
                 StartCoroutine(ToEndScreen());
             }
         }
         if (collision.tag == "End")
         {
             GameEndText.text = "ROOM COMPLETE!";
-            didWin = true;
+            ChoiceCarrier.didWin = true;
+            ChoiceCarrier.timeInLevel = TimerScript.Instance.timer;
+            ChoiceCarrier.killCount = KillCount.Instance.KillCountTracker;
             StartCoroutine(ToEndScreen());
         }
     }

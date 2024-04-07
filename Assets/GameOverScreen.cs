@@ -12,7 +12,7 @@ public class GameOverScreen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (HPSystem.Instance.didWin == true)
+        if (ChoiceCarrier.didWin == true)
         {
             IsGameOver.text = "ROOM COMPLETE!";
         }
@@ -21,7 +21,8 @@ public class GameOverScreen : MonoBehaviour
             IsGameOver.text = "GAME OVER!";
         }
 
-        CompleteTime.text = TimerScript.Instance.timer.ToString();
+        CompleteTime.text = ChoiceCarrier.timeInLevel.ToString();
+        KillCount.text = ChoiceCarrier.killCount.ToString();
     }
 
     // Update is called once per frame
