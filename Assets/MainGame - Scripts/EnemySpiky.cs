@@ -23,11 +23,11 @@ public class EnemySpiky : MonoBehaviour
     {
 
         if (raycast1.hit.collider == null || raycast1.hit.collider.tag != "Ground"){
-           // Debug.Log("egg");
+           Debug.Log("egg");
             isFacingRight = true;
         }
           if (raycast2.hit.collider == null || raycast2.hit.collider.tag != "Ground"){
-           // Debug.Log("wscfughsaiurg");
+           //Debug.Log("wscfughsaiurg");
             isFacingRight = false;
         }
         if (isFacingRight){
