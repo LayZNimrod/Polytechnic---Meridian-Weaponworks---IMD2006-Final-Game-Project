@@ -8,7 +8,6 @@ public class EnemyHealth : MonoBehaviour
     public StatHandler StatHandler;
     public float EnemyHP;
     public float EnemyMaxHP;
-    public EnemyHitSFX EnemyHitSFX;
     [SerializeField] FloatingHPBar hPBar;
     public KillCount KillCount;
     public AudioClip sound;
