@@ -31,12 +31,13 @@ public class EnemySpiky : MonoBehaviour
             isFacingRight = false;
         }
         if (isFacingRight){
-            rb.velocity = Vector2.right * speed;
+            rb.velocity = new Vector2(speed, rb.velocity.y);
 
         }
         else{
-            rb.velocity = Vector2.left * speed;
+            rb.velocity = new Vector2(-speed, rb.velocity.y);
         }
 
     }
+    
 }
