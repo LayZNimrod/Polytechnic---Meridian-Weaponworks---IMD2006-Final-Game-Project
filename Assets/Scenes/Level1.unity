@@ -279,8 +279,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 882c01c86d3e968489ee45b0a96bd8ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SWeapText: {fileID: 1227202236}
-  SElemText: {fileID: 335348028}
+  SWeapText: {fileID: 0}
+  SElemText: {fileID: 0}
+  ComboText: {fileID: 569663328}
 --- !u!4 &12180973
 Transform:
   m_ObjectHideFlags: 0
@@ -374,7 +375,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 160
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -626,7 +627,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 160
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -1012,7 +1013,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 160
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -1615,6 +1616,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SWeapText: {fileID: 1232792710}
   SElemText: {fileID: 760867508}
+  ComboText: {fileID: 0}
 --- !u!4 &135351388 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5303156873606879728, guid: 969d7f530c9dd1542807e00c248d9867, type: 3}
@@ -2757,7 +2759,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 160
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -3518,7 +3520,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 160
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -3714,17 +3716,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &335348028 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5415257457540239697, guid: 8141529198c28144a9fd6759e99de6f9, type: 3}
-  m_PrefabInstance: {fileID: 1607099011}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &337679341 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5303156873606879728, guid: 969d7f530c9dd1542807e00c248d9867, type: 3}
@@ -3879,7 +3870,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 160
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -5352,7 +5343,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 160
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -5862,6 +5853,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8624190067974085277, guid: 63caeeb84050c2b4ea953c6e4a46560f, type: 3}
   m_PrefabInstance: {fileID: 295572065669817046}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &569663328 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4132491941243825247, guid: 8141529198c28144a9fd6759e99de6f9, type: 3}
+  m_PrefabInstance: {fileID: 1607099011}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &591769171
 GameObject:
   m_ObjectHideFlags: 0
@@ -7176,7 +7178,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 160
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -9451,7 +9453,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 160
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -10174,7 +10176,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 160
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -11026,21 +11028,10 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 160
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
---- !u!114 &1227202236 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3757938012514359624, guid: 8141529198c28144a9fd6759e99de6f9, type: 3}
-  m_PrefabInstance: {fileID: 1607099011}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1232792709
 GameObject:
   m_ObjectHideFlags: 0
@@ -11321,7 +11312,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 160
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -13081,7 +13072,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 160
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -13231,7 +13222,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 160
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -13414,7 +13405,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 160
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -13523,6 +13514,46 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1703804257}
     m_Modifications:
+    - target: {fileID: 5303156873606879728, guid: 969d7f530c9dd1542807e00c248d9867, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -11.110001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303156873606879728, guid: 969d7f530c9dd1542807e00c248d9867, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -373.3334
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303156873606879728, guid: 969d7f530c9dd1542807e00c248d9867, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303156873606879728, guid: 969d7f530c9dd1542807e00c248d9867, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303156873606879728, guid: 969d7f530c9dd1542807e00c248d9867, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303156873606879728, guid: 969d7f530c9dd1542807e00c248d9867, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303156873606879728, guid: 969d7f530c9dd1542807e00c248d9867, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303156873606879728, guid: 969d7f530c9dd1542807e00c248d9867, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303156873606879728, guid: 969d7f530c9dd1542807e00c248d9867, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9020022977191840348, guid: 969d7f530c9dd1542807e00c248d9867, type: 3}
+      propertyPath: m_Name
+      value: Triangle (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 2044444844501622586, guid: 8141529198c28144a9fd6759e99de6f9, type: 3}
       propertyPath: m_ScreenMatchMode
       value: 0
@@ -13590,46 +13621,6 @@ PrefabInstance:
     - target: {fileID: 8826704318936585942, guid: 8141529198c28144a9fd6759e99de6f9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.8200002
-      objectReference: {fileID: 0}
-    - target: {fileID: 5303156873606879728, guid: 969d7f530c9dd1542807e00c248d9867, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -11.110001
-      objectReference: {fileID: 0}
-    - target: {fileID: 5303156873606879728, guid: 969d7f530c9dd1542807e00c248d9867, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -373.3334
-      objectReference: {fileID: 0}
-    - target: {fileID: 5303156873606879728, guid: 969d7f530c9dd1542807e00c248d9867, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5303156873606879728, guid: 969d7f530c9dd1542807e00c248d9867, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5303156873606879728, guid: 969d7f530c9dd1542807e00c248d9867, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5303156873606879728, guid: 969d7f530c9dd1542807e00c248d9867, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5303156873606879728, guid: 969d7f530c9dd1542807e00c248d9867, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5303156873606879728, guid: 969d7f530c9dd1542807e00c248d9867, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5303156873606879728, guid: 969d7f530c9dd1542807e00c248d9867, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9020022977191840348, guid: 969d7f530c9dd1542807e00c248d9867, type: 3}
-      propertyPath: m_Name
-      value: Triangle (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13873,22 +13864,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 6903454843898775011, guid: 8141529198c28144a9fd6759e99de6f9, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6903454843898775011, guid: 8141529198c28144a9fd6759e99de6f9, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8038675877110007822, guid: 8141529198c28144a9fd6759e99de6f9, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 260.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8038675877110007822, guid: 8141529198c28144a9fd6759e99de6f9, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 158.1
-      objectReference: {fileID: 0}
     - target: {fileID: 8675970564490010078, guid: 8141529198c28144a9fd6759e99de6f9, type: 3}
       propertyPath: m_Name
       value: CameraUICanvas
@@ -14626,7 +14601,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 160
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -15321,7 +15296,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 160
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -16177,7 +16152,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 160
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -17057,7 +17032,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 160
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -17441,6 +17416,10 @@ PrefabInstance:
     - target: {fileID: 2160401729454203154, guid: 0974b2b2fe218704fbfaa25fb9454313, type: 3}
       propertyPath: m_Name
       value: Platform (54)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6613799572360879153, guid: 0974b2b2fe218704fbfaa25fb9454313, type: 3}
+      propertyPath: m_SurfaceArc
+      value: 160
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

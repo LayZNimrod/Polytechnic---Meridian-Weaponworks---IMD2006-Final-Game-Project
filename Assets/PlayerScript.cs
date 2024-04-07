@@ -19,7 +19,7 @@ public class PlayerScript : MonoBehaviour
     public float rayCastYDistFromOrigin = -0.51f;
     public float weaponPushBack = -100f;
 
-    private float velX;
+    public float velX;
     private float velY;
 
     private InputAction movement;

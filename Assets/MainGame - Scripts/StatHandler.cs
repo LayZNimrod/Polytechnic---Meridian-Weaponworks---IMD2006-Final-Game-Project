@@ -63,6 +63,10 @@ public class StatHandler : MonoBehaviour
                 PlayerScript.airDragX = 1f;
                 PlayerScript.GetComponent<Rigidbody2D>().gravityScale = 4;
                 HPSystem.Instance.HPCount = 3;
+                if (weapon as Wrench != null) // https://forum.unity.com/threads/check-if-a-gameobject-has-a-certain-script.88484/
+                {
+                    (weapon as Wrench).flightThrust = 10;
+                }
                 break;
             case (MenuScript.Element.Reinforced):
                 ElementDamage = 4;

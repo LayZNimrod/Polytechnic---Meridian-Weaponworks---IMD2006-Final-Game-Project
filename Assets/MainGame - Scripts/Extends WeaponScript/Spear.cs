@@ -11,8 +11,12 @@ public class Spear : WeaponScript
     public AudioSource attackSoundSource;
     public AudioClip attackSound;
     public float volume;
+    public Animator anim;
 
-
+    private void OnAwake()
+    {
+        anim = GetComponentInChildren<Animator>();
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.tag == "Ground" || collision.tag == "FallThrough")
@@ -43,6 +47,7 @@ public class Spear : WeaponScript
     {
         if (weaponTimer == 0)
         {
+            anim.SetTrigger("Active");
             attackSoundSource.PlayOneShot(attackSound, volume);
             if (isWeaponTouchGround)
             {
@@ -52,8 +57,8 @@ public class Spear : WeaponScript
             {
                 touchedEnemy.TakeDamage();
             }
-
             weaponTimer = Time.deltaTime;
+            anim.SetTrigger("Inactive");
         }
     }
     protected override void Attack()// remember to add player stun and 
