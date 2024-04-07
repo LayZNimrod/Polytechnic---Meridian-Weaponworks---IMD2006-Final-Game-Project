@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class TimerScript : MonoBehaviour
 {
-    private double timer;
+    public static TimerScript Instance;
+    public double timer;
     private TextMeshProUGUI TextMeshPro;
     // Start is called before the first frame update
     void Start()
     {
+        Instance = this;
         TextMeshPro = this.GetComponent<TextMeshProUGUI>();
     }
 

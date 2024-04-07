@@ -8,4 +8,8 @@ public class ChoiceCarrier : MonoBehaviour
     public static MenuScript.Weapon ChosenWeapon;
     public static MenuScript.Element ChosenElement;
     //public static LevelSelect
+
+    public static bool didWin = false;
+    public static int timeInLevel = 0;
+    public static int killCount = 0;
 }
