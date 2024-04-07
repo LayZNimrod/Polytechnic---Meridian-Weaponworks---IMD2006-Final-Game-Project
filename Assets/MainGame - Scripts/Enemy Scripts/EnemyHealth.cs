@@ -11,7 +11,6 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] FloatingHPBar hPBar;
     public KillCount KillCount;
     public AudioClip sound;
-    public GameObject AudLocation;
 
     // Start is called before the first frame update
     void Start()
