@@ -31,7 +31,61 @@ public class MenuScript : MonoBehaviour
     public LevelSelect.LevelChoice ChosenLevel;
     private void Start()
     {
-        ChosenLevel = LevelChoiceCarrier.Chosen;
+        chosenElement = ChoiceCarrier.ChosenElement;
+        switch (chosenElement)
+        {
+            case Element.Lightning:
+                {
+                    chosenElement = Element.Lightning;
+                    SelectedElement.text = "Electified";
+                    SelectedElementDesc.text = "3HP, lower damage, Faster movement and attack speed, lower jump height";
+
+                    break;
+                }
+            case Element.Reinforced:
+                {
+                    chosenElement = Element.Reinforced;
+                    SelectedElement.text = "Reinforced";
+                    SelectedElementDesc.text = "5HP, highest damage and atack power, lower movement / attack speed, lower jump height";
+
+                    break;
+                }
+            case Element.Fire:
+                {
+                    chosenElement = Element.Fire;
+                    SelectedElement.text = "Overheated";
+                    SelectedElementDesc.text = "4HP, higher damage, normal movement and attack speed, higher jump height";
+
+                    break;
+                }
+        }
+        chosenWeapon = ChoiceCarrier.ChosenWeapon;
+        switch (chosenWeapon)
+        {
+            case Weapon.Cannon:
+                {
+                    chosenWeapon = Weapon.Cannon;
+                    SelectedWeapon.text = "Cannon";
+                    SelectedWeaponDesc.text = "Projectile, higher damage, slower attack speed. Use the knockback to your advantage!";
+
+                    break;
+                }
+            case Weapon.Wrench:
+                {
+                    chosenWeapon = Weapon.Wrench;
+                    SelectedWeapon.text = "Wrench";
+                    SelectedWeaponDesc.text = "Melee, average damage, faster attack speed. Hold Attack to spin it and glide!";
+                    break;
+                }
+            case Weapon.Spear:
+                {
+                    chosenWeapon = Weapon.Spear;
+                    SelectedWeapon.text = "Spear";
+                    SelectedWeaponDesc.text = "Melee, lower damage, faster attack speed. Attack the ground to increase velocity!";
+                    break;
+                }
+        }
+                ChosenLevel = LevelChoiceCarrier.Chosen;
     }
     // Choose weapon
     public void SwitchWeapon()

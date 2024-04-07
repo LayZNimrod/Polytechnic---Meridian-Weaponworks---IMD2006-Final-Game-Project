@@ -87,6 +87,7 @@ public class PlayerScript : MonoBehaviour
         movement.Disable();
         jump.Disable();
         aim.Disable();
+        fire.Disable();
     }
 
     // Update is called once per frame
