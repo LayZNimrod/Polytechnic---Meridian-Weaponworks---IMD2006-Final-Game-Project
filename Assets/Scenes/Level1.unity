@@ -9999,6 +9999,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7066084459486048506, guid: 4b327c637160e514aa662ce4fb4bef32, type: 3}
+      propertyPath: stat
+      value: 
+      objectReference: {fileID: 12180975}
     - target: {fileID: 7519583611939719077, guid: 4b327c637160e514aa662ce4fb4bef32, type: 3}
       propertyPath: m_audioClip
       value: 
