@@ -46,7 +46,10 @@ public class MenuScript : MonoBehaviour
                     chosenElement = Element.Lightning;
                     SelectedElement.text = "Electified";
                     SelectedElementDesc.text = "Electrify your gear, significantly boosting your movement speed, at the cost of weapon power and hp";
-
+                    HPNum.text = "3";
+                    JPNum.text = "4";
+                    DGNum.text = "1";
+                    SPNum.text = "5";
                     break;
                 }
             case Element.Reinforced:
@@ -54,7 +57,10 @@ public class MenuScript : MonoBehaviour
                     chosenElement = Element.Reinforced;
                     SelectedElement.text = "Reinforced";
                     SelectedElementDesc.text = "Heavier metal plating, sacrificing movement prowess for much stronger weapon power, and higher hp";
-
+                    HPNum.text = "5";
+                    JPNum.text = "2";
+                    DGNum.text = "5";
+                    SPNum.text = "1";
                     break;
                 }
             case Element.Fire:
@@ -62,7 +68,10 @@ public class MenuScript : MonoBehaviour
                     chosenElement = Element.Fire;
                     SelectedElement.text = "Overheated";
                     SelectedElementDesc.text = "Overheat your weapon's engine, providing well rounded stats and increased jump height";
-
+                    HPNum.text = "4";
+                    JPNum.text = "5";
+                    DGNum.text = "3";
+                    SPNum.text = "3";
                     break;
                 }
         }
@@ -74,7 +83,8 @@ public class MenuScript : MonoBehaviour
                     chosenWeapon = Weapon.Cannon;
                     SelectedWeapon.text = "Cannon";
                     SelectedWeaponDesc.text = "Use the high knockback to your advantage when moving!";
-
+                    DGNum2.text = "3";
+                    DMGType.text = "RANGED";
                     break;
                 }
             case Weapon.Wrench:
@@ -82,6 +92,8 @@ public class MenuScript : MonoBehaviour
                     chosenWeapon = Weapon.Wrench;
                     SelectedWeapon.text = "Wrench";
                     SelectedWeaponDesc.text = "Hold Attack to spin it and expend stamina to glide!";
+                    DGNum2.text = "2";
+                    DMGType.text = "MELEE";
                     break;
                 }
             case Weapon.Spear:
@@ -89,6 +101,8 @@ public class MenuScript : MonoBehaviour
                     chosenWeapon = Weapon.Spear;
                     SelectedWeapon.text = "Spear";
                     SelectedWeaponDesc.text = "Attack the ground to increase velocity / bounce around!";
+                    DGNum2.text = "2";
+                    DMGType.text = "MELEE";
                     break;
                 }
         }

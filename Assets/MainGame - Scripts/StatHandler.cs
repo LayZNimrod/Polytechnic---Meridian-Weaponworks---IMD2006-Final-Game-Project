@@ -70,6 +70,7 @@ public class StatHandler : MonoBehaviour
                 break;
             case (MenuScript.Element.Reinforced):
                 ElementDamage = 5;
+                PlayerScript.jumpForce = 6;
                 PlayerScript.moveSpeed = 10;
                 PlayerScript.maxSpeed = 7;
                 PlayerScript.dragX = 3f;
