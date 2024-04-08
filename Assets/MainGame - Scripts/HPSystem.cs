@@ -8,7 +8,7 @@ public class HPSystem : MonoBehaviour
 {
     public static HPSystem Instance;
     public TextMeshProUGUI HPText = null;
-    public TextMeshProUGUI GameEndText = null;
+    //public TextMeshProUGUI GameEndText = null;
     public int HPCount = 0;
     public int HPMax = 0;
     public PlayerScript PlayerScript;
@@ -76,7 +76,7 @@ public class HPSystem : MonoBehaviour
             if (HPCount <= 0)
             {
                 HPCount = 0;
-                GameEndText.text = "YOU DIED";
+                //GameEndText.text = "YOU DIED";
                 ChoiceCarrier.didWin = false;
                 ChoiceCarrier.timeInLevel = (int)TimerScript.Instance.timer;
                 ChoiceCarrier.killCount = KillCount.Instance.KillCountTracker;
@@ -85,7 +85,7 @@ public class HPSystem : MonoBehaviour
         }
         if (collision.tag == "End")
         {
-            GameEndText.text = "ROOM COMPLETE!";
+            //GameEndText.text = "ROOM COMPLETE!";
             ChoiceCarrier.didWin = true;
             ChoiceCarrier.timeInLevel = (int)TimerScript.Instance.timer;
             ChoiceCarrier.killCount = KillCount.Instance.KillCountTracker;
