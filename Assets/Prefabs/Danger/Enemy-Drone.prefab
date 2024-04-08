@@ -563,7 +563,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -635,11 +635,9 @@ MonoBehaviour:
   StatHandler: {fileID: 0}
   EnemyHP: 5
   EnemyMaxHP: 5
-  EnemyHitSFX: {fileID: 6775754833950976204, guid: 8141529198c28144a9fd6759e99de6f9, type: 3}
   hPBar: {fileID: 0}
   KillCount: {fileID: 0}
   sound: {fileID: 8300000, guid: 5abc7d1e2b661f74dae8182942db41d4, type: 3}
-  AudLocation: {fileID: 8675970564490010078, guid: 8141529198c28144a9fd6759e99de6f9, type: 3}
 --- !u!114 &7685694513542426760
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,8 +8,10 @@ public class EnemySpiky : MonoBehaviour
     public GameObject Spiky;
     public SpikyRayCast raycast1;
     public SpikyRayCast raycast2;
-    private bool isFacingRight = true;
+    public bool isFacingRight = true;
     [SerializeField] private float speed;
+    [SerializeField] private bool enclosedSpace;
+    [SerializeField] private SpikyFlipSprite spikyFlipSprite;
 
     // Start is called before the first frame update
     void Start()
@@ -21,15 +23,39 @@ public class EnemySpiky : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (enclosedSpace)
+        {
+            if(raycast1.hit.collider != null)
+            {
+                if ( raycast1.hit.collider.tag == "Ground")
+                {
+                    //Debug.Log("egg");
+                    spikyFlipSprite.flipAnimSpriteX(true);
+                    isFacingRight = true;
+                }
+            } 
+            if (raycast2.hit.collider != null)
+            {
+                if ( raycast2.hit.collider.tag == "Ground")
+                {
+                    //Debug.Log("wscfughsaiurg");
+                    spikyFlipSprite.flipAnimSpriteX(false);
+                    isFacingRight = false;
+                }
+            }
+        }
+        else
+        {
+            if (raycast1.hit.collider == null || raycast1.hit.collider.tag != "Ground"){
+                spikyFlipSprite.flipAnimSpriteX(true);
+                isFacingRight = true;
+            }
+            if (raycast2.hit.collider == null || raycast2.hit.collider.tag != "Ground"){
+                spikyFlipSprite.flipAnimSpriteX(false);
+                isFacingRight = false;
+            }
+        }
 
-        if (raycast1.hit.collider == null || raycast1.hit.collider.tag != "Ground"){
-            //Debug.Log("egg");
-            isFacingRight = true;
-        }
-        if (raycast2.hit.collider == null || raycast2.hit.collider.tag != "Ground"){
-            //Debug.Log("wscfughsaiurg");
-            isFacingRight = false;
-        }
         if (isFacingRight){
             rb.velocity = new Vector2(speed, rb.velocity.y);
 
