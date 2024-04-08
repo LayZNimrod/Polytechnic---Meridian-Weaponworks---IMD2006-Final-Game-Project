@@ -47,7 +47,7 @@ public class Spear : WeaponScript
     {
         if (weaponTimer == 0)
         {
-            anim.SetTrigger("Active");
+            anim.Play("SpearStab", -1, 0f);
             attackSoundSource.PlayOneShot(attackSound, volume);
             if (isWeaponTouchGround)
             {
@@ -58,7 +58,6 @@ public class Spear : WeaponScript
                 touchedEnemy.TakeDamage();
             }
             weaponTimer = Time.deltaTime;
-            anim.SetTrigger("Inactive");
         }
     }
     protected override void Attack()// remember to add player stun and 
