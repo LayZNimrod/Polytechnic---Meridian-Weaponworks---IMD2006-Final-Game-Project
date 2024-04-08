@@ -47,9 +47,7 @@ public class Spear : WeaponScript
     {
         if (weaponTimer == 0)
         {
-            anim.SetTrigger("Active");
-            anim.Play("SpearStab", 1,50f);
-            //anim.SetTrigger("Inactive");
+            anim.Play("SpearStab", -1, 0f);
             attackSoundSource.PlayOneShot(attackSound, volume);
             if (isWeaponTouchGround)
             {

@@ -57,11 +57,11 @@ public class EnemySpiky : MonoBehaviour
         }
 
         if (isFacingRight){
-            rb.velocity = new Vector2(speed, rb.velocity.y);
+            rb.velocity = new Vector2(speed*Time.deltaTime, rb.velocity.y);
 
         }
         else{
-            rb.velocity = new Vector2(-speed, rb.velocity.y);
+            rb.velocity = new Vector2(-speed*Time.deltaTime, rb.velocity.y);
         }
 
     }

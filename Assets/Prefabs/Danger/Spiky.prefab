@@ -265,7 +265,8 @@ MonoBehaviour:
   Spiky: {fileID: 0}
   raycast1: {fileID: 2047439365494730322}
   raycast2: {fileID: 2401051342648252769}
-  speed: 2.5
+  isFacingRight: 1
+  speed: 100
   enclosedSpace: 0
   spikyFlipSprite: {fileID: 9145011020117042342}
 --- !u!1 &2065971621791495923
