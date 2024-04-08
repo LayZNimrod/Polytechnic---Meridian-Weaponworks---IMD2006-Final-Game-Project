@@ -245,8 +245,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StatHandler: {fileID: 0}
-  EnemyHP: 20
-  EnemyMaxHP: 20
+  EnemyHP: 12
+  EnemyMaxHP: 12
   hPBar: {fileID: 5103056977648682163}
   KillCount: {fileID: 1696952249195850057, guid: 8141529198c28144a9fd6759e99de6f9, type: 3}
   sound: {fileID: 8300000, guid: 5abc7d1e2b661f74dae8182942db41d4, type: 3}
@@ -266,7 +266,7 @@ MonoBehaviour:
   raycast1: {fileID: 2047439365494730322}
   raycast2: {fileID: 2401051342648252769}
   isFacingRight: 1
-  speed: 100
+  speed: 200
   enclosedSpace: 0
   spikyFlipSprite: {fileID: 9145011020117042342}
 --- !u!1 &2065971621791495923
