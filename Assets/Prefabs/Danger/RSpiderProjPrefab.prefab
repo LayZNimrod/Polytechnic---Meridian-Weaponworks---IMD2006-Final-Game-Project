@@ -51,7 +51,7 @@ CircleCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 4
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: 59
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -182,7 +182,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 59
   m_Sprite: {fileID: -1370781421, guid: 9326c5d1aca5b7d439208591bd71b86f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
