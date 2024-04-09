@@ -718,9 +718,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponCont: {fileID: 0}
   moveSpeed: 15
-  rayCastLenth: 0.9
-  rayCastXDistFromOrigin: -0.45
-  rayCastYDistFromOrigin: -0.54
+  rayCastLenth: 1
+  rayCastXDistFromOrigin: -0.5
+  rayCastYDistFromOrigin: -0.55
   weaponPushBack: -0.5
   velX: 0
   weaponPos: {x: 0, y: 0}
