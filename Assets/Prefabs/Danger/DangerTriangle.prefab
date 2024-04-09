@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5860688025743408564}
   - component: {fileID: 2919628668181718580}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 5303156873606879728}
   - component: {fileID: 6216747922989781170}
   - component: {fileID: 6496850800310090765}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DangerTriangle
   m_TagString: Danger
   m_Icon: {fileID: 0}
