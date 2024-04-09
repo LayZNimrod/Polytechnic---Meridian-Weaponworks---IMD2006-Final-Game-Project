@@ -21,7 +21,7 @@ public class Cannon : WeaponScript
     {
         if (weaponTimer == 0)
         {
-            anim.SetTrigger("Active");
+            anim.Play("CannonFireAnim", -1, 0f);
             attackSoundSource.PlayOneShot(attackSound, volume);
 
             Vector3 SpawnerPos = new Vector3(transform.position.x, transform.position.y, 0f);
@@ -32,7 +32,6 @@ public class Cannon : WeaponScript
             playerRB.velocity = new Vector2(playerRB.velocity.x,0);
             playerRB.AddForce(pushVector, ForceMode2D.Force);
             
-            anim.SetTrigger("Inactive");
             reloadSoundSource.PlayDelayed(1);
         }
     }
