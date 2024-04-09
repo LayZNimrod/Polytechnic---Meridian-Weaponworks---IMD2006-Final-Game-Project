@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3486239217344801099}
   - component: {fileID: -8855369708826760890}
   - component: {fileID: 5727780164454350215}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RSpiderProjPrefab
   m_TagString: Danger
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 260247115325499277}
   - component: {fileID: 597589851242829680}
   - component: {fileID: 6009027670783961274}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}

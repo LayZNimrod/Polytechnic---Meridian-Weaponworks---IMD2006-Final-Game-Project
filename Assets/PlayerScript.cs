@@ -47,6 +47,8 @@ public class PlayerScript : MonoBehaviour
     bool CanMove = true;
     private bool weaponFiredInAir = false;
     public bool playerStun;
+    
+    [SerializeField] JumpBoxScript jumpBoxScript;
 
     public void ToggleMove()
     {
@@ -93,8 +95,8 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 temp = new Vector3(rayCastXDistFromOrigin, rayCastYDistFromOrigin, 0);
-        Debug.DrawRay(transform.position + temp, Vector2.right * rayCastLenth, Color.green);
+        //Vector3 temp = new Vector3(rayCastXDistFromOrigin, rayCastYDistFromOrigin, 0);
+        //Debug.DrawRay(transform.position + temp, Vector2.right * rayCastLenth, Color.green);
 
         onGround = CheckOnGround();
         if (onGround)
@@ -188,18 +190,22 @@ public class PlayerScript : MonoBehaviour
 
     public Boolean CheckOnGround()
     {
-        Vector3 temp = new Vector3(rayCastXDistFromOrigin, rayCastYDistFromOrigin, 0);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position + temp, Vector2.right, rayCastLenth, ~LayerMask.GetMask("Enemy"));
+        //Vector3 temp = new Vector3(rayCastXDistFromOrigin, rayCastYDistFromOrigin, 0);
+        //RaycastHit2D hit = Physics2D.Raycast(transform.position + temp, Vector2.right, rayCastLenth, ~LayerMask.GetMask("Enemy"));
 
-
-        if (hit.collider != null)
+        if (jumpBoxScript.onGround)
         {
-            if (hit.collider.gameObject.tag == "Ground" || hit.collider.gameObject.tag == "FallThrough")
-            {
-                return true;
-            }
+            return true;
         }
         return false;
+        //if (hit.collider != null)
+        //{
+        //    if (hit.collider.gameObject.tag == "Ground" || hit.collider.gameObject.tag == "FallThrough")
+        //    {
+        //        return true;
+        //    }
+        //}
+        //return false;
     }
 
     public void StunPlayer()
