@@ -19,13 +19,5 @@ public class MusicPlayerSciript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        string sceneName = SceneManager.GetActiveScene().name;
-        if (sceneName == "Level1" || sceneName == "Level2") 
-        {
-            audioSourse.clip = LevelMusic;
-        } else
-        {
-            audioSourse.clip = MenuMusic;
-        }
     }
 }
