@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: maptest_1_2
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: -877665324, guid: e19e3c0d8608c814386abf037fefb113, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7075472, g: 0.7075472, b: 0.7075472, a: 1}
   m_Transform:
     e00: 1
     e01: 0
