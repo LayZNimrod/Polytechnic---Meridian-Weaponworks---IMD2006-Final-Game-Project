@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4329066257095919472}
   - component: {fileID: 3728585828388812116}
   - component: {fileID: 8389550815444228990}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 3486239217344801099}
   - component: {fileID: -8855369708826760890}
   - component: {fileID: -6979529282755950903}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LSpiderProjPrefab
   m_TagString: Danger
   m_Icon: {fileID: 0}
