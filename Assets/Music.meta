@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Music.meta
 guid: 3dba677c3fea4614da2750bb880f9684
 folderAsset: yes
+========
+guid: 43e96c170dfc3c04cbf3a29b3bffa909
+>>>>>>>> main:Assets/Scenes/Level2Old.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
